@@ -21,7 +21,7 @@ const AboutSection = () => {
             Hello! I'm Vaibhav Singhal, an Associate Product Manager at JustBaat AI, driven by a passion for building impactful products at the intersection of technology and user needs. My Mechanical Engineering background from IIT Ropar provides a strong analytical foundation for tackling complex challenges.
           </p>
           <p>
-            My experience encompasses AI video generation, programmatic ad mediation, and community monetization platforms. I excel at launching and scaling engagement products, driving significant revenue growth, and leading end-to-end development cycles—from ideation and strategy to GTM execution.
+            My experience includes programmatic ad mediation, and community monetization platforms. I excel at launching and scaling engagement products, driving significant revenue growth, and leading end-to-end development cycles—from ideation and strategy to GTM execution.
           </p>
           <p>
             I've successfully managed projects generating substantial revenue ($300K+), optimized ad inventory for numerous publishers, and increased user acquisition through innovative platforms like AI Content Generators. Proficient in product management fundamentals (monetization, stakeholder management, user research, prioritization, GTM) and tools like Google Analytics, Figma, SQL, and Jira, I'm always eager to connect and discuss new opportunities. Explore my journey and projects below!
