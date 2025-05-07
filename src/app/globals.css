@@ -1,0 +1,200 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* Removed background pattern styles */
+}
+
+@layer base {
+  :root {
+    /* Light Theme (kept for potential future toggle, but dark is default) */
+    --background-light: 0 0% 100%;
+    --foreground-light: 0 0% 3.9%;
+    --card-light: 0 0% 100%;
+    --card-foreground-light: 0 0% 3.9%;
+    --popover-light: 0 0% 100%;
+    --popover-foreground-light: 0 0% 3.9%;
+    --primary-light: 221 83% 53%; /* Example Primary - Adjust if needed */
+    --primary-foreground-light: 0 0% 98%;
+    --secondary-light: 0 0% 96.1%;
+    --secondary-foreground-light: 0 0% 9%;
+    --muted-light: 0 0% 96.1%;
+    --muted-foreground-light: 0 0% 45.1%;
+    --accent-light: 0 0% 96.1%;
+    --accent-foreground-light: 0 0% 9%;
+    --destructive-light: 0 84.2% 60.2%;
+    --destructive-foreground-light: 0 0% 98%;
+    --border-light: 0 0% 89.8%;
+    --input-light: 0 0% 89.8%;
+    --ring-light: 221 83% 53%; /* Example Ring - Adjust if needed */
+    --radius: 0.5rem;
+    --chart-1-light: 12 76% 61%;
+    --chart-2-light: 173 58% 39%;
+    --chart-3-light: 197 37% 24%;
+    --chart-4-light: 43 74% 66%;
+    --chart-5-light: 27 87% 67%;
+    --sidebar-background-light: 0 0% 98%;
+    --sidebar-foreground-light: 240 5.3% 26.1%;
+    --sidebar-primary-light: 240 5.9% 10%;
+    --sidebar-primary-foreground-light: 0 0% 98%;
+    --sidebar-accent-light: 240 4.8% 95.9%;
+    --sidebar-accent-foreground-light: 240 5.9% 10%;
+    --sidebar-border-light: 220 13% 91%;
+    --sidebar-ring-light: 217.2 91.2% 59.8%;
+
+    /* Dark Theme (Based on User Request) */
+    --background-dark: 0 0% 12.9%; /* #212121 */
+    --foreground-dark: 0 0% 98%; /* Near white for contrast */
+    --card-dark: 0 0% 18.8%; /* #303030 */
+    --card-foreground-dark: 0 0% 98%;
+    --popover-dark: 0 0% 12.9%; /* #212121 */
+    --popover-foreground-dark: 0 0% 98%;
+    --primary-dark: 0 0% 18.8%; /* #303030 - Using Dark Gray as primary */
+    --primary-foreground-dark: 0 0% 98%; /* Near white for contrast on primary */
+    --secondary-dark: 0 0% 12.9%; /* #212121 - Using Darker Gray as secondary */
+    --secondary-foreground-dark: 0 0% 98%;
+    --muted-dark: 0 0% 25%; /* Slightly lighter gray for muted elements */
+    --muted-foreground-dark: 0 0% 63.9%; /* Lighter gray for muted text */
+    --accent-dark: 186 100% 39%; /* #00BCD4 - Teal */
+    --accent-foreground-dark: 0 0% 9%; /* Dark text on accent */
+    --destructive-dark: 0 62.8% 30.6%;
+    --destructive-foreground-dark: 0 0% 98%;
+    --border-dark: 0 0% 25%; /* Slightly lighter gray for borders */
+    --input-dark: 0 0% 25%; /* Slightly lighter gray for inputs */
+    --ring-dark: 186 100% 39%; /* Teal for focus rings */
+    --chart-1-dark: 186 100% 39%; /* Teal */
+    --chart-2-dark: 210 40% 96.1%; /* Light Blue/Gray */
+    --chart-3-dark: 60 9.1% 97.8%; /* Very Light Yellow/Gray */
+    --chart-4-dark: 0 0% 63.9%; /* Gray */
+    --chart-5-dark: 0 0% 80%; /* Lighter Gray */
+    --sidebar-background-dark: 0 0% 12.9%; /* #212121 */
+    --sidebar-foreground-dark: 0 0% 98%;
+    --sidebar-primary-dark: 186 100% 39%; /* Teal */
+    --sidebar-primary-foreground-dark: 0 0% 9%; /* Dark text */
+    --sidebar-accent-dark: 0 0% 25%;
+    --sidebar-accent-foreground-dark: 0 0% 98%;
+    --sidebar-border-dark: 0 0% 25%;
+    --sidebar-ring-dark: 186 100% 39%; /* Teal */
+  }
+
+  /* Apply dark theme variables by default */
+  :root {
+    --background: var(--background-dark);
+    --foreground: var(--foreground-dark);
+    --card: var(--card-dark);
+    --card-foreground: var(--card-foreground-dark);
+    --popover: var(--popover-dark);
+    --popover-foreground: var(--popover-foreground-dark);
+    --primary: var(--primary-dark);
+    --primary-foreground: var(--primary-foreground-dark);
+    --secondary: var(--secondary-dark);
+    --secondary-foreground: var(--secondary-foreground-dark);
+    --muted: var(--muted-dark);
+    --muted-foreground: var(--muted-foreground-dark);
+    --accent: var(--accent-dark);
+    --accent-foreground: var(--accent-foreground-dark);
+    --destructive: var(--destructive-dark);
+    --destructive-foreground: var(--destructive-foreground-dark);
+    --border: var(--border-dark);
+    --input: var(--input-dark);
+    --ring: var(--ring-dark);
+    --chart-1: var(--chart-1-dark);
+    --chart-2: var(--chart-2-dark);
+    --chart-3: var(--chart-3-dark);
+    --chart-4: var(--chart-4-dark);
+    --chart-5: var(--chart-5-dark);
+    --sidebar-background: var(--sidebar-background-dark);
+    --sidebar-foreground: var(--sidebar-foreground-dark);
+    --sidebar-primary: var(--sidebar-primary-dark);
+    --sidebar-primary-foreground: var(--sidebar-primary-foreground-dark);
+    --sidebar-accent: var(--sidebar-accent-dark);
+    --sidebar-accent-foreground: var(--sidebar-accent-foreground-dark);
+    --sidebar-border: var(--sidebar-border-dark);
+    --sidebar-ring: var(--sidebar-ring-dark);
+  }
+
+  /* Optional: Define light theme if needed via .light class */
+  /* .light { */
+    /* --background: var(--background-light); */
+    /* ... map all light variables ... */
+  /* } */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Add smooth scroll for better navigation */
+    scroll-behavior: smooth;
+  }
+  /* Ensure links use accent color */
+  a {
+      @apply text-accent transition-colors hover:text-accent/80;
+  }
+  /* Style for active navigation link */
+   .nav-link-active {
+      @apply text-accent font-semibold; /* Example: Use accent color and bold font */
+    }
+}
+
+/* Add styles for timeline */
+@layer components {
+  .timeline-item {
+    @apply relative pl-8 pb-8;
+  }
+  .timeline-item:last-child {
+    @apply pb-0;
+  }
+  .timeline-connector {
+    @apply absolute left-[10px] top-[5px] h-full w-0.5 bg-border;
+  }
+  .timeline-item:last-child .timeline-connector {
+    @apply h-[calc(100%-1.5rem)]; /* Adjust height for last item */
+  }
+  .timeline-dot {
+    @apply absolute left-0 top-0 h-5 w-5 rounded-full bg-accent border-4 border-background;
+  }
+  .timeline-content {
+    @apply pt-1;
+  }
+}
+
+/* Animated multicolor line styles */
+@keyframes animate-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@layer components {
+  .multicolor-line {
+    @apply h-1 w-full;
+    background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4); /* Google Colors, repeat first color for seamless loop */
+    background-size: 200% 100%; /* Make the background wider than the element */
+    animation: animate-gradient 5s linear infinite; /* Apply the animation */
+  }
+}
+
+
+/* Style scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent));
+}
