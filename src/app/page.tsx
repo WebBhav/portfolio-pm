@@ -1,6 +1,6 @@
+
 import HeroSection from '@/components/sections/hero-section';
-import ExperienceSection from '@/components/sections/experience-section'; // Updated import
-import EducationSection from '@/components/sections/education-section'; // New import
+import JourneySection from '@/components/sections/journey-section'; // New import for merged section
 import AiProjectsShowcase from '@/components/sections/ai-projects-showcase';
 import AboutSection from '@/components/sections/about-section';
 import ContactSection from '@/components/sections/contact-section';
@@ -19,9 +19,7 @@ export default function Home() {
       <Separator />
       <SkillsSection />
       <Separator />
-      <ExperienceSection /> {/* Use ExperienceSection */}
-      <Separator />
-      <EducationSection /> {/* Use EducationSection */}
+      <JourneySection /> {/* Use the new JourneySection */}
       <Separator />
       <PositionsSection />
        <Separator />
@@ -35,3 +33,4 @@ export default function Home() {
     </div>
   );
 }
+
