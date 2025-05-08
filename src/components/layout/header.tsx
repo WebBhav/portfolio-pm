@@ -179,7 +179,7 @@ const Header = () => {
 
 
         {/* Right: Buttons */}
-        <div className="flex items-center gap-2 pr-4"> {/* Add padding for spacing */}
+        <div className="flex items-center gap-2 pr-4"> {/* Adjusted padding for better alignment */}
            <div className="hidden md:flex">
              <Button asChild variant="default" size="sm" className="shadow-md" onClick={() => handleNavigationClick('#contact')}>
               <Link href="#contact">

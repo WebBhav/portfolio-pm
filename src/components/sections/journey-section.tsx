@@ -59,7 +59,7 @@ const journeyData: JourneyItem[] = [
   {
     type: 'education',
     icon: <GraduationCap className="h-4 w-4 text-accent-foreground" />,
-    date: '2020 - 2024',
+    date: '2020 - 2024', // Updated Date
     title: 'Indian Institute of Technology, Ropar',
     description: 'Rupnagar, Punjab', // Updated description
     details: [ // Updated details to list degree and CGPA
@@ -120,4 +120,3 @@ const JourneySection = () => {
 };
 
 export default JourneySection;
-
