@@ -34,7 +34,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'May 2023 - July 2023',
     title: 'Product Management Intern - B.S. Geartech Pvt. Ltd.',
-    description: 'Optimized procurement and contributed to website revamp.',
+    description: 'Manufacture High Precision Gears and Gear Boxes', // Updated description
     details: [
       "Optimized Buy vs. Build for 60+ imported parts across 10+ products, impacting 1.3Cr revenue.",
       "Revamped website landing page with the UI, UX & Growth teams.",
@@ -46,7 +46,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'Apr 2021 - June 2021',
     title: 'Marketing & Operations Intern - UnSchool',
-    description: '#3 Ranked Startup of 2020 LinkedIn. Executed market expansion strategies.', // Slightly rephrased for clarity
+    description: '#3 Ranked Startup of 2020 LinkedIn.', // Slightly rephrased for clarity
     details: [
         "Executed market expansion and penetration strategies, reaching approx 3K people.",
         "Aligned efforts with goals for audience growth and product visibility.",
