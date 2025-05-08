@@ -11,11 +11,11 @@ import {
   SheetHeader,
   SheetTitle,
   SheetClose,
-  SheetDescription,
+  SheetDescription, // Added import for accessibility
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Mail, Menu } from 'lucide-react';
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'; // Added import for accessibility
 import { cn } from '@/lib/utils';
 import { ScrollArea, ScrollAreaViewport } from '@/components/ui/scroll-area';
 import { useLoading } from '@/contexts/loading-context';
@@ -121,7 +121,6 @@ const Header = () => {
             }
         }
         // For hash links, loader will be hidden by GlobalLoaderWrapper or manually if needed
-        // For this user request, active highlighting is removed, so we just ensure loader hides.
         // GlobalLoaderWrapper might not catch hash changes if pathname/searchParams don't change.
         // So, hide loader manually after a short delay for hash links.
         setTimeout(() => setIsLoading(false), 500); // Adjust delay as needed
@@ -146,7 +145,7 @@ const Header = () => {
                 history.pushState(null, '', href);
             }
         }
-        setTimeout(() => setIsLoading(false), 500); 
+        setTimeout(() => setIsLoading(false), 500);
     } else {
         if (typeof window !== 'undefined') {
             window.location.href = href;
@@ -158,7 +157,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="multicolor-line"></div>
-      <div className="container flex h-16 items-center"> {/* Main flex container */}
+      <div className="container flex h-16 items-center"> {/* Removed justify-between */}
         {/* Left: Logo */}
         <div className="flex-shrink-0">
           <Link href="/" className="flex items-center space-x-2" onClick={() => handleNavigationClick('/')}>
