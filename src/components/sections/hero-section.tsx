@@ -48,10 +48,7 @@ const HeroSection = () => {
            </Button> */}
         </div>
       </div>
-       {/* Add a note for the user */}
-       <p className="mt-8 text-sm text-muted-foreground">
-            Note: To display your own image, please add an image file named `vaibhav-singhal.jpg` to the `public` directory of your project.
-       </p>
+       {/* Removed the note for the user */}
     </section>
   );
 };
