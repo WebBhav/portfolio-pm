@@ -20,6 +20,7 @@ const skillsData = {
     'Funnel Optimisation',
   ],
   tools: [
+    'AI Tools', // Added AI Tools here
     'ProjectLibre',
     'Google Analytics',
     'Google Ad-Manager',
