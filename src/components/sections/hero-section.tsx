@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowDown, Download } from 'lucide-react'; // Added Download icon
 import Image from 'next/image';
 
+
 const HeroSection = () => {
   return (
     <section id="hero" className="relative container mx-auto flex flex-col items-center justify-center text-center min-h-[calc(70vh-5rem)] py-8 md:py-16 overflow-hidden">
@@ -36,8 +37,9 @@ const HeroSection = () => {
             <Link href="#contact">Get In Touch</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="#experience">
-              View Experience <ArrowDown className="ml-2 h-5 w-5" />
+            {/* Updated href to point to the journey section */}
+            <Link href="#journey">
+              View Journey <ArrowDown className="ml-2 h-5 w-5" />
             </Link>
           </Button>
            {/* Keep Resume Download Button commented out as per previous state */}
@@ -48,7 +50,6 @@ const HeroSection = () => {
            </Button> */}
         </div>
       </div>
-       {/* Removed the note for the user */}
     </section>
   );
 };

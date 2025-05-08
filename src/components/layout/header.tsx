@@ -26,7 +26,7 @@ const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#journey', label: 'Journey' }, // Changed from Experience & Education
-  { href: '#positions', label: 'Positions' },
+  { href: '#positions', label: 'PORs' }, // Updated label to PORs
   { href: '#key-projects', label: 'Key Projects' },
   { href: '#projects-ai', label: 'AI Projects' },
   { href: '#awards', label: 'Awards' },
@@ -37,13 +37,11 @@ const NavLink = ({
   children,
   className,
   onClick,
-  isActive, // Add isActive prop
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
-  isActive?: boolean; // Define isActive prop type
 }) => {
   const linkOnClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
@@ -70,10 +68,10 @@ const NavLink = ({
       className={cn(
         'transition-colors px-3 py-2 rounded-md text-sm font-medium',
         'text-muted-foreground hover:text-foreground hover:bg-accent/10', // Default style
-        isActive ? 'text-foreground bg-accent/10 font-semibold' : '', // Active style
+        // Removed active styles based on user request
         className
       )}
-      aria-current={isActive ? 'page' : undefined} // Add aria-current for accessibility
+      // Removed aria-current based on user request
     >
       {children}
     </Link>
@@ -84,8 +82,7 @@ const MobileNavLink = ({
   href,
   children,
   onClick,
-  isActive, // Add isActive prop
-}: ComponentProps<typeof Link> & { onClick?: (href: string) => void, isActive?: boolean }) => { // Define isActive prop type
+}: ComponentProps<typeof Link> & { onClick?: (href: string) => void }) => { // Define isActive prop type
   const mobileLinkOnClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick && href) {
         onClick(href as string);
@@ -102,10 +99,10 @@ const MobileNavLink = ({
         className={cn(
           'block py-2 text-base font-medium transition-colors rounded-sm px-3',
           'text-foreground/80 hover:text-foreground hover:bg-accent/10', // Default style
-          isActive ? 'text-foreground bg-accent/10 font-semibold' : '', // Active style
+          // Removed active styles based on user request
           'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background'
         )}
-        aria-current={isActive ? 'page' : undefined} // Add aria-current for accessibility
+        // Removed aria-current based on user request
       >
         {children}
       </Link>
@@ -116,7 +113,6 @@ const MobileNavLink = ({
 const Header = () => {
   const { setIsLoading } = useLoading();
   const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
   const pathname = usePathname(); // Get current pathname
 
   // Function to scroll to section and update state/history
@@ -127,9 +123,6 @@ const Header = () => {
         if (typeof window !== 'undefined' && window.location.hash !== `#${id}`) {
            history.pushState(null, '', `#${id}`);
         }
-        // Manually set active section immediately for better UX,
-        // IntersectionObserver will refine it on scroll end.
-        setActiveSection(id);
     }
   }, []);
 
@@ -142,7 +135,6 @@ const Header = () => {
     } else {
          if (typeof window !== 'undefined') {
              window.location.href = href; // Use standard navigation for non-hash links
-             // Loader will be handled by page load/GlobalLoaderWrapper for full page navigations
          }
     }
   }, [setIsLoading, scrollToSection]);
@@ -152,65 +144,6 @@ const Header = () => {
     setIsSheetOpen(false); // Close sheet on click
     handleNavigationClick(href); // Reuse the same logic
   }, [handleNavigationClick]);
-
-  // Effect for Intersection Observer
-  useEffect(() => {
-    if (typeof window === 'undefined') return; // Ensure this runs only on the client
-
-    const observerOptions = {
-        root: null, // relative to the viewport
-        rootMargin: '-50% 0px -50% 0px', // Trigger when the section is in the middle 50% of the viewport
-        threshold: 0, // Trigger as soon as any part enters/leaves the margin
-    };
-
-    const observerCallback: IntersectionObserverCallback = (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                setActiveSection(entry.target.id);
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe all sections that have IDs corresponding to nav links
-    navLinks.forEach((link) => {
-        if (link.href.startsWith('#')) {
-            const element = document.getElementById(link.href.substring(1));
-            if (element) {
-                observer.observe(element);
-            }
-        }
-    });
-
-     // Initial check for hash on load
-     const currentHash = window.location.hash;
-     if (currentHash) {
-         const initialSectionId = currentHash.substring(1);
-         const correspondingLink = navLinks.find(link => link.href === currentHash);
-         if (correspondingLink) {
-             setActiveSection(initialSectionId);
-             // Optional: Smooth scroll to the section if it's not fully visible
-             // document.getElementById(initialSectionId)?.scrollIntoView({ behavior: 'smooth' });
-         }
-     } else if (pathname === '/') {
-         // If no hash and on homepage, maybe default to no active section or '#hero' if needed
-         // setActiveSection(null); // Or 'hero' if HeroSection has id="hero"
-     }
-
-
-    // Cleanup function
-    return () => {
-        navLinks.forEach((link) => {
-            if (link.href.startsWith('#')) {
-                const element = document.getElementById(link.href.substring(1));
-                if (element) {
-                    observer.unobserve(element);
-                }
-            }
-        });
-    };
-  }, [pathname]); // Re-run observer setup if pathname changes (though less relevant for hash links)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -236,7 +169,7 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => handleNavigationClick(link.href)}
-                isActive={activeSection === link.href.substring(1)} // Pass isActive state
+                // isActive removed
               >
                 {link.label}
               </NavLink>
@@ -285,7 +218,7 @@ const Header = () => {
                         key={link.href}
                         href={link.href}
                         onClick={handleSheetLinkClick}
-                        isActive={activeSection === link.href.substring(1)} // Pass isActive state
+                        // isActive removed
                       >
                         {link.label}
                       </MobileNavLink>
@@ -311,4 +244,3 @@ const Header = () => {
 };
 
 export default Header;
-
