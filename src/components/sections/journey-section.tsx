@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { Briefcase, GraduationCap } from 'lucide-react';
@@ -22,7 +23,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'July 2024 - Present',
     title: 'Associate Product Manager - JustBaat AI',
-    description: 'AI Video Generation and Programmatic Ad Mediators.',
+    description: 'Company Details: AI Video Generation and Programmatic Ad Mediators.',
     details: [ // Updated details without leading "— "
       "Launched & scaled 6+ engagement products (Player, Shorts, Quiz, Poll, etc.), generating $300K in 6 months, filling 100% inventory for 400+ publishers, and increasing direct revenue by 16%.",
       "Built a D2C review marketplace, later pivoting it into a WhatsApp Community Monetization Platform, solving a three-way problem—demand partners needed genuine traffic, admins sought better monetization, and it boosted engagement & platform metrics.",
@@ -35,7 +36,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'May 2023 - July 2023',
     title: 'Product Management Intern - B.S. Geartech Pvt. Ltd.',
-    description: 'Manufacture High Precision Gears and Gear Boxes', // Updated description
+    description: 'Company Details: Manufacture High Precision Gears and Gear Boxes', // Updated description
     details: [
       "Optimized Buy vs. Build for 60+ imported parts across 10+ products, impacting 1.3Cr revenue.",
       "Revamped website landing page with the UI, UX & Growth teams.",
@@ -47,7 +48,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'Apr 2021 - June 2021',
     title: 'Marketing & Operations Intern - UnSchool',
-    description: '#3 Ranked Startup of 2020 LinkedIn.', // Updated description
+    description: 'Company Details: #3 Ranked Startup of 2020 LinkedIn.', // Updated description
     details: [
         "Executed market expansion and penetration strategies, reaching approx 3K people.", // Removed redundant phrase
         "Aligned efforts with goals for audience growth and product visibility.",
@@ -60,8 +61,11 @@ const journeyData: JourneyItem[] = [
     icon: <GraduationCap className="h-4 w-4 text-accent-foreground" />,
     date: '2020 - 2024',
     title: 'Indian Institute of Technology, Ropar',
-    description: 'Bachelor of Technology (B.Tech) in Mechanical Engineering.',
-    details: ['CGPA: 7.39'],
+    description: 'Rupnagar, Punjab', // Updated description
+    details: [ // Updated details to list degree and CGPA
+        'Bachelor of Technology (B.Tech) in Mechanical Engineering',
+        'CGPA: 7.39'
+    ],
     startDate: new Date(2020, 7), // Assuming start in Aug 2020 for sorting, exact month isn't critical for relative order here.
   },
 ];
@@ -95,11 +99,7 @@ const JourneySection = () => {
                     </div>
                     <span className="text-sm text-muted-foreground sm:ml-auto sm:pl-4">{item.date}</span>
                   </div>
-                   {/* Add "Company Details:" prefix for experience items */}
-                  <CardDescription>
-                    {item.type === 'experience' && <span className="font-semibold">Company Details: </span>}
-                    {item.description}
-                  </CardDescription>
+                  <CardDescription>{item.description}</CardDescription>
                 </CardHeader>
                 {item.details && item.details.length > 0 && (
                   <CardContent>
@@ -120,3 +120,4 @@ const JourneySection = () => {
 };
 
 export default JourneySection;
+
