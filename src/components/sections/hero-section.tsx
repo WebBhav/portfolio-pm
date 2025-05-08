@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react'; // Added Download icon
 import Image from 'next/image';
 
 const HeroSection = () => {
