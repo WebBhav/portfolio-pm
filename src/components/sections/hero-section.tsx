@@ -1,31 +1,22 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowDown, Download } from 'lucide-react'; // Added Download icon
-// Remove the import for AnimatedHeroGraphic as it's no longer used
-// import AnimatedHeroGraphic from '@/components/ui/animated-hero-graphic';
-import Image from 'next/image'; // Re-add Image import for profile picture
+import { ArrowDown } from 'lucide-react';
+import Image from 'next/image';
 
 const HeroSection = () => {
   return (
     <section id="hero" className="relative container mx-auto flex flex-col items-center justify-center text-center min-h-[calc(70vh-5rem)] py-8 md:py-16 overflow-hidden">
 
-      {/* Animated Graphic Removed */}
-      {/*
-      <div className="w-full max-w-sm h-32 md:h-48 mb-6 md:mb-8 flex items-center justify-center">
-        <AnimatedHeroGraphic />
-      </div>
-      */}
-
-        {/* Re-add Profile Picture */}
+      {/* Profile Picture */}
        <div className="mb-6 mt-8 md:mt-0">
          <Image
-           src="https://picsum.photos/150/150" // Using a slightly larger picture again
+           src="/vaibhav-singhal.jpg" // Updated src: Assumes image is in public/vaibhav-singhal.jpg
            alt="Vaibhav Singhal"
            width={150}
            height={150}
            className="rounded-full border-4 border-accent shadow-lg"
-           data-ai-hint="professional profile picture headshot"
+           // data-ai-hint removed as it's no longer a placeholder
            priority={true}
          />
        </div>
@@ -57,6 +48,10 @@ const HeroSection = () => {
            </Button> */}
         </div>
       </div>
+       {/* Add a note for the user */}
+       <p className="mt-8 text-sm text-muted-foreground">
+            Note: To display your own image, please add an image file named `vaibhav-singhal.jpg` to the `public` directory of your project.
+       </p>
     </section>
   );
 };
