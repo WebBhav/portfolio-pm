@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Briefcase, GraduationCap } from 'lucide-react';
@@ -46,9 +47,9 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'Apr 2021 - June 2021',
     title: 'Marketing & Operations Intern - UnSchool',
-    description: '#3 Ranked Startup of 2020 LinkedIn.', // Slightly rephrased for clarity
+    description: '#3 Ranked Startup of 2020 LinkedIn.', // Updated description
     details: [
-        "Executed market expansion and penetration strategies, reaching approx 3K people.",
+        "Executed market expansion and penetration strategies, reaching approx 3K people.", // Removed redundant phrase
         "Aligned efforts with goals for audience growth and product visibility.",
     ],
      startDate: new Date(2021, 3), // April 2021
