@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Github, Instagram } from 'lucide-react'; // Replaced Twitter with Instagram icon
 import Link from 'next/link';
 
 const ContactSection = () => {
@@ -17,20 +17,21 @@ const ContactSection = () => {
           </Link>
         </Button>
         <Button asChild variant="outline" size="lg">
-          <Link href="https://linkedin.com/in/vaibhav-singhal-iit-ropar/" target="_blank" rel="noopener noreferrer"> {/* Updated LinkedIn */}
+          {/* Updated LinkedIn link */}
+          <Link href="https://www.linkedin.com/in/vaibhav-singhal-iit-ropar" target="_blank" rel="noopener noreferrer">
             <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
           </Link>
         </Button>
          <Button asChild variant="outline" size="lg">
-          {/* Assuming GitHub link remains the same, update if different */}
-          <Link href="https://github.com/vaibhavsinghal18" target="_blank" rel="noopener noreferrer">
+          {/* Updated GitHub link */}
+          <Link href="https://github.com/WebBhav" target="_blank" rel="noopener noreferrer">
             <Github className="mr-2 h-5 w-5" /> GitHub
           </Link>
         </Button>
          <Button asChild variant="outline" size="lg">
-          {/* Assuming Twitter/X link remains the same, update if different */}
-          <Link href="https://x.com/VaibhvSinghal" target="_blank" rel="noopener noreferrer">
-            <Twitter className="mr-2 h-5 w-5" /> Twitter/X
+          {/* Replaced Twitter with Instagram */}
+          <Link href="https://www.instagram.com/thewebbhav" target="_blank" rel="noopener noreferrer">
+            <Instagram className="mr-2 h-5 w-5" /> Instagram
           </Link>
         </Button>
       </div>
