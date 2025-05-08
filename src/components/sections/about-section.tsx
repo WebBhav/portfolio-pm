@@ -18,7 +18,7 @@ const AboutSection = () => {
         </div>
         <div className="md:col-span-2 text-lg text-muted-foreground space-y-4">
           <p>
-            Hello! I'm Vaibhav Singhal, an Associate Product Manager at JustBaat AI, driven by a passion for building impactful products at the intersection of technology and user needs. My Mechanical Engineering background from IIT Ropar provides a strong analytical foundation for tackling complex challenges.
+            Hello! I'm Vaibhav Singhal. My most recent role was Associate Product Manager at JustBaat AI, where I was driven by a passion for building impactful products at the intersection of technology and user needs. My Mechanical Engineering background from IIT Ropar provides a strong analytical foundation for tackling complex challenges.
           </p>
           <p>
             My experience includes programmatic ad mediation, and community monetization platforms. I excel at launching and scaling engagement products, driving significant revenue growth, and leading end-to-end development cycles—from ideation and strategy to GTM execution.
