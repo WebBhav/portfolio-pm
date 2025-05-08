@@ -23,10 +23,10 @@ const journeyData: JourneyItem[] = [
     date: 'July 2024 - Present',
     title: 'Associate Product Manager - JustBaat AI',
     description: 'AI Video Generation and Programmatic Ad Mediators.',
-    details: [ // Updated details
-      "— Launched & scaled 6+ engagement products (Player, Shorts, Quiz, Poll, etc.), generating $300K in 6 months, filling 100% inventory for 400+ publishers, and increasing direct revenue by 16%.",
-      "— Built a D2C review marketplace, later pivoting it into a WhatsApp Community Monetization Platform, solving a three-way problem—demand partners needed genuine traffic, admins sought better monetization, and it boosted engagement & platform metrics.",
-      "— Led the development of 5+ platforms, including a Self-Serve Platform for AdTech Vertical, an AI Content Generator, and increased B2B2C user acquisition by 11% in 3 months.",
+    details: [ // Updated details without leading "— "
+      "Launched & scaled 6+ engagement products (Player, Shorts, Quiz, Poll, etc.), generating $300K in 6 months, filling 100% inventory for 400+ publishers, and increasing direct revenue by 16%.",
+      "Built a D2C review marketplace, later pivoting it into a WhatsApp Community Monetization Platform, solving a three-way problem—demand partners needed genuine traffic, admins sought better monetization, and it boosted engagement & platform metrics.",
+      "Led the development of 5+ platforms, including a Self-Serve Platform for AdTech Vertical, an AI Content Generator, and increased B2B2C user acquisition by 11% in 3 months.",
     ],
     startDate: new Date(2024, 6), // July 2024
   },
@@ -116,5 +116,6 @@ const JourneySection = () => {
 };
 
 export default JourneySection;
+
 
 
