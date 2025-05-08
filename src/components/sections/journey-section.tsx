@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Briefcase, GraduationCap } from 'lucide-react';
@@ -47,7 +46,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'Apr 2021 - June 2021',
     title: 'Marketing & Operations Intern - UnSchool',
-    description: 'Executed market expansion strategies for LinkedIn #3 Ranked Startup of 2020.',
+    description: '#3 Ranked Startup of 2020 LinkedIn. Executed market expansion strategies.', // Slightly rephrased for clarity
     details: [
         "Executed market expansion and penetration strategies, reaching approx 3K people.",
         "Aligned efforts with goals for audience growth and product visibility.",
@@ -95,7 +94,11 @@ const JourneySection = () => {
                     </div>
                     <span className="text-sm text-muted-foreground sm:ml-auto sm:pl-4">{item.date}</span>
                   </div>
-                  <CardDescription>{item.description}</CardDescription>
+                   {/* Add "Company Details:" prefix for experience items */}
+                  <CardDescription>
+                    {item.type === 'experience' && <span className="font-semibold">Company Details: </span>}
+                    {item.description}
+                  </CardDescription>
                 </CardHeader>
                 {item.details && item.details.length > 0 && (
                   <CardContent>
@@ -116,6 +119,3 @@ const JourneySection = () => {
 };
 
 export default JourneySection;
-
-
-
