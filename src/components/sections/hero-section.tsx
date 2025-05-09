@@ -1,7 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowDown, Download } from 'lucide-react'; // Added Download icon
+import { ArrowDown } from 'lucide-react';
 import Image from 'next/image';
 
 
@@ -12,12 +12,11 @@ const HeroSection = () => {
       {/* Profile Picture */}
        <div className="mb-6 mt-8 md:mt-0">
          <Image
-           src="/vaibhav-singhal.jpg" // Updated src: Assumes image is in public/vaibhav-singhal.jpg
+           src="/vaibhav-singhal.jpg"
            alt="Vaibhav Singhal"
            width={150}
            height={150}
            className="rounded-full border-4 border-accent shadow-lg"
-           // data-ai-hint removed as it's no longer a placeholder
            priority={true}
          />
        </div>
@@ -30,24 +29,17 @@ const HeroSection = () => {
         </h1>
         {/* Updated Subheading */}
         <p className="text-base text-muted-foreground sm:text-lg md:text-xl max-w-3xl mb-8">
-          Product Manager | IIT Ropar Alumnus | Driving AI, Design and Monetisation in Product
+          AI Product Manager | IIT Ropar Alumnus | Driving AI, Design and Monetisation in Product
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Button asChild size="lg">
             <Link href="#contact">Get In Touch</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            {/* Updated href to point to the journey section */}
             <Link href="#journey">
               View Journey <ArrowDown className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-           {/* Keep Resume Download Button commented out as per previous state */}
-           {/* <Button asChild variant="secondary" size="lg">
-             <Link href="/resume/vaibhav_singhal_resume.pdf" download="Vaibhav_Singhal_Resume.pdf">
-               Download Resume <Download className="ml-2 h-5 w-5" />
-             </Link>
-           </Button> */}
         </div>
       </div>
     </section>
@@ -55,3 +47,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
