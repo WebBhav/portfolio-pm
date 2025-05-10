@@ -17,6 +17,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Vaibhav Singhal Portfolio',
   description: 'Portfolio of Vaibhav Singhal, Product Manager, IIT Ropar Alumnus, specializing in AI, Design, and Monetization.',
+  verification: {
+    google: 'GHAwX5L_HelEtZxAP0y8lOnNTjNxqqtrRJctgl0lJ10',
+  },
 };
 
 export default function RootLayout({
