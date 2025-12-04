@@ -8,7 +8,7 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-center">
         <div className="md:col-span-1 flex justify-center">
            <Image
-              src="https://picsum.photos/seed/handshake/300/400"
+              src="/handshake.jpg"
               alt="Handshake"
               width={300}
               height={400}
