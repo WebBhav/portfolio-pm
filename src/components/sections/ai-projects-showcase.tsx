@@ -2,29 +2,28 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ExternalLink, Bot } from 'lucide-react';
+import { ExternalLink, Bot, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 const projects = [
   {
     title: 'WebAstroAI',
     description: 'Developed an AI-powered astrology platform that combines web-based data analysis with intelligent interpretation to generate personalised astrological insights. The system automatically scans relevant sources, extracts patterns, and delivers contextual predictions tailored to each user’s profile. Designed with scalable architecture, clean UI, and seamless deployment—now fully live and functional for end users.',
-    imageUrl: 'https://picsum.photos/400/200?random=1', // Replace with actual screenshot or relevant image
+    imageUrl: 'https://picsum.photos/seed/astro/400/200',
     projectUrl: 'https://webastroai.netlify.app/',
     tags: ['AI', 'Astrology', 'Web Analysis', 'Deployed', 'Personal Project'],
     icon: <Bot className="h-6 w-6 text-accent" />,
     aiHint: "artificial intelligence astrology web app",
   },
-  // Add more relevant AI projects here if any from resume or future plans
-  // {
-  //   title: 'AI Content Generator (JustBaat)', // Example if mentioned explicitly as a separate project
-  //   description: 'Led development of an AI Content Generator platform driving B2B2C user acquisition.',
-  //   imageUrl: 'https://picsum.photos/400/200?random=2',
-  //   projectUrl: '#', // Internal project, may not have a public link
-  //   tags: ['AI', 'Content Generation', 'B2B2C', 'Work Project'],
-  //   icon: <Bot className="h-6 w-6 text-accent" />,
-  //   aiHint: "ai content generation platform",
-  // },
+  {
+    title: 'Mail Automation | n8n',
+    description: 'Developed a fully automated command-to-action engine using n8n, integrating a Telegram bot with Gemini’s LLM capabilities to understand user instructions. The system restructures inputs into a predefined operational format, fetches the appropriate Gmail template from a stored library, and sends the email instantly. Designed for reliability and scalability, it serves as a hands-free AI-driven workflow for automated communication.',
+    imageUrl: 'https://picsum.photos/seed/mail/400/200',
+    projectUrl: '#',
+    tags: ['AI', 'Automation', 'n8n', 'Telegram', 'Personal Project'],
+    icon: <Mail className="h-6 w-6 text-accent" />,
+    aiHint: "mail automation telegram bot",
+  },
 ];
 
 const AiProjectsShowcase = () => {
