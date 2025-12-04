@@ -21,6 +21,7 @@ const skillsData = {
   ],
   tools: [
     'AI Tools', // Added AI Tools here
+    'n8n',
     'ProjectLibre',
     'Google Analytics',
     'Google Ad-Manager',
