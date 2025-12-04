@@ -21,8 +21,20 @@ const journeyData: JourneyItem[] = [
   {
     type: 'experience',
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
-    date: 'July 2024 - Present',
-    title: 'Associate Product Manager - JustBaat AI',
+    date: 'August 2025 - Present',
+    title: 'Associate Product Manager - KreditBee',
+    description: 'Company Details: an Instant Personal Loan & Online Credit Provider',
+    details: [
+        "Drove end-to-end onboarding and funnel optimization for Personal Loans across Salaried & Non-Salaried segments",
+        "Led website revamp, resolved key onboarding issues, and contributed product suggestions for the upcoming UPI vertical."
+    ],
+    startDate: new Date(2025, 7), // August 2025
+  },
+  {
+    type: 'experience',
+    icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
+    date: 'July 2024 - July 2025',
+    title: 'Associate Product Manager - JustBaat AI (Powered By Google)',
     description: 'Company Details: AI Video Generation and Programmatic Ad Mediators.',
     details: [ // Updated details without leading "— "
       "Launched & scaled 6+ engagement products (Player, Shorts, Quiz, Poll, etc.), generating $300K in 6 months, filling 100% inventory for 400+ publishers, and increasing direct revenue by 16%.",
