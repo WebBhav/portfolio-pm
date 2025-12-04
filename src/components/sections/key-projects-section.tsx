@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Lightbulb, Presentation, ExternalLink, FileText } from 'lucide-react'; // Added FileText
+import { Lightbulb, Presentation, FileText, ArrowRight } from 'lucide-react'; // Added ArrowRight
 import Image from 'next/image';
 
 const keyProjects = [
@@ -88,6 +88,13 @@ const KeyProjectsSection = () => {
             </CardFooter>
           </Card>
         ))}
+      </div>
+      <div className="mt-12 text-center">
+        <Button asChild size="lg">
+          <Link href="https://drive.google.com/drive/u/1/folders/1Hcd-58gybWHKgO3owtQSEhi86cUta7u6" target="_blank" rel="noopener noreferrer">
+            Find more here <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        </Button>
       </div>
     </section>
   );
