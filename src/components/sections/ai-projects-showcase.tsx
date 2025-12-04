@@ -37,7 +37,7 @@ const AiProjectsShowcase = () => {
     <section id="projects-ai" className="container mx-auto py-12 md:py-24 scroll-mt-16">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">AI Projects Showcase</h2>
        <div className="multicolor-line mb-12 w-24 mx-auto"></div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <Card key={index} className="flex flex-col overflow-hidden bg-card hover:shadow-xl transition-shadow duration-300">
              <Image
@@ -83,7 +83,3 @@ const AiProjectsShowcase = () => {
 };
 
 export default AiProjectsShowcase;
-
-
-
-    
