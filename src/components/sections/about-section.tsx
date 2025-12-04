@@ -8,7 +8,7 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-center">
         <div className="md:col-span-1 flex justify-center">
            <Image
-              src="/handshake.jpg"
+              src="https://picsum.photos/seed/handshake/300/400"
               alt="Handshake"
               width={300}
               height={400}
@@ -18,13 +18,16 @@ const AboutSection = () => {
         </div>
         <div className="md:col-span-2 text-lg text-muted-foreground space-y-4">
           <p>
-            Hello! I'm Vaibhav Singhal. My most recent role was Associate Product Manager at JustBaat AI, where I was driven by a passion for building impactful products at the intersection of technology and user needs. My Mechanical Engineering background from IIT Ropar provides a strong analytical foundation for tackling complex challenges.
+            Hi, I’m Vaibhav — a product thinker who blends data, design, and strategy to build meaningful digital experiences.
           </p>
           <p>
-            My experience includes programmatic ad mediation, and community monetization platforms. I excel at launching and scaling engagement products, driving significant revenue growth, and leading end-to-end development cycles—from ideation and strategy to GTM execution.
+            I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity. With years of hands-on design experience, I still sketch, wireframe, and build UI myself.
           </p>
           <p>
-            I've successfully managed projects generating substantial revenue ($300K+), optimized ad inventory for numerous publishers, and increased user acquisition through innovative platforms like AI Content Generators. Proficient in product management fundamentals (monetization, stakeholder management, user research, prioritization, GTM) and tools like Google Analytics, Figma, SQL, and Jira, I'm always eager to connect and discuss new opportunities. Explore my journey and projects below!
+            I’ve led teams, built IIT Ropar’s first eSports community, revived campus culture post-COVID, and helped secure ₹3M+ in sponsorships. I enjoy creating systems that scale — whether products, communities, or ideas.
+          </p>
+          <p>
+            Mechanical Engineering @ IIT Ropar. Born in Alwar. Driven by curiosity, craft, and impact.
           </p>
         </div>
       </div>
