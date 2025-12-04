@@ -10,7 +10,7 @@ const skillsData = {
     'Product Roadmapping',
     'Product Strategy',
     'Agile Methodologies',
-    'Scrum',
+    'Product Design',
     'APIs',
     'User Research',
     'Wireframing',
