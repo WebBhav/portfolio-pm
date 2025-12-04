@@ -9,28 +9,46 @@ import KeyProjectsSection from '@/components/sections/key-projects-section';
 import PositionsSection from '@/components/sections/positions-section';
 import AwardsSection from '@/components/sections/awards-section';
 import { Separator } from '@/components/ui/separator';
+import AnimatedSection from '@/components/ui/animated-section';
 
 export default function Home() {
   return (
     <div className="space-y-16 md:space-y-24">
-      <HeroSection />
+      <AnimatedSection>
+        <HeroSection />
+      </AnimatedSection>
       <Separator />
-      <AboutSection />
+      <AnimatedSection>
+        <AboutSection />
+      </AnimatedSection>
       <Separator />
-      <SkillsSection />
+      <AnimatedSection>
+        <SkillsSection />
+      </AnimatedSection>
       <Separator />
-      <JourneySection /> {/* Use the new JourneySection */}
+      <AnimatedSection>
+        <JourneySection /> {/* Use the new JourneySection */}
+      </AnimatedSection>
       <Separator />
-      <PositionsSection />
+      <AnimatedSection>
+        <PositionsSection />
+      </AnimatedSection>
        <Separator />
-      <KeyProjectsSection />
+      <AnimatedSection>
+        <KeyProjectsSection />
+      </AnimatedSection>
       <Separator />
-      <AiProjectsShowcase />
+      <AnimatedSection>
+        <AiProjectsShowcase />
+      </AnimatedSection>
        <Separator />
-      <AwardsSection />
+      <AnimatedSection>
+        <AwardsSection />
+      </AnimatedSection>
       <Separator />
-      <ContactSection />
+      <AnimatedSection>
+        <ContactSection />
+      </AnimatedSection>
     </div>
   );
 }
-
