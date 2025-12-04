@@ -1,3 +1,4 @@
+
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import Image from 'next/image';
 const projects = [
   {
     title: 'WebAstroAI',
-    description: 'An AI-powered tool providing astrological insights based on web data analysis. Deployed and functional.',
+    description: 'Developed an AI-powered astrology platform that combines web-based data analysis with intelligent interpretation to generate personalised astrological insights. The system automatically scans relevant sources, extracts patterns, and delivers contextual predictions tailored to each user’s profile. Designed with scalable architecture, clean UI, and seamless deployment—now fully live and functional for end users.',
     imageUrl: 'https://picsum.photos/400/200?random=1', // Replace with actual screenshot or relevant image
     projectUrl: 'https://webastroai.netlify.app/',
     tags: ['AI', 'Astrology', 'Web Analysis', 'Deployed', 'Personal Project'],
@@ -83,3 +84,6 @@ const AiProjectsShowcase = () => {
 
 export default AiProjectsShowcase;
 
+
+
+    
