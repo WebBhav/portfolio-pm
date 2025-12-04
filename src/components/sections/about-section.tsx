@@ -8,12 +8,12 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-center">
         <div className="md:col-span-1 flex justify-center">
            <Image
-              src="https://picsum.photos/300/400" // Replace with another picture if desired
-              alt="Vaibhav Singhal - About"
+              src="/handshake.jpg"
+              alt="Handshake"
               width={300}
               height={400}
               className="rounded-lg shadow-xl object-cover"
-              data-ai-hint="professional working photo candidate"
+              data-ai-hint="business agreement"
             />
         </div>
         <div className="md:col-span-2 text-lg text-muted-foreground space-y-4">
