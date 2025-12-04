@@ -28,9 +28,10 @@ const HeroSection = () => {
           Vaibhav Singhal
         </h1>
         {/* Updated Subheading */}
-        <p className="text-base text-muted-foreground sm:text-lg md:text-xl max-w-3xl mb-8">
-          AI Product Manager | IIT Ropar Alumnus | Driving AI, Design and Monetisation in Product
-        </p>
+        <div className="text-base text-muted-foreground sm:text-lg md:text-xl max-w-3xl mb-8">
+          <p>AI Product Manager | IIT Ropar Alumnus</p>
+          <p>Driving AI, Design and Monetisation in Product</p>
+        </div>
         <div className="flex flex-col sm:flex-row gap-4">
           <Button asChild size="lg">
             <Link href="#contact">Get In Touch</Link>
@@ -47,4 +48,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
 
