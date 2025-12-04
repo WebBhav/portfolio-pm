@@ -5,6 +5,16 @@ import { Lightbulb, Presentation, ExternalLink, FileText } from 'lucide-react'; 
 import Image from 'next/image';
 
 const keyProjects = [
+    {
+    title: 'Payment Gateway | Product Design',
+    date: 'July 2025',
+    description: 'Designed a product strategy and end-to-end pitch deck for a Conversational AI–based merchant onboarding solution used by Payment Gateways. Included market sizing, user personas, feature architecture, RICE prioritisation, wireframes, GTM plan, key metrics, and risk analysis to improve completion rates and reduce onboarding friction for 25M+ digital MSMEs.',
+    imageUrl: 'https://picsum.photos/seed/6/400/200',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1HCOuCQX1E14tF3GuXwKZ5e6XVyTmoNFK/view?usp=sharing',
+    tags: ['Fintech', 'Product Design', 'Product Sense', 'Wireframing', 'Pitch Deck'],
+    icon: <Presentation className="h-6 w-6 text-accent" />,
+    aiHint: "payment gateway design",
+  },
   {
     title: 'Improving Online Ordering Experience | BigBasket Now',
     date: 'June 2024',
