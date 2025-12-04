@@ -64,14 +64,16 @@ const AiProjectsShowcase = () => {
             <CardContent className="flex-grow">
               <CardDescription>{project.description}</CardDescription>
             </CardContent>
-            <CardFooter>
-              <Button asChild variant={project.projectUrl === '#' ? "secondary" : "default"} disabled={project.projectUrl === '#'} className="w-full">
-                <Link href={project.projectUrl} target={project.projectUrl === '#' ? '_self' : '_blank'} rel="noopener noreferrer">
-                  {project.projectUrl === '#' ? 'Details Unavailable' : 'View Project'}
-                  {project.projectUrl !== '#' && <ExternalLink className="ml-2 h-4 w-4" />}
-                </Link>
-              </Button>
-            </CardFooter>
+            {project.projectUrl !== '#' && (
+              <CardFooter>
+                <Button asChild variant="default" className="w-full">
+                  <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
+                    View Project
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            )}
           </Card>
         ))}
       </div>
