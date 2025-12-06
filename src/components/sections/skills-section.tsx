@@ -57,7 +57,7 @@ const SkillsSection = () => {
              <Briefcase className="h-8 w-8 text-accent" />
             <CardTitle className="text-xl">Product Management</CardTitle>
           </CardHeader>
-          <CardContent className="min-h-[10rem]">
+          <CardContent>
             <ShowMoreSkills skills={skillsData.productManagement} />
           </CardContent>
         </Card>
@@ -68,7 +68,7 @@ const SkillsSection = () => {
             <Wrench className="h-8 w-8 text-accent" />
             <CardTitle className="text-xl">Tools</CardTitle>
           </CardHeader>
-          <CardContent className="min-h-[10rem]">
+          <CardContent>
             <ShowMoreSkills skills={skillsData.tools} />
           </CardContent>
         </Card>
