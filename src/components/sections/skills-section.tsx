@@ -1,6 +1,6 @@
-import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BrainCircuit, Wrench, Users, Briefcase } from 'lucide-react';
+import ShowMoreSkills from '@/components/ui/show-more-skills'; // Import the new component
 
 const skillsData = {
   productManagement: [
@@ -58,13 +58,7 @@ const SkillsSection = () => {
             <CardTitle className="text-xl">Product Management</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {skillsData.productManagement.map((skill, index) => (
-                <Badge key={index} variant="secondary" className="text-sm">
-                  {skill}
-                </Badge>
-              ))}
-            </div>
+            <ShowMoreSkills skills={skillsData.productManagement} />
           </CardContent>
         </Card>
 
@@ -75,13 +69,7 @@ const SkillsSection = () => {
             <CardTitle className="text-xl">Tools</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {skillsData.tools.map((tool, index) => (
-                <Badge key={index} variant="secondary" className="text-sm">
-                  {tool}
-                </Badge>
-              ))}
-            </div>
+            <ShowMoreSkills skills={skillsData.tools} />
           </CardContent>
         </Card>
 
