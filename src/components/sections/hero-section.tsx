@@ -36,11 +36,6 @@ const HeroSection = () => {
           <Button asChild size="lg">
             <Link href="#contact">Get In Touch</Link>
           </Button>
-           <Button asChild variant="outline" size="lg">
-            <Link href="https://drive.google.com/file/d/1M2ebVi96l7Qi9dLy6oz8qqij8NWy8Tpw/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
-              Access My One-Pager <FileText className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
           <Button asChild variant="outline" size="lg">
             <Link href="#journey">
               View Journey <ArrowDown className="ml-2 h-5 w-5" />
@@ -53,6 +48,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-
-

@@ -2,9 +2,11 @@
 
 'use client';
 
-import { Briefcase, GraduationCap } from 'lucide-react';
+import { Briefcase, GraduationCap, FileText } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ReadMoreList from '@/components/ui/read-more-list';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 // Combined and typed data for the journey timeline
 type JourneyItem = {
@@ -123,6 +125,13 @@ const JourneySection = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-12 text-center">
+        <Button asChild variant="outline" size="lg">
+          <Link href="https://drive.google.com/file/d/1M2ebVi96l7Qi9dLy6oz8qqij8NWy8Tpw/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+            Access My One-Pager <FileText className="ml-2 h-5 w-5" />
+          </Link>
+        </Button>
       </div>
     </section>
   );
