@@ -4,6 +4,7 @@
 
 import { Briefcase, GraduationCap } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import ReadMoreList from '@/components/ui/read-more-list';
 
 // Combined and typed data for the journey timeline
 type JourneyItem = {
@@ -115,11 +116,7 @@ const JourneySection = () => {
                 </CardHeader>
                 {item.details && item.details.length > 0 && (
                   <CardContent>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                      {item.details.map((detail, i) => (
-                        <li key={i}>{detail}</li>
-                      ))}
-                    </ul>
+                    <ReadMoreList items={item.details} initialCount={2}/>
                   </CardContent>
                 )}
               </Card>
