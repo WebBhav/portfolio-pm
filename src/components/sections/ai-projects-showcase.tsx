@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ExternalLink, Bot, Mail } from 'lucide-react';
 import Image from 'next/image';
+import ReadMore from '@/components/ui/read-more';
 
 const projects = [
   {
@@ -62,7 +63,12 @@ const AiProjectsShowcase = () => {
 
             </CardHeader>
             <CardContent className="flex-grow">
-              <CardDescription>{project.description}</CardDescription>
+              <CardDescription as="div">
+                <div className="block md:hidden">
+                  <ReadMore text={project.description} />
+                </div>
+                <p className="hidden md:block">{project.description}</p>
+              </CardDescription>
             </CardContent>
             {project.projectUrl !== '#' && (
               <CardFooter>
