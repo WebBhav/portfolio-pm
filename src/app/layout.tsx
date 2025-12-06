@@ -8,6 +8,7 @@ import Footer from '@/components/layout/footer';
 import { LoadingProvider } from '@/contexts/loading-context';
 import GlobalLoaderWrapper from '@/components/layout/global-loader-wrapper';
 import { cn } from '@/lib/utils';
+import ScrollToTopButton from '@/components/ui/scroll-to-top-button';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Footer />
           <Toaster />
           <GlobalLoaderWrapper />
+          <ScrollToTopButton />
         </LoadingProvider>
       </body>
     </html>
