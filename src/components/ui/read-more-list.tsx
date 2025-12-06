@@ -34,7 +34,7 @@ const ReadMoreList = ({ items, initialCount = 1 }: ReadMoreListProps) => {
           onClick={toggleExpansion}
           className="px-0 h-auto py-1 text-accent text-sm"
         >
-          {isExpanded ? 'Show less' : `+${items.length - initialCount} more`}
+          {isExpanded ? 'Show less' : 'Show more'}
         </Button>
       )}
     </div>
