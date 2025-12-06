@@ -20,20 +20,20 @@ const skillsData = {
     'Funnel Optimisation',
   ],
   tools: [
-    'AI Tools', // Added AI Tools here
+    'AI Tools',
     'n8n',
     'ProjectLibre',
     'Google Analytics',
     'Google Ad-Manager',
-    'Mixpanel', // Added from LinkedIn
+    'Mixpanel',
     'MS Excel',
     'Linear',
-    'Jira', // Added from LinkedIn
+    'Jira',
     'SQL',
     'Firebase',
     'Photoshop (PS)',
     'FIGMA',
-    'Python (Basic)', // Added from LinkedIn
+    'Python (Basic)',
   ],
   // Optional: Add Soft Skills / Leadership if desired
   // leadershipCommunication: [
@@ -57,7 +57,7 @@ const SkillsSection = () => {
              <Briefcase className="h-8 w-8 text-accent" />
             <CardTitle className="text-xl">Product Management</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="min-h-[10rem]">
             <ShowMoreSkills skills={skillsData.productManagement} />
           </CardContent>
         </Card>
@@ -68,7 +68,7 @@ const SkillsSection = () => {
             <Wrench className="h-8 w-8 text-accent" />
             <CardTitle className="text-xl">Tools</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="min-h-[10rem]">
             <ShowMoreSkills skills={skillsData.tools} />
           </CardContent>
         </Card>
