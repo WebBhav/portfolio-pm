@@ -1,11 +1,27 @@
 
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowDown, FileText } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import Image from 'next/image';
 
 
 const HeroSection = () => {
+    const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const href = e.currentTarget.href;
+    const targetId = href.split('#')[1];
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+       if (typeof window !== 'undefined' && window.location.hash !== `#${targetId}`) {
+           history.pushState(null, '', `#${targetId}`);
+        }
+    }
+  };
+
+
   return (
     <section id="hero" className="relative container mx-auto flex flex-col items-center justify-center text-center min-h-[calc(70vh-5rem)] py-8 md:py-16 overflow-hidden">
 
@@ -34,10 +50,10 @@ const HeroSection = () => {
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
           <Button asChild size="lg">
-            <Link href="#contact">Get In Touch</Link>
+            <Link href="#contact" onClick={handleScrollClick}>Get In Touch</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="#projects-ai">
+            <Link href="#projects-ai" onClick={handleScrollClick}>
               View Projects <ArrowDown className="ml-2 h-5 w-5" />
             </Link>
           </Button>
