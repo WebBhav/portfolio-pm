@@ -112,10 +112,7 @@ const KeyProjectsSection = () => {
             </CardHeader>
             <CardContent className="flex-grow">
               <CardDescription as="div">
-                <div className="block md:hidden">
-                  <ReadMore text={project.description} />
-                </div>
-                <p className="hidden md:block">{project.description}</p>
+                <ReadMore text={project.description} />
               </CardDescription>
             </CardContent>
             <CardFooter>
