@@ -46,8 +46,8 @@ const AboutSection = () => {
            <Image
               src="/handshake.jpg"
               alt="Handshake"
-              width={300}
-              height={400}
+              width={400}
+              height={300}
               className="rounded-lg shadow-xl object-cover"
               data-ai-hint="business agreement"
             />
