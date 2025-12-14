@@ -24,11 +24,11 @@ import { usePathname } from 'next/navigation'; // Import usePathname
 
 const navLinks = [
   { href: '#about', label: 'About' },
+  { href: '#journey', label: 'Journey' },
   { href: '#skills', label: 'Skills' },
-  { href: '#journey', label: 'Journey' }, // Changed from Experience & Education
-  { href: '#positions', label: 'PORs' }, // Updated label to PORs
-  { href: '#key-projects', label: 'Key Projects' },
   { href: '#projects-ai', label: 'AI Projects' },
+  { href: '#key-projects', label: 'Key Projects' },
+  { href: '#positions', label: 'PORs' },
   { href: '#awards', label: 'Awards' },
 ];
 
