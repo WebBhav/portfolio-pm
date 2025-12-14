@@ -10,7 +10,7 @@ const keyProjects = [
     title: 'Payment Gateway | Product Design',
     date: 'July 2025',
     description: 'Designed a product strategy and end-to-end pitch deck for a Conversational AI–based merchant onboarding solution used by Payment Gateways. Included market sizing, user personas, feature architecture, RICE prioritisation, wireframes, GTM plan, key metrics, and risk analysis to improve completion rates and reduce onboarding friction for 25M+ digital MSMEs.',
-    imageUrl: 'https://picsum.photos/seed/6/400/200',
+    imageUrl: '/VaibhavSinghal_OnGrid.jpg',
     pitchDeckUrl: 'https://drive.google.com/file/d/1HCOuCQX1E14tF3GuXwKZ5e6XVyTmoNFK/view?usp=sharing',
     tags: ['Fintech', 'Product Design', 'Product Sense', 'Wireframing', 'Pitch Deck'],
     icon: <Presentation className="h-6 w-6 text-accent" />,
@@ -20,7 +20,7 @@ const keyProjects = [
     title: 'Improving Online Ordering Experience | BigBasket Now',
     date: 'June 2024',
     description: 'Secured 8th Rank in PM School #193 Challenge (Score: 87/99). Deep-dived into Q-Commerce market, created pitch deck for Bigbasket Now improvements aimed at increasing engagement. Designed wireframes and outlined end-to-end processes.',
-    imageUrl: 'https://picsum.photos/400/200?random=4',
+    imageUrl: '/BigBasket.jpg',
     pitchDeckUrl: 'https://drive.google.com/file/d/1AsjAzRq_XmjMcHJJhDaVOOWB6qgXXvtL/view?usp=sharing', // Updated link
     tags: ['Q-Commerce', 'Case Study', 'Product Improvement', 'Pitch Deck', 'Wireframing'],
     icon: <Lightbulb className="h-6 w-6 text-accent" />,
@@ -30,7 +30,7 @@ const keyProjects = [
     title: 'Traders in College | BaaS Product GTM',
     date: 'May 2023',
     description: 'Developed a GTM strategy and pitch deck for a BaaS product targeting college students involved in trading (31B USD market). Included credit and consultancy services, wireframes, media promotions, and KYC procedures.',
-    imageUrl: 'https://picsum.photos/400/200?random=5',
+    imageUrl: '/BaaS_Product.jpg',
     pitchDeckUrl: 'https://drive.google.com/file/d/1dwR6wgl-C7Ls4iNYGuovqTu33P41sCPs/view?usp=sharing', // Updated link
     tags: ['FinTech', 'BaaS', 'GTM Strategy', 'Pitch Deck', 'Student Market', 'Wireframing'],
     icon: <Presentation className="h-6 w-6 text-accent" />,
