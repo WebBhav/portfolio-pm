@@ -27,6 +27,16 @@ const keyProjects = [
     aiHint: "ecommerce app product design",
   },
   {
+    title: 'BNPL by Refyne | Product Strategy & Launch Plan',
+    date: 'July 2025',
+    description: 'Designed a zero-to-one enterprise-linked BNPL product enabling salaried employees to access no-cost EMI purchases through salary-deducted repayments. Built the end-to-end strategy covering TAM–SAM–SOM sizing, dual-persona analysis (employees & HR), credit-risk architecture, phased MVP roadmap, success metrics, GTM plan, and regulatory risk mitigation to drive responsible credit adoption while maintaining low default risk across partner enterprises',
+    imageUrl: '/Refyne.jpg',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1bg9DFH4ZFRBwGfNAlO0NL5xdKNTMNsqT/view?usp=sharing',
+    tags: ['Product Strategy', 'Market Sizing', 'User Journeys', 'Risk Design', 'Credit'],
+    icon: <Presentation className="h-6 w-6 text-accent" />,
+    aiHint: "bnpl product strategy",
+  },
+  {
     title: 'Traders in College | BaaS Product GTM',
     date: 'May 2023',
     description: 'Developed a GTM strategy and pitch deck for a BaaS product targeting college students involved in trading (31B USD market). Included credit and consultancy services, wireframes, media promotions, and KYC procedures.',
