@@ -37,6 +37,16 @@ const keyProjects = [
     aiHint: "bnpl product strategy",
   },
   {
+    title: 'PharmaTrade | Product Strategy',
+    date: 'Aug 2025',
+    description: 'Designed a zero-to-one B2B pharmaceutical trading marketplace aimed at bringing real-time price discovery, compliance, and liquidity to India’s fragmented pharma distribution ecosystem. Defined the product vision (“Bloomberg Terminal for Pharma”), sized TAM–SAM–SOM, built dual buyer–seller personas, architected core marketplace features (bid/offer engine, compliance validation, anonymous negotiation), prioritised roadmap using impact–feasibility, and designed GTM and risk-mitigation strategies to drive trust, adoption, and sustained transaction liquidity across Tier 1–3 cities.',
+    imageUrl: '/pharma.jpg',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1TM516BQy7atutg7lipz_jaoEUvgZlMSN/view?usp=sharing',
+    tags: ['Product Strategy', 'Market Sizing', 'Two-Sided Marketplace Design', 'Supply Chain', 'HealthTech', 'GTM', 'Risk Analysis'],
+    icon: <Presentation className="h-6 w-6 text-accent" />,
+    aiHint: 'pharmaceutical trading marketplace',
+  },
+  {
     title: 'Traders in College | BaaS Product GTM',
     date: 'May 2023',
     description: 'Developed a GTM strategy and pitch deck for a BaaS product targeting college students involved in trading (31B USD market). Included credit and consultancy services, wireframes, media promotions, and KYC procedures.',
