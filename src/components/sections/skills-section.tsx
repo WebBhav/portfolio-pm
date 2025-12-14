@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BrainCircuit, Wrench, Users, Briefcase } from 'lucide-react';
 import ShowMoreSkills from '@/components/ui/show-more-skills'; // Import the new component
@@ -5,8 +6,10 @@ import ShowMoreSkills from '@/components/ui/show-more-skills'; // Import the new
 const skillsData = {
   productManagement: [
     'Wireframing',
-    'Strong Documentation and Cross Functional Communication',
-    'Stakeholder & Project Management',
+    'Strong Documentation',
+    'Cross Functional Communication',
+    'Stakeholder Management',
+    'Project Management',
     'UX',
     'APIs',
     'AI Prototyping',
