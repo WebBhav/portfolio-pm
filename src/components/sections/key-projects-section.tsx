@@ -17,16 +17,6 @@ const keyProjects = [
     aiHint: "payment gateway design",
   },
   {
-    title: 'JustBaat AI | Market Transition Strategy',
-    date: 'May 2025',
-    description: 'Designed an end-to-end product strategy and pitch deck for JustBaat AI, a video-first generative AI platform enabling faceless creators to produce vernacular AI videos at scale. Covered market sizing (7.5–15M creators), user personas, feature architecture, credit-based marketplace design, RICE prioritisation, success metrics, GTM plan, and risk analysis to improve creator onboarding, engagement, and monetisation across Meta and Google publisher ecosystems.',
-    imageUrl: '/Justbaat.jpg',
-    pitchDeckUrl: 'https://drive.google.com/file/d/1y1smVelyB3SY2hYz4wbbJ6_-OOE7FwgV/view?usp=sharing',
-    tags: ['Product Strategy', 'Product Sense', 'Market Sizing', 'RICE Prioritisation', 'Wireframing', 'GTM'],
-    icon: <Presentation className="h-6 w-6 text-accent" />,
-    aiHint: "generative ai video platform strategy",
-  },
-  {
     title: 'Improving Online Ordering Experience | BigBasket Now',
     date: 'June 2024',
     description: 'Secured 8th Rank in PM School #193 Challenge (Score: 87/99). Deep-dived into Q-Commerce market, created pitch deck for Bigbasket Now improvements aimed at increasing engagement. Designed wireframes and outlined end-to-end processes.',
@@ -45,6 +35,16 @@ const keyProjects = [
     tags: ['FinTech', 'BaaS', 'GTM Strategy', 'Pitch Deck', 'Student Market', 'Wireframing'],
     icon: <Presentation className="h-6 w-6 text-accent" />,
     aiHint: "fintech trading student app",
+  },
+  {
+    title: 'JustBaat AI | Market Transition Strategy',
+    date: 'May 2025',
+    description: 'Designed an end-to-end product strategy and pitch deck for JustBaat AI, a video-first generative AI platform enabling faceless creators to produce vernacular AI videos at scale. Covered market sizing (7.5–15M creators), user personas, feature architecture, credit-based marketplace design, RICE prioritisation, success metrics, GTM plan, and risk analysis to improve creator onboarding, engagement, and monetisation across Meta and Google publisher ecosystems.',
+    imageUrl: '/Justbaat.jpg',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1y1smVelyB3SY2hYz4wbbJ6_-OOE7FwgV/view?usp=sharing',
+    tags: ['Product Strategy', 'Product Sense', 'Market Sizing', 'RICE Prioritisation', 'Wireframing', 'GTM'],
+    icon: <Presentation className="h-6 w-6 text-accent" />,
+    aiHint: "generative ai video platform strategy",
   },
 ];
 
