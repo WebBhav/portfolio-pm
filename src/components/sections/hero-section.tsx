@@ -37,8 +37,8 @@ const HeroSection = () => {
             <Link href="#contact">Get In Touch</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="#journey">
-              View Journey <ArrowDown className="ml-2 h-5 w-5" />
+            <Link href="#projects-ai">
+              View Projects <ArrowDown className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>

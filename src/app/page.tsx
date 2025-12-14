@@ -23,23 +23,23 @@ export default function Home() {
       </AnimatedSection>
       <Separator />
       <AnimatedSection>
-        <SkillsSection />
-      </AnimatedSection>
-      <Separator />
-      <AnimatedSection>
         <JourneySection /> {/* Use the new JourneySection */}
       </AnimatedSection>
       <Separator />
       <AnimatedSection>
-        <PositionsSection />
+        <SkillsSection />
       </AnimatedSection>
-       <Separator />
+      <Separator />
+      <AnimatedSection>
+        <AiProjectsShowcase />
+      </AnimatedSection>
+      <Separator />
       <AnimatedSection>
         <KeyProjectsSection />
       </AnimatedSection>
       <Separator />
       <AnimatedSection>
-        <AiProjectsShowcase />
+        <PositionsSection />
       </AnimatedSection>
        <Separator />
       <AnimatedSection>
