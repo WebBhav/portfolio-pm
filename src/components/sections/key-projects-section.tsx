@@ -36,7 +36,7 @@ const keyProjects = [
     icon: <Presentation className="h-6 w-6 text-accent" />,
     aiHint: "bnpl product strategy",
   },
-  {
+    {
     title: 'PharmaTrade | Product Strategy',
     date: 'Aug 2025',
     description: 'Designed a zero-to-one B2B pharmaceutical trading marketplace aimed at bringing real-time price discovery, compliance, and liquidity to India’s fragmented pharma distribution ecosystem. Defined the product vision (“Bloomberg Terminal for Pharma”), sized TAM–SAM–SOM, built dual buyer–seller personas, architected core marketplace features (bid/offer engine, compliance validation, anonymous negotiation), prioritised roadmap using impact–feasibility, and designed GTM and risk-mitigation strategies to drive trust, adoption, and sustained transaction liquidity across Tier 1–3 cities.',
