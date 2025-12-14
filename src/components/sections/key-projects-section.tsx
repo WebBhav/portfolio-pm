@@ -7,6 +7,16 @@ import ReadMore from '@/components/ui/read-more';
 
 const keyProjects = [
     {
+    title: 'JustBaat AI | Market Transition Strategy',
+    date: 'May 2025',
+    description: 'Designed an end-to-end product strategy and pitch deck for JustBaat AI, a video-first generative AI platform enabling faceless creators to produce vernacular AI videos at scale. Covered market sizing (7.5–15M creators), user personas, feature architecture, credit-based marketplace design, RICE prioritisation, success metrics, GTM plan, and risk analysis to improve creator onboarding, engagement, and monetisation across Meta and Google publisher ecosystems.',
+    imageUrl: '/Justbaat.jpg',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1y1smVelyB3SY2hYz4wbbJ6_-OOE7FwgV/view?usp=sharing',
+    tags: ['Product Strategy', 'Product Sense', 'Market Sizing', 'RICE Prioritisation', 'Wireframing', 'GTM'],
+    icon: <Presentation className="h-6 w-6 text-accent" />,
+    aiHint: "generative ai video platform strategy",
+  },
+    {
     title: 'Payment Gateway | Product Design',
     date: 'July 2025',
     description: 'Designed a product strategy and end-to-end pitch deck for a Conversational AI–based merchant onboarding solution used by Payment Gateways. Included market sizing, user personas, feature architecture, RICE prioritisation, wireframes, GTM plan, key metrics, and risk analysis to improve completion rates and reduce onboarding friction for 25M+ digital MSMEs.',
