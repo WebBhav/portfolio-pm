@@ -46,6 +46,16 @@ const keyProjects = [
     icon: <Presentation className="h-6 w-6 text-accent" />,
     aiHint: "generative ai video platform strategy",
   },
+   {
+    title: 'Canva | User Onboarding – Product Strategy & Design',
+    date: 'June 2025',
+    description: 'Designed a product strategy and onboarding-led growth framework to improve new user activation and reduce early churn for a Canva-like design platform. Conducted market sizing (135M+ MAU), defined user personas, mapped onboarding friction points, proposed a “try-before-signup” onboarding flow, prioritised features using RICE, and outlined GTM, success metrics, and risk analysis to increase acquisition, engagement, and premium conversion across individual and community-based creators',
+    imageUrl: '/Omnify.jpg',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1snpQjcqyoU_sFpPWQ15ivjPTdtSJFN9n/view?usp=sharing',
+    tags: ['Product Strategy', 'Product Sense', 'Onboarding Design', 'Market Sizing', 'RICE Prioritisation', 'GTM'],
+    icon: <Presentation className="h-6 w-6 text-accent" />,
+    aiHint: "canva product strategy",
+  },
 ];
 
 const KeyProjectsSection = () => {
