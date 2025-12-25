@@ -7,6 +7,23 @@ import AnimatedSection from '@/components/ui/animated-section';
 
 const interviewExperiences = [
   {
+    company: 'Credgenics',
+    role: 'Associate Product Manager',
+    date: 'December 2025',
+    outcome: 'Not Converted',
+    introduction: 'This interview I got through the Linkedin Jobs. This was a multi-stage interview process focusing heavily on product sense, analytical skills, and leadership. Here is a round-by-round breakdown of my experience.',
+    rounds: [
+      {
+        title: 'Round 1: Screening and Case Study',
+        content: "A 1-hour call with a recruiter discussing my background, interest in the role, and high-level product questions. I was asked to walk through my resume and explain my most impactful project. Started with the Fintech sector and basic questions. Then it jumped to the customers who's intent was judged according to the collections once the customer defaults its loan repayment. The round ended with a basic puzzle: Find the Forfeited Coins' Jar.",
+      },
+      {
+        title: 'Round 2: Case Study Round',
+        content: 'Started with a basic introduction and quickly paced up where a Quick RCA was presented, "There is a drop of 45% of repayment on the reminder message." It started basic but quickly went to the Data Journey. I started finding the data sources and finally caught that there may be a default in the format in which contact details are fetched, so message delivery is short, making the overall impact. Round completed with some HR question.',
+      },
+    ],
+  },
+  {
     company: 'Spinny',
     role: 'Associate Product Manager',
     date: 'March 2025',
