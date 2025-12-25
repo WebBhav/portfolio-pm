@@ -14,6 +14,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Calendar } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 interface InterviewPostProps {
   company: string;
@@ -24,6 +25,7 @@ interface InterviewPostProps {
     title: string;
     content: string;
   }[];
+  outcome?: string;
 }
 
 const InterviewPost = ({
@@ -32,6 +34,7 @@ const InterviewPost = ({
   date,
   introduction,
   rounds,
+  outcome,
 }: InterviewPostProps) => {
   return (
     <Card className="overflow-hidden">
@@ -46,6 +49,13 @@ const InterviewPost = ({
                 <span>{date}</span>
             </div>
         </div>
+        {outcome && (
+          <div className="pt-2">
+            <Badge variant={outcome === 'Converted' ? 'default' : 'destructive'}>
+              {outcome}
+            </Badge>
+          </div>
+        )}
         <CardDescription className="pt-4 text-base">{introduction}</CardDescription>
       </CardHeader>
       <CardContent>

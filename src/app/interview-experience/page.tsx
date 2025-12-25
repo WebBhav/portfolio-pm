@@ -6,6 +6,23 @@ import AnimatedSection from '@/components/ui/animated-section';
 
 const interviewExperiences = [
   {
+    company: 'Spinny',
+    role: 'Associate Product Manager',
+    date: 'March 2024',
+    outcome: 'Not Converted',
+    introduction: 'This was a multi-stage interview process focusing heavily on product sense, analytical skills, and leadership. Here is a round-by-round breakdown of my experience.',
+    rounds: [
+      {
+        title: 'Round 1: Analytical Interview',
+        content: "A case-based interview where I was given a problem like 'User onboarding has dropped by 10% at Uber. What would you do?' I broke down the problem, formulated hypotheses, identified key metrics to investigate, and proposed a structured plan to diagnose the issue.\n\nFirst I identified whether this could be cause due to governmental policy changes or competitors change which were not related because user searching for ride isn't dropped. Then after a thorough QnA, we found out that users are not able to board the uber because of conjusted area in the metropolitan geographies due to multi level story roads.",
+      },
+      {
+        title: 'Round 2: Case Study Round',
+        content: 'Round started with a small guestimate of "how many orders Swiggy platform completes in one average day in india". Then it took the pace. This round focused on my experience leading teams and projects. I was asked about a time I had to influence stakeholders without authority and how I would launch a new product. I used the STAR (Situation, Task, Action, Result) method to structure my answers.',
+      },
+    ],
+  },
+  {
     company: 'Google',
     role: 'Associate Product Manager',
     date: 'October 2023',
