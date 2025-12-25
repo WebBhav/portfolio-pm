@@ -24,6 +24,23 @@ const interviewExperiences = [
     ],
   },
   {
+    company: 'Adda247',
+    role: 'Associate Product Manager',
+    date: 'June 2025',
+    outcome: 'Not Converted',
+    introduction: 'I got this interview through the LinkedIn posts. This was a multi-stage interview process focusing heavily on product sense, design capabilities, and leadership. Here is a round-by-round breakdown of my experience.',
+    rounds: [
+      {
+        title: 'Round 1: Guesstimate and Product Design Round',
+        content: 'Started with a thorough resume discussion and cross-questioning. This was followed by a simple RCA, where I need to build a whole platform that simplifies the teaching experiences for the teachers and students across the country. I started by mentioning different personas and using the CIRCLES, and I evaluated each solution in a possible, prioritised manner. Also, proposed a GTM with it. The round ended with a guesstimate that asked how many cars are in Delhi.',
+      },
+      {
+        title: 'Round 2: Puzzle and User Journey Optimisation Round',
+        content: 'I was then asked quickly about my prior achievements, followed by a brief clarification of my resume. Moving on to the question, I was first asked how I would optimise the journey for the Adda247 study app for students. I started with the STAR but quickly transitioned to Pain Point and Persona solving according to current needs.',
+      },
+    ],
+  },
+  {
     company: 'Spinny',
     role: 'Associate Product Manager',
     date: 'March 2025',
