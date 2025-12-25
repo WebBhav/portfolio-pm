@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import Link from 'next/link';
+import { FileText } from 'lucide-react';
 
 const AboutSection = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -67,6 +69,13 @@ const AboutSection = () => {
               </Button>
             </div>
           )}
+           <div className="pt-6">
+                <Button asChild variant="outline" size="lg">
+                    <Link href="https://drive.google.com/file/d/1M2ebVi96l7Qi9dLy6oz8qqij8NWy8Tpw/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+                        Access My One-Pager <FileText className="ml-2 h-5 w-5" />
+                    </Link>
+                </Button>
+            </div>
         </div>
       </div>
     </section>
