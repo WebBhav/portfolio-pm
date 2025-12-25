@@ -9,7 +9,7 @@ const interviewExperiences = [
   {
     company: 'Spinny',
     role: 'Associate Product Manager',
-    date: 'March 2024',
+    date: 'March 2025',
     outcome: 'Not Converted',
     introduction: 'This was a multi-stage interview process focusing heavily on product sense, analytical skills, and leadership. Here is a round-by-round breakdown of my experience.',
     rounds: [
