@@ -30,7 +30,7 @@ const navLinks = [
   { href: '/#key-projects', label: 'Key Projects' },
   { href: '/#positions', label: 'PORs' },
   { href: '/#awards', label: 'Awards' },
-  { href: '/interview-experience', label: 'Interview Experience' },
+  { href: '/interview-experience', label: 'Interviews' },
 ];
 
 const NavLink = ({
