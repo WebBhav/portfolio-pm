@@ -2,7 +2,7 @@
 
 'use client';
 
-import { Briefcase, GraduationCap, FileText } from 'lucide-react';
+import { Briefcase, GraduationCap, FileText, ArrowRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ReadMoreList from '@/components/ui/read-more-list';
 import { Button } from '@/components/ui/button';
@@ -125,6 +125,13 @@ const JourneySection = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-12 text-center">
+        <Button asChild size="lg">
+          <Link href="/interview-experience">
+            Read My Interview Experiences <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        </Button>
       </div>
     </section>
   );
