@@ -26,6 +26,7 @@ const interviewExperiences = [
     company: 'Google',
     role: 'Associate Product Manager',
     date: 'October 2023',
+    outcome: 'Not Converted',
     introduction: 'This was a multi-stage interview process focusing heavily on product sense, analytical skills, and leadership. Here is a round-by-round breakdown of my experience.',
     rounds: [
       {
@@ -34,7 +35,7 @@ const interviewExperiences = [
       },
       {
         title: 'Round 2: Product Sense Interview',
-        content: "This round was about creativity and product thinking. The prompt was: 'Design a new feature for Google Maps.' I focused on a feature to help users find eco-friendly routes, detailing user personas, pain points, potential solutions, and success metrics.",
+        content: "This round was about creativity and product thinking. The prompt was: 'Design a new feature for Google Ads Ecosystem.' I focused on a feature to help users with personalised ads, detailing user personas, pain points, potential solutions, and success metrics. Finally, we concluded that the display of Ads should not interrupt, but rather be user-intentional.",
       },
       {
         title: 'Round 3: Analytical Interview',
