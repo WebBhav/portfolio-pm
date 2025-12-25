@@ -1,3 +1,4 @@
+
 'use client';
 
 import InterviewPost from '@/components/sections/interview-post';
@@ -36,14 +37,6 @@ const interviewExperiences = [
       {
         title: 'Round 2: Product Sense Interview',
         content: "This round was about creativity and product thinking. The prompt was: 'Design a new feature for Google Ads Ecosystem.' I focused on a feature to help users with personalised ads, detailing user personas, pain points, potential solutions, and success metrics. Finally, we concluded that the display of Ads should not interrupt, but rather be user-intentional.",
-      },
-      {
-        title: 'Round 3: Analytical Interview',
-        content: "A case-based interview where I was given a problem like 'Daily Active Users for YouTube have dropped by 10%. What would you do?' I broke down the problem, formulated hypotheses, identified key metrics to investigate, and proposed a structured plan to diagnose the issue.",
-      },
-      {
-        title: 'Round 4: Leadership & Go-to-Market (GTM) Interview',
-        content: 'This round focused on my experience leading teams and projects. I was asked about a time I had to influence stakeholders without authority and how I would launch a new product. I used the STAR (Situation, Task, Action, Result) method to structure my answers.',
       },
     ],
   },
