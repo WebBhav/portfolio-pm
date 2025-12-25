@@ -23,13 +23,14 @@ import { usePathname } from 'next/navigation'; // Import usePathname
 
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#journey', label: 'Journey' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects-ai', label: 'AI Projects' },
-  { href: '#key-projects', label: 'Key Projects' },
-  { href: '#positions', label: 'PORs' },
-  { href: '#awards', label: 'Awards' },
+  { href: '/#about', label: 'About' },
+  { href: '/#journey', label: 'Journey' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#projects-ai', label: 'AI Projects' },
+  { href: '/#key-projects', label: 'Key Projects' },
+  { href: '/#positions', label: 'PORs' },
+  { href: '/#awards', label: 'Awards' },
+  { href: '/interview-experience', label: 'Interview Experience' },
 ];
 
 const NavLink = ({
@@ -43,35 +44,45 @@ const NavLink = ({
   className?: string;
   onClick?: () => void;
 }) => {
+  const pathname = usePathname();
+  // Check if it's a page link (starts with / but not /#)
+  const isPageLink = href.startsWith('/') && !href.startsWith('/#');
+  const isActive = isPageLink && pathname === href;
+
   const linkOnClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick) {
       onClick();
     }
-    if (href.startsWith('#')) {
+    if (href.startsWith('/#')) {
       e.preventDefault();
-      const elementId = href.substring(1);
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        // Update hash without redundant navigation
-        if (typeof window !== 'undefined' && window.location.hash !== href) {
-            history.pushState(null, '', href);
+      // Handle same-page hash link
+      if (pathname === '/') {
+        const elementId = href.substring(2);
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          if (typeof window !== 'undefined' && window.location.hash !== `#${elementId}`) {
+              history.pushState(null, '', `/#${elementId}`);
+          }
         }
+      } else {
+        // Navigate to home page with hash
+        window.location.href = href;
       }
     }
   };
-
+  
   return (
     <Link
       href={href}
       onClick={linkOnClick}
       className={cn(
         'transition-colors px-3 py-2 rounded-md text-sm font-medium',
-        'text-muted-foreground hover:text-foreground hover:bg-accent/10', // Default style
-        // Removed active styles based on user request
+        'text-muted-foreground hover:text-foreground hover:bg-accent/10',
+        isActive && 'text-accent font-semibold',
         className
       )}
-      // Removed aria-current based on user request
+      aria-current={isActive ? 'page' : undefined}
     >
       {children}
     </Link>
@@ -82,12 +93,16 @@ const MobileNavLink = ({
   href,
   children,
   onClick,
-}: ComponentProps<typeof Link> & { onClick?: (href: string) => void }) => { // Define isActive prop type
+}: ComponentProps<typeof Link> & { onClick?: (href: string) => void }) => {
+  const pathname = usePathname();
+  const isPageLink = (href as string).startsWith('/') && !(href as string).startsWith('/#');
+  const isActive = isPageLink && pathname === (href as string);
+
   const mobileLinkOnClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (onClick && href) {
         onClick(href as string);
     }
-    if ((href as string).startsWith('#')) {
+    if ((href as string).startsWith('/#')) {
         e.preventDefault();
     }
   };
@@ -98,11 +113,11 @@ const MobileNavLink = ({
         onClick={mobileLinkOnClick}
         className={cn(
           'block py-2 text-base font-medium transition-colors rounded-sm px-3',
-          'text-foreground/80 hover:text-foreground hover:bg-accent/10', // Default style
-          // Removed active styles based on user request
+          'text-foreground/80 hover:text-foreground hover:bg-accent/10',
+          isActive && 'text-accent font-semibold',
           'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background'
         )}
-        // Removed aria-current based on user request
+        aria-current={isActive ? 'page' : undefined}
       >
         {children}
       </Link>
@@ -128,16 +143,29 @@ const Header = () => {
 
   const handleNavigationClick = useCallback((href: string) => {
     setIsLoading(true);
-    if (href.startsWith('#')) {
+    if (href.startsWith('/#')) {
+        // If we are already on the home page, just scroll
+        if (pathname === '/') {
+            const elementId = href.substring(2);
+            scrollToSection(elementId);
+             setTimeout(() => setIsLoading(false), 500); // Hide loader after scroll
+        } else {
+            // Otherwise, navigate to home page with hash
+            if (typeof window !== 'undefined') {
+                window.location.href = href;
+            }
+        }
+    } else if (href.startsWith('#')) {
         const elementId = href.substring(1);
         scrollToSection(elementId);
-        setTimeout(() => setIsLoading(false), 500); // Hide loader after scroll attempt
-    } else {
+        setTimeout(() => setIsLoading(false), 500);
+    }
+    else {
          if (typeof window !== 'undefined') {
-             window.location.href = href; // Use standard navigation for non-hash links
+             window.location.href = href; // Use standard navigation for other links
          }
     }
-  }, [setIsLoading, scrollToSection]);
+  }, [setIsLoading, scrollToSection, pathname]);
 
 
   const handleSheetLinkClick = useCallback((href: string) => {
@@ -169,7 +197,6 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => handleNavigationClick(link.href)}
-                // isActive removed
               >
                 {link.label}
               </NavLink>
@@ -218,7 +245,6 @@ const Header = () => {
                         key={link.href}
                         href={link.href}
                         onClick={handleSheetLinkClick}
-                        // isActive removed
                       >
                         {link.label}
                       </MobileNavLink>
