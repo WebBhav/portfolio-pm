@@ -99,6 +99,11 @@ const Header = () => {
   const pathname = usePathname(); // Get current pathname
 
   const handleNavigationClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If we are already on the page, do nothing.
+    if (pathname === href) {
+        setIsLoading(false);
+        return;
+    }
     setIsLoading(true);
     // For hash links on the same page, we prevent default and scroll smoothly.
     if (href.startsWith('/#') && pathname === '/') {
