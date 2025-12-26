@@ -28,14 +28,14 @@ export default function ProjectsPage() {
 
       <AnimatedSection>
         <div className="mt-12 text-center flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg">
-                <Link href="https://drive.google.com/drive/u/1/folders/1Hcd-58gybWHKgO3owtQSEhi86cUta7u6" target="_blank" rel="noopener noreferrer">
-                    Find more here <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-            </Button>
             <Button asChild size="lg" variant="outline">
                 <Link href="/">
                     <Home className="mr-2 h-5 w-5" /> Back to Home
+                </Link>
+            </Button>
+            <Button asChild size="lg">
+                <Link href="https://drive.google.com/drive/u/1/folders/1Hcd-58gybWHKgO3owtQSEhi86cUta7u6" target="_blank" rel="noopener noreferrer">
+                    More Projects <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
             </Button>
         </div>
