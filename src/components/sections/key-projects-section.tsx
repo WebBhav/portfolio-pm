@@ -138,13 +138,6 @@ const KeyProjectsSection = () => {
           </Card>
         ))}
       </div>
-      <div className="mt-12 text-center">
-        <Button asChild size="lg">
-          <Link href="https://drive.google.com/drive/u/1/folders/1Hcd-58gybWHKgO3owtQSEhi86cUta7u6" target="_blank" rel="noopener noreferrer">
-            Find more here <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
-        </Button>
-      </div>
     </section>
   );
 };

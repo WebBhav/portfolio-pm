@@ -116,18 +116,15 @@ export default function InterviewExperiencePage() {
         ))}
       </div>
 
-       <div className="text-center text-muted-foreground mt-16">
-         <p>More experiences coming soon...</p>
-       </div>
-
        <AnimatedSection>
-        <div className="text-center mt-16 mb-8">
-            <Button asChild size="lg" variant="outline">
-                <Link href="/#journey">
-                    <Briefcase className="mr-2 h-5 w-5" /> My Professional Journey
-                </Link>
-            </Button>
-        </div>
+         <div className="text-center mt-16">
+           <p className="text-muted-foreground mb-8">More experiences coming soon...</p>
+           <Button asChild size="lg" variant="outline">
+               <Link href="/#journey">
+                   <Briefcase className="mr-2 h-5 w-5" /> My Professional Journey
+               </Link>
+           </Button>
+         </div>
        </AnimatedSection>
     </div>
   );
