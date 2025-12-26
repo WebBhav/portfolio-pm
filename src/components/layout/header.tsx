@@ -101,10 +101,8 @@ const Header = () => {
   const handleNavigationClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     // If we are already on the page, do nothing.
     if (pathname === href) {
-        setIsLoading(false);
         return;
     }
-    setIsLoading(true);
     // For hash links on the same page, we prevent default and scroll smoothly.
     if (href.startsWith('/#') && pathname === '/') {
         e.preventDefault();
@@ -116,12 +114,10 @@ const Header = () => {
                 history.pushState(null, '', `/#${elementId}`);
             }
         }
-        // Hide loader after a short delay for scroll to start
-        setTimeout(() => setIsLoading(false), 300);
     }
     // For other links, Next.js Link component will handle navigation,
     // and the global loader will be dismissed by the wrapper component on route change.
-  }, [setIsLoading, pathname]);
+  }, [pathname]);
 
   const handleSheetLinkClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setIsSheetOpen(false); // Close sheet on click
