@@ -4,6 +4,9 @@ import AiProjectsShowcase from '@/components/sections/ai-projects-showcase';
 import KeyProjectsSection from '@/components/sections/key-projects-section';
 import { Separator } from '@/components/ui/separator';
 import AnimatedSection from '@/components/ui/animated-section';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Home } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Projects | Vaibhav Singhal',
@@ -22,6 +25,16 @@ export default function ProjectsPage() {
       <AnimatedSection>
         <KeyProjectsSection />
       </AnimatedSection>
+
+      <AnimatedSection>
+        <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline">
+                <Link href="/">
+                    <Home className="mr-2 h-5 w-5" /> Back to Home
+                </Link>
+            </Button>
+        </div>
+       </AnimatedSection>
     </div>
   );
 }
