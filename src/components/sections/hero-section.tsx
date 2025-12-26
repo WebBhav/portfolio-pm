@@ -3,11 +3,13 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react'; // Changed from ArrowDown to ArrowRight
 import Image from 'next/image';
-
+import { useLoading } from '@/contexts/loading-context'; // Import useLoading hook
 
 const HeroSection = () => {
+    const { setIsLoading } = useLoading(); // Get setIsLoading from context
+
     const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     const href = e.currentTarget.href;
@@ -19,6 +21,10 @@ const HeroSection = () => {
            history.pushState(null, '', `#${targetId}`);
         }
     }
+  };
+
+   const handleProjectsClick = () => {
+    setIsLoading(true); // Set loading state to true on click
   };
 
 
@@ -53,8 +59,8 @@ const HeroSection = () => {
             <Link href="#contact" onClick={handleScrollClick}>Get In Touch</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="/projects">
-              View Projects <ArrowDown className="ml-2 h-5 w-5" />
+            <Link href="/projects" onClick={handleProjectsClick}>
+              View Projects <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>
