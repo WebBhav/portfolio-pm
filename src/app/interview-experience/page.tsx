@@ -121,7 +121,7 @@ export default function InterviewExperiencePage() {
        </div>
 
        <AnimatedSection>
-        <div className="text-center mt-12">
+        <div className="text-center mt-16 mb-8">
             <Button asChild size="lg" variant="outline">
                 <Link href="/#journey">
                     <Briefcase className="mr-2 h-5 w-5" /> My Professional Journey

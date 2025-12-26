@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="space-y-16 md:space-y-24">
+    <div className="space-y-16 md:space-y-20">
       <AnimatedSection>
         <AiProjectsShowcase />
       </AnimatedSection>

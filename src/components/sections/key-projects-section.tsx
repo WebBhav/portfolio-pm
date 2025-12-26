@@ -81,7 +81,7 @@ const keyProjects = [
 
 const KeyProjectsSection = () => {
   return (
-    <section id="key-projects" className="container mx-auto py-12 md:py-24 scroll-mt-16">
+    <section id="key-projects" className="container mx-auto py-12 md:py-16 scroll-mt-16">
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Key Projects & Case Studies</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
