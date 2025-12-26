@@ -1,6 +1,4 @@
 
-'use client';
-
 import type { Metadata } from 'next';
 import InterviewPost from '@/components/sections/interview-post';
 import { Separator } from '@/components/ui/separator';

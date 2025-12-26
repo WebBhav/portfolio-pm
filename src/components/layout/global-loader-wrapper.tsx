@@ -13,18 +13,16 @@ const GlobalLoaderLogic = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Hide loader on route change completion
+    // Hide loader on route change completion.
+    // The initial render is handled by the wrapper's isClient state.
     if (isLoading) {
-      // setIsLoading is stable, no need to add it if it causes re-renders of this effect
-      // Consider a small delay if needed for state propagation, but often not necessary.
-      // const timer = setTimeout(() => setIsLoading(false), 50); 
-      // return () => clearTimeout(timer);
       setIsLoading(false); 
     }
-    // isLoading and setIsLoading are included as per exhaustive-deps,
-    // though setIsLoading is usually stable.
-  }, [pathname, searchParams, isLoading, setIsLoading]); 
+    // We only want this effect to run when the path changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname, searchParams]); 
 
+  // This component now only controls the presentation of the loader based on the context state.
   if (!isLoading) return null;
 
   return <GlobalLoader />;
@@ -35,17 +33,17 @@ const GlobalLoaderWrapper = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // This effect runs only on the client, setting isClient to true
+    // This effect runs only once on the client after hydration, setting isClient to true.
     setIsClient(true);
   }, []);
 
+  // During SSR or before client-side hydration, render nothing.
+  // This prevents any client-side hooks within GlobalLoaderLogic from running on the server.
   if (!isClient) {
-    // During SSR or prerender (like for /_not-found), render nothing
-    // This prevents GlobalLoaderLogic and its client-side hooks from running
     return null;
   }
 
-  // Render the actual logic only on the client-side
+  // Render the actual loader logic only on the client-side.
   return <GlobalLoaderLogic />;
 };
 
