@@ -3,7 +3,6 @@ import HeroSection from '@/components/sections/hero-section';
 import JourneySection from '@/components/sections/journey-section'; // New import for merged section
 import AiProjectsShowcase from '@/components/sections/ai-projects-showcase';
 import AboutSection from '@/components/sections/about-section';
-import ContactSection from '@/components/sections/contact-section';
 import SkillsSection from '@/components/sections/skills-section';
 import KeyProjectsSection from '@/components/sections/key-projects-section';
 import PositionsSection from '@/components/sections/positions-section';
@@ -44,10 +43,6 @@ export default function Home() {
        <Separator />
       <AnimatedSection>
         <AwardsSection />
-      </AnimatedSection>
-      <Separator />
-      <AnimatedSection>
-        <ContactSection />
       </AnimatedSection>
     </div>
   );

@@ -10,6 +10,8 @@ import { LoadingProvider } from '@/contexts/loading-context';
 import GlobalLoaderWrapper from '@/components/layout/global-loader-wrapper';
 import { cn } from '@/lib/utils';
 import ScrollToTopButton from '@/components/ui/scroll-to-top-button';
+import ContactSection from '@/components/sections/contact-section';
+import { Separator } from '@/components/ui/separator';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -93,6 +95,8 @@ export default function RootLayout({
           <main className="flex-grow container mx-auto px-4 py-8">
             {children}
           </main>
+          <Separator />
+          <ContactSection />
           <Footer />
           <Toaster />
           <GlobalLoaderWrapper />
