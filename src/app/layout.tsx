@@ -16,8 +16,46 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Vaibhav Singhal Portfolio',
-  description: 'Portfolio of Vaibhav Singhal, Product Manager, IIT Ropar Alumnus, specializing in AI, Design, and Monetization.',
+  metadataBase: new URL('https://vaibhavsinghal.dev'), // Replace with your domain
+  title: {
+    default: 'Vaibhav Singhal | AI Product Manager',
+    template: '%s | Vaibhav Singhal',
+  },
+  description: 'Portfolio of Vaibhav Singhal, an AI Product Manager and IIT Ropar Alumnus, specializing in AI, Product Design, and Monetization strategy.',
+  openGraph: {
+    title: 'Vaibhav Singhal | AI Product Manager',
+    description: 'Explore the portfolio of Vaibhav Singhal, showcasing projects in AI, product management, and design.',
+    url: 'https://vaibhavsinghal.dev', // Replace with your domain
+    siteName: 'Vaibhav Singhal Portfolio',
+    images: [
+      {
+        url: '/vaibhav-singhal.jpg', // Path to your OG image
+        width: 150,
+        height: 150,
+        alt: 'Vaibhav Singhal',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vaibhav Singhal | AI Product Manager',
+    description: 'Portfolio of Vaibhav Singhal, an AI Product Manager and IIT Ropar Alumnus.',
+    // creator: '@yourtwitterhandle', // Optional: add your twitter handle
+     images: ['/vaibhav-singhal.jpg'], // Must be an absolute URL in the future
+  },
   verification: {
     google: 'GHAwX5L_HelEtZxAP0y8lOnNTjNxqqtrRJctgl0lJ10',
   },
