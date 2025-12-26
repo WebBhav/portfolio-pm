@@ -35,8 +35,13 @@ const AiProjectsShowcase = () => {
 
   return (
     <section id="projects-ai" className="container mx-auto py-12 md:py-24 scroll-mt-16">
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">AI Projects Showcase</h2>
-       <div className="multicolor-line mb-12 w-24 mx-auto"></div>
+      <div className="text-center">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">AI Projects Showcase</h2>
+        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          Projects built to gain real-world exposure in the new-age AI space.
+        </p>
+        <div className="multicolor-line mt-6 mb-12 w-24 mx-auto"></div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <Card key={index} className="flex flex-col overflow-hidden bg-card hover:shadow-xl transition-shadow duration-300">
@@ -83,8 +88,9 @@ const AiProjectsShowcase = () => {
           </Card>
         ))}
       </div>
-       {/* Optional: Add a note if some projects are internal */}
-       {/* <p className="text-center text-muted-foreground mt-8">Note: Some projects listed were developed internally during my employment and may not have public links.</p> */}
+       <div className="text-center text-muted-foreground mt-16">
+         <p>More AI Projects coming soon...</p>
+       </div>
     </section>
   );
 };
