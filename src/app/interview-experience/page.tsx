@@ -1,9 +1,15 @@
 
 'use client';
 
+import type { Metadata } from 'next';
 import InterviewPost from '@/components/sections/interview-post';
 import { Separator } from '@/components/ui/separator';
 import AnimatedSection from '@/components/ui/animated-section';
+
+export const metadata: Metadata = {
+  title: 'Interview Experiences | Vaibhav Singhal',
+  description: 'A collection of my interview journeys with various companies for product management roles, including Google, Spinny, Credgenics, and Adda247.',
+};
 
 const interviewExperiences = [
   {
