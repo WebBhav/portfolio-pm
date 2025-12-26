@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script'; // Import Script component
@@ -16,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vaibhavsinghal.dev'), // Replace with your domain
+  metadataBase: new URL('https://vaibhav-singhal.netlify.app/'), // Replace with your domain
   title: {
     default: 'Vaibhav Singhal | AI Product Manager',
     template: '%s | Vaibhav Singhal',
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vaibhav Singhal | AI Product Manager',
     description: 'Explore the portfolio of Vaibhav Singhal, showcasing projects in AI, product management, and design.',
-    url: 'https://vaibhavsinghal.dev', // Replace with your domain
+    url: 'https://vaibhav-singhal.netlify.app/', // Replace with your domain
     siteName: 'Vaibhav Singhal Portfolio',
     images: [
       {
