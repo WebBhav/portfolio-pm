@@ -2,7 +2,7 @@
 'use client';
 
 import type { ComponentProps } from 'react';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import {
@@ -26,8 +26,7 @@ const navLinks = [
   { href: '/#about', label: 'About' },
   { href: '/#journey', label: 'Journey' },
   { href: '/#skills', label: 'Skills' },
-  { href: '/#projects-ai', label: 'AI Projects' },
-  { href: '/#key-projects', label: 'Key Projects' },
+  { href: '/projects', label: 'Projects' },
   { href: '/#positions', label: 'PORs' },
   { href: '/#awards', label: 'Awards' },
   { href: '/interview-experience', label: 'Interviews' },

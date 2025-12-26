@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${baseUrl}/projects`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/interview-experience`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -21,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Dynamic routes from sections on the homepage
-  const sections = ['about', 'journey', 'skills', 'projects-ai', 'key-projects', 'positions', 'awards', 'contact'];
+  const sections = ['about', 'journey', 'skills', 'positions', 'awards', 'contact'];
   const dynamicRoutes = sections.map((section) => ({
     url: `${baseUrl}/#${section}`,
     lastModified: new Date(),

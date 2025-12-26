@@ -53,7 +53,7 @@ const HeroSection = () => {
             <Link href="#contact" onClick={handleScrollClick}>Get In Touch</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="#projects-ai" onClick={handleScrollClick}>
+            <Link href="/projects">
               View Projects <ArrowDown className="ml-2 h-5 w-5" />
             </Link>
           </Button>
