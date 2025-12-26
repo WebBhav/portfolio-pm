@@ -24,7 +24,7 @@ const journeyData: JourneyItem[] = [
   {
     type: 'experience',
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
-    date: 'August 2025 - Present',
+    date: 'August 2025 - September 2025',
     title: 'Associate Product Manager - KreditBee',
     description: 'Company Details: an Instant Personal Loan & Online Credit Provider',
     details: [
