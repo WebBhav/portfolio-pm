@@ -26,7 +26,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'August 2025 - September 2025',
     title: 'Associate Product Manager - KreditBee',
-    description: 'Company Details: an Instant Personal Loan & Online Credit Provider',
+    description: 'Company Details: an Instant Personal Loan & Online Credit Provider.',
     details: [
         "Drove end-to-end onboarding and funnel optimization for Personal Loans across Salaried & Non-Salaried segments",
         "Led website revamp, resolved key onboarding issues, and contributed product suggestions for the upcoming UPI vertical."
@@ -51,7 +51,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'May 2023 - July 2023',
     title: 'Product Management Intern - B.S. Geartech Pvt. Ltd.',
-    description: 'Company Details: Manufacture High Precision Gears and Gear Boxes', // Updated description
+    description: 'Company Details: Manufacture High Precision Gears and Gear Boxes.',
     details: [
       "Optimized Buy vs. Build for 60+ imported parts across 10+ products, impacting 1.3Cr revenue.",
       "Revamped website landing page with the UI, UX & Growth teams.",
@@ -63,7 +63,7 @@ const journeyData: JourneyItem[] = [
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: 'Apr 2021 - June 2021',
     title: 'Marketing & Operations Intern - UnSchool',
-    description: 'Company Details: #3 Ranked Startup of 2020 LinkedIn.', // Updated description
+    description: 'Company Details: #3 Ranked Startup of 2020 LinkedIn.',
     details: [
         "Executed market expansion and penetration strategies, reaching approx 3K people.", // Removed redundant phrase
         "Aligned efforts with goals for audience growth and product visibility.",
@@ -76,7 +76,7 @@ const journeyData: JourneyItem[] = [
     icon: <GraduationCap className="h-4 w-4 text-accent-foreground" />,
     date: '2020 - 2024', // Updated Date
     title: 'Indian Institute of Technology, Ropar',
-    description: 'Rupnagar, Punjab', // Updated description
+    description: 'Rupnagar, Punjab.',
     details: [ // Updated details to list degree and CGPA
         'Bachelor of Technology (B.Tech) in Mechanical Engineering',
         'CGPA: 7.39'
