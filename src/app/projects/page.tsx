@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import AnimatedSection from '@/components/ui/animated-section';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Briefcase, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Projects | Vaibhav Singhal',
@@ -35,16 +35,6 @@ export default function ProjectsPage() {
             </Button>
         </div>
       </AnimatedSection>
-
-       <AnimatedSection>
-        <div className="text-center mt-12">
-            <Button asChild size="lg" variant="outline">
-                <Link href="/#journey">
-                    <Briefcase className="mr-2 h-5 w-5" /> My Professional Journey
-                </Link>
-            </Button>
-        </div>
-       </AnimatedSection>
     </div>
   );
 }
