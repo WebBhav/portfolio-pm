@@ -34,7 +34,7 @@ const AiProjectsShowcase = () => {
   }
 
   return (
-    <section id="projects-ai" className="container mx-auto py-12 md:py-16 scroll-mt-16">
+    <section id="projects-ai" className="container mx-auto pt-12 md:pt-16 scroll-mt-16">
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">AI Projects Showcase</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -88,7 +88,7 @@ const AiProjectsShowcase = () => {
           </Card>
         ))}
       </div>
-       <div className="text-center text-muted-foreground mt-16">
+       <div className="text-center text-muted-foreground mt-8">
          <p>More AI Projects coming soon...</p>
        </div>
     </section>
