@@ -22,7 +22,7 @@ export default function ProjectsPage() {
       
       <Separator />
 
-      <AnimatedSection>
+      <AnimatedSection threshold={0.05}>
         <KeyProjectsSection />
       </AnimatedSection>
 
