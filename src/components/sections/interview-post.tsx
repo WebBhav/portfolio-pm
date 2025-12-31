@@ -51,7 +51,7 @@ const InterviewPost = ({
         </div>
         {outcome && (
           <div className="pt-2">
-            <Badge variant={outcome === 'Converted' ? 'default' : 'destructive'}>
+            <Badge variant={outcome === 'Converted' ? 'success' : 'destructive'}>
               {outcome}
             </Badge>
           </div>
