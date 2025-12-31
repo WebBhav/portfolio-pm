@@ -14,6 +14,31 @@ export const metadata: Metadata = {
 
 const interviewExperiences = [
     {
+    company: 'Refyne',
+    role: 'Associate Product Manager',
+    date: 'October 2025',
+    outcome: 'Not Converted',
+    introduction: 'I received this interview opportunity through a Direct Apply. A 4-round process at Refyne evaluating my experience, product thinking, technical fundamentals, stakeholder management, and cultural fit.',
+    rounds: [
+      {
+        title: 'Round 1: Assignment Round',
+        content: 'This round involved a product design challenge to conceptualise and launch a Buy Now, Pay Later (BNPL) platform for employees of partnered enterprises. The problem required designing a controlled e-commerce + credit ecosystem, where employees could purchase curated products or services and repay via no-cost EMIs, while balancing risk, usability, and enterprise constraints.',
+      },
+      {
+        title: 'Round 2: Assignment Discussion',
+        content: 'The discussion was centred around a detailed walkthrough of the assignment. I approached the problem using the CIRCLES framework, clearly defining the MVP scope, GTM strategy, and a scaling roadmap, while addressing key considerations such as eligibility, credit limits, merchant onboarding, and repayment flows.',
+      },
+      {
+        title: 'Round 3: Technical Round',
+        content: 'This was a SQL-heavy round, with most questions aligned to HackerRank Medium-level problems, testing data querying, joins, and aggregations. The round also covered lending fundamentals, including EMI calculations and the reducing balance interest model, to assess domain understanding.',
+      },
+      {
+        title: 'Round 4: Founders’ Office Screening',
+        content: 'The final round focused on my professional background, long-term career vision, and product mindset. Discussions included comparisons across lending models, in-depth analyses of user onboarding journeys, and an examination of how product decisions vary across segments within the lending ecosystem.',
+      },
+    ],
+  },
+    {
     company: 'Credgenics',
     role: 'Associate Product Manager',
     date: 'December 2025',
@@ -175,3 +200,5 @@ export default function InterviewExperiencePage() {
     </div>
   );
 }
+
+    
