@@ -172,7 +172,7 @@ export default function InterviewExperiencePage() {
         <div className="text-center">
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Interview Experience</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-                A collection of my interview journeys with various companies.
+                A collection of some of my interview journeys across different companies.
             </p>
              <div className="multicolor-line mt-6 mb-12 w-24 mx-auto"></div>
         </div>
@@ -200,5 +200,3 @@ export default function InterviewExperiencePage() {
     </div>
   );
 }
-
-    
