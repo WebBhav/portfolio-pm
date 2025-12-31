@@ -14,31 +14,6 @@ export const metadata: Metadata = {
 
 const interviewExperiences = [
     {
-    company: 'NxtWave',
-    role: 'Growth Product Manager',
-    date: 'July 2025',
-    outcome: 'Converted',
-    introduction: 'I received this interview opportunity through the Naukri platform. Below is a round-by-round breakdown of my experience and key learnings from each stage.',
-    rounds: [
-      {
-        title: 'Round 1: Assignment Round',
-        content: 'This round involved a strategic assignment focused on planning and execution for Student Onboarding, Engagement, Retention, and Skill Outcomes over a 6-month horizon. The objective was to design scalable growth levers while balancing learner outcomes and business impact.',
-      },
-      {
-        title: 'Round 2: Assignment Discussion',
-        content: 'This was a thorough examination of the submitted assignment. I proposed multiple growth pathways, including collaborations with Career Development & Placement Cells and college-level programs offered free of cost to drive high-intent onboarding (achieving ~90–95% conversion). From there, the discussion centered on funnel design, where meaningful engagement begins only after students complete a defined set of activation tasks.',
-      },
-      {
-        title: 'Round 3: Product Case Round',
-        content: 'The round began with a walkthrough of my previous experience and gradually increased in complexity. It included guesstimates and RCA exercises, such as estimating the number of cars on Delhi roads on an average day, to evaluate structured thinking and assumptions. The conversation eventually moved to execution readiness and joining timelines.',
-      },
-      {
-        title: 'Round 4: HR Round',
-        content: 'The final round focused on situational and behavioural questions, followed by discussions around compensation expectations, role alignment, and joining logistics.',
-      },
-    ],
-  },
-  {
     company: 'Credgenics',
     role: 'Associate Product Manager',
     date: 'December 2025',
@@ -73,6 +48,31 @@ const interviewExperiences = [
       {
         title: 'Round 3: HR Round',
         content: "The HR round was thorough and scenario-driven, covering how I would respond to different workplace and ethical situations, my communication style, and cultural alignment. The discussion also included compensation expectations and role fit.",
+      },
+    ],
+  },
+  {
+    company: 'NxtWave',
+    role: 'Growth Product Manager',
+    date: 'July 2025',
+    outcome: 'Converted',
+    introduction: 'I received this interview opportunity through the Naukri platform. Below is a round-by-round breakdown of my experience and key learnings from each stage.',
+    rounds: [
+      {
+        title: 'Round 1: Assignment Round',
+        content: 'This round involved a strategic assignment focused on planning and execution for Student Onboarding, Engagement, Retention, and Skill Outcomes over a 6-month horizon. The objective was to design scalable growth levers while balancing learner outcomes and business impact.',
+      },
+      {
+        title: 'Round 2: Assignment Discussion',
+        content: 'This was a thorough examination of the submitted assignment. I proposed multiple growth pathways, including collaborations with Career Development & Placement Cells and college-level programs offered free of cost to drive high-intent onboarding (achieving ~90–95% conversion). From there, the discussion centered on funnel design, where meaningful engagement begins only after students complete a defined set of activation tasks.',
+      },
+      {
+        title: 'Round 3: Product Case Round',
+        content: 'The round began with a walkthrough of my previous experience and gradually increased in complexity. It included guesstimates and RCA exercises, such as estimating the number of cars on Delhi roads on an average day, to evaluate structured thinking and assumptions. The conversation eventually moved to execution readiness and joining timelines.',
+      },
+      {
+        title: 'Round 4: HR Round',
+        content: 'The final round focused on situational and behavioural questions, followed by discussions around compensation expectations, role alignment, and joining logistics.',
       },
     ],
   },
