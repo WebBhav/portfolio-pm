@@ -13,6 +13,27 @@ export const metadata: Metadata = {
 };
 
 const interviewExperiences = [
+   {
+    company: 'InCred Financial Services',
+    role: 'Associate Product Manager',
+    date: 'December 2025',
+    outcome: 'Converted',
+    introduction: 'I landed through Hirist platform. A three-round interview at InCred evaluating my experience, product thinking, technical fundamentals, stakeholder management, and cultural fit.',
+    rounds: [
+      {
+        title: 'Round 1: Telephonic Screening',
+        content: "This was an initial screening focused on my previous work experience, role transitions, and overall background. The discussion went into detail around my responsibilities, impact, and alignment with the role at InCred.",
+      },
+      {
+        title: 'Round 2: Product Round',
+        content: "This was the core evaluation round. It started with foundational questions such as why I want to move into the product domain and what the role of a Product Manager means to me.\nThe conversation then moved into technical fundamentals, including my understanding of APIs, CDNs, and how product managers collaborate with engineering and other stakeholders.\nThe round concluded with a product design problem — designing a Referral System within the InCred platform, focusing on user incentives, abuse prevention, and business impact.",
+      },
+      {
+        title: 'Round 3: HR Round',
+        content: "The HR round was thorough and scenario-driven, covering how I would respond to different workplace and ethical situations, my communication style, and cultural alignment. The discussion also included compensation expectations and role fit.",
+      },
+    ],
+  },
   {
     company: 'Credgenics',
     role: 'Associate Product Manager',
