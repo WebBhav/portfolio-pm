@@ -18,15 +18,15 @@ const interviewExperiences = [
     role: 'Associate Product Manager',
     date: 'December 2025',
     outcome: 'Not Converted',
-    introduction: 'This interview I got through the Linkedin Jobs. This was a multi-stage interview process focusing heavily on product sense, analytical skills, and leadership. Here is a round-by-round breakdown of my experience.',
+    introduction: 'I landed this interview opportunity through LinkedIn Jobs. The hiring process was structured as a multi-stage interview, with a strong emphasis on product sense, analytical thinking, and leadership skills.\n\nBelow is a round-by-round breakdown of my experience and key learnings from each stage.',
     rounds: [
       {
         title: 'Round 1: Screening and Case Study',
-        content: "A 1-hour call with a recruiter discussing my background, interest in the role, and high-level product questions. I was asked to walk through my resume and explain my most impactful project. Started with the Fintech sector and basic questions. Then it jumped to the customers who's intent was judged according to the collections once the customer defaults its loan repayment. The round ended with a basic puzzle: Find the Forfeited Coins' Jar.",
+        content: "This round focused on understanding my background, motivation for the role, and overall product thinking. I walked through my resume and deep-dived into my most impactful project, primarily from the FinTech domain.\n\nThe discussion then moved to high-level product questions, including customer intent assessment in the context of loan defaults and collections, and how product decisions can be shaped using behavioral signals.\n\nThe round concluded with a logical puzzle i.e. Find the Forfeited Coins’ Jar, aimed at evaluating structured thinking and problem-solving approach.",
       },
       {
-        title: 'Round 2: Case Study Round',
-        content: 'Started with a basic introduction and quickly paced up where a Quick RCA was presented, "There is a drop of 45% of repayment on the reminder message." It started basic but quickly went to the Data Journey. I started finding the data sources and finally caught that there may be a default in the format in which contact details are fetched, so message delivery is short, making the overall impact. Round completed with some HR question.',
+        title: 'Product Analytics',
+        content: "The round began with a brief introduction and quickly moved into a rapid RCA exercise. I was presented with a scenario: a 45% drop in repayments triggered by reminder messages.\n\nThe analysis started at a high level and progressively went deeper into the end-to-end data journey. I mapped out potential data sources, delivery touchpoints, and failure points across the funnel. Through this, I identified a likely root cause: a formatting issue in how contact details were being fetched, which led to shortened or failed message delivery and ultimately impacted repayments.\n\nThe round concluded with a few HR and behavioural questions to assess culture fit and communication style.",
       },
     ],
   },
