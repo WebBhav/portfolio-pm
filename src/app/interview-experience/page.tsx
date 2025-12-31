@@ -13,6 +13,23 @@ export const metadata: Metadata = {
 };
 
 const interviewExperiences = [
+  {
+    company: 'Credgenics',
+    role: 'Associate Product Manager',
+    date: 'December 2025',
+    outcome: 'Not Converted',
+    introduction: 'I landed this interview opportunity through LinkedIn Jobs. The hiring process was structured as a multi-stage interview, with a strong emphasis on product sense, analytical thinking, and leadership skills.\n\nBelow is a round-by-round breakdown of my experience and key learnings from each stage.',
+    rounds: [
+      {
+        title: 'Round 1: Screening and Case Study',
+        content: "This round focused on understanding my background, motivation for the role, and overall product thinking. I walked through my resume and deep-dived into my most impactful project, primarily from the FinTech domain.\n\nThe discussion then moved to high-level product questions, including customer intent assessment in the context of loan defaults and collections, and how product decisions can be shaped using behavioral signals.\n\nThe round concluded with a logical puzzle i.e. Find the Forfeited Coins’ Jar, aimed at evaluating structured thinking and problem-solving approach.",
+      },
+      {
+        title: 'Product Analytics',
+        content: "The round began with a brief introduction and quickly moved into a rapid RCA exercise. I was presented with a scenario: a 45% drop in repayments triggered by reminder messages.\n\nThe analysis started at a high level and progressively went deeper into the end-to-end data journey. I mapped out potential data sources, delivery touchpoints, and failure points across the funnel. Through this, I identified a likely root cause: a formatting issue in how contact details were being fetched, which led to shortened or failed message delivery and ultimately impacted repayments.\n\nThe round concluded with a few HR and behavioural questions to assess culture fit and communication style.",
+      },
+    ],
+  },
    {
     company: 'InCred Financial Services',
     role: 'Associate Product Manager',
@@ -31,23 +48,6 @@ const interviewExperiences = [
       {
         title: 'Round 3: HR Round',
         content: "The HR round was thorough and scenario-driven, covering how I would respond to different workplace and ethical situations, my communication style, and cultural alignment. The discussion also included compensation expectations and role fit.",
-      },
-    ],
-  },
-  {
-    company: 'Credgenics',
-    role: 'Associate Product Manager',
-    date: 'December 2025',
-    outcome: 'Not Converted',
-    introduction: 'I landed this interview opportunity through LinkedIn Jobs. The hiring process was structured as a multi-stage interview, with a strong emphasis on product sense, analytical thinking, and leadership skills.\n\nBelow is a round-by-round breakdown of my experience and key learnings from each stage.',
-    rounds: [
-      {
-        title: 'Round 1: Screening and Case Study',
-        content: "This round focused on understanding my background, motivation for the role, and overall product thinking. I walked through my resume and deep-dived into my most impactful project, primarily from the FinTech domain.\n\nThe discussion then moved to high-level product questions, including customer intent assessment in the context of loan defaults and collections, and how product decisions can be shaped using behavioral signals.\n\nThe round concluded with a logical puzzle i.e. Find the Forfeited Coins’ Jar, aimed at evaluating structured thinking and problem-solving approach.",
-      },
-      {
-        title: 'Product Analytics',
-        content: "The round began with a brief introduction and quickly moved into a rapid RCA exercise. I was presented with a scenario: a 45% drop in repayments triggered by reminder messages.\n\nThe analysis started at a high level and progressively went deeper into the end-to-end data journey. I mapped out potential data sources, delivery touchpoints, and failure points across the funnel. Through this, I identified a likely root cause: a formatting issue in how contact details were being fetched, which led to shortened or failed message delivery and ultimately impacted repayments.\n\nThe round concluded with a few HR and behavioural questions to assess culture fit and communication style.",
       },
     ],
   },
