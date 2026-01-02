@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         <AiProjectsShowcase />
       </AnimatedSection>
       
-      <Separator />
+      <Separator className="my-8" />
 
       <AnimatedSection threshold={0.05}>
         <KeyProjectsSection />
