@@ -48,6 +48,16 @@ const keyProjects = [
     aiHint: "bnpl product strategy",
   },
   {
+    title: 'Improving Online Ordering Experience | BigBasket Now',
+    date: 'June 2024',
+    description: 'Secured 8th Rank in PM School #193 Challenge (Score: 87/99). Deep-dived into Q-Commerce market, created pitch deck for Bigbasket Now improvements aimed at increasing engagement. Designed wireframes and outlined end-to-end processes.',
+    imageUrl: '/BigBasket.jpg',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1AsjAzRq_XmjMcHJJhDaVOOWB6qgXXvtL/view?usp=sharing', // Updated link
+    tags: ['Q-Commerce', 'Case Study', 'Product Improvement', 'Pitch Deck', 'Wireframing'],
+    icon: <Lightbulb className="h-6 w-6 text-accent" />,
+    aiHint: "ecommerce app product design",
+  },
+  {
     title: 'Canva | User Onboarding – Product Strategy & Design',
     date: 'June 2025',
     description: 'Designed a product strategy and onboarding-led growth framework to improve new user activation and reduce early churn for a Canva-like design platform. Conducted market sizing (135M+ MAU), defined user personas, mapped onboarding friction points, proposed a “try-before-signup” onboarding flow, prioritised features using RICE, and outlined GTM, success metrics, and risk analysis to increase acquisition, engagement, and premium conversion across individual and community-based creators',
@@ -66,16 +76,6 @@ const keyProjects = [
     tags: ['Product Strategy', 'Product Sense', 'Market Sizing', 'RICE Prioritisation', 'Wireframing', 'GTM'],
     icon: <Presentation className="h-6 w-6 text-accent" />,
     aiHint: "generative ai video platform strategy",
-  },
-  {
-    title: 'Improving Online Ordering Experience | BigBasket Now',
-    date: 'June 2024',
-    description: 'Secured 8th Rank in PM School #193 Challenge (Score: 87/99). Deep-dived into Q-Commerce market, created pitch deck for Bigbasket Now improvements aimed at increasing engagement. Designed wireframes and outlined end-to-end processes.',
-    imageUrl: '/BigBasket.jpg',
-    pitchDeckUrl: 'https://drive.google.com/file/d/1AsjAzRq_XmjMcHJJhDaVOOWB6qgXXvtL/view?usp=sharing', // Updated link
-    tags: ['Q-Commerce', 'Case Study', 'Product Improvement', 'Pitch Deck', 'Wireframing'],
-    icon: <Lightbulb className="h-6 w-6 text-accent" />,
-    aiHint: "ecommerce app product design",
   },
   {
     title: 'Traders in College | BaaS Product GTM',
