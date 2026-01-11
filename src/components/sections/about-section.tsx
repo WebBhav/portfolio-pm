@@ -68,9 +68,9 @@ const AboutSection = () => {
               </Button>
             </div>
           )}
-           <div className="pt-6 flex justify-start md:justify-start">
+           <div className="pt-6 flex justify-center md:justify-start">
                 <Button asChild variant="outline" size="lg">
-                    <Link href="https://drive.google.com/file/d/1M2ebVi96l7Qi9dLy6oz8qqij8NWy8Tpw/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+                    <Link href="/resume" target="_blank" rel="noopener noreferrer">
                         Access My One-Pager <FileText className="ml-2 h-5 w-5" />
                     </Link>
                 </Button>
