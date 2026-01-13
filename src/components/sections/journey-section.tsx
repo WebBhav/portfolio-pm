@@ -35,7 +35,7 @@ const journeyData: JourneyItem[] = [
   {
     type: 'experience',
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
-    date: 'July 2024 - July 2025',
+    date: '2024',
     title: 'Associate Product Manager - JustBaat AI (Powered By Google)',
     description: 'Company Details: AI Video Generation and Programmatic Ad Mediators.',
     details: [ // Updated details without leading "— "
@@ -48,7 +48,7 @@ const journeyData: JourneyItem[] = [
   {
     type: 'experience',
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
-    date: 'May 2023 - July 2023',
+    date: '2023',
     title: 'Product Management Intern - B.S. Geartech Pvt. Ltd.',
     description: 'Company Details: Manufacture High Precision Gears and Gear Boxes.',
     details: [
@@ -60,7 +60,7 @@ const journeyData: JourneyItem[] = [
    {
     type: 'experience',
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
-    date: 'Apr 2021 - June 2021',
+    date: '2021',
     title: 'Marketing & Operations Intern - UnSchool',
     description: 'Company Details: #3 Ranked Startup of 2020 LinkedIn.',
     details: [
@@ -73,7 +73,7 @@ const journeyData: JourneyItem[] = [
   {
     type: 'education',
     icon: <GraduationCap className="h-4 w-4 text-accent-foreground" />,
-    date: '2020 - 2024', // Updated Date
+    date: '2024', // Updated Date
     title: 'Indian Institute of Technology, Ropar',
     description: 'Rupnagar, Punjab.',
     details: [ // Updated details to list degree and CGPA
