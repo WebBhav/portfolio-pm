@@ -9,7 +9,7 @@ const ContactSection = () => {
     <section id="contact" className="container mx-auto py-12 md:py-24 text-center scroll-mt-16">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Get In Touch</h2>
        <div className="multicolor-line mb-12 w-24 mx-auto"></div>
-      <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">
+      <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8 px-4 sm:px-0">
         I'm always open to discussing new projects, product challenges, or opportunities to collaborate. Feel free to reach out!
       </p>
       <div className="flex flex-wrap justify-center gap-4">
