@@ -17,15 +17,15 @@ const keyProjects = [
     icon: <Presentation className="h-6 w-6 text-accent" />,
     aiHint: "job application growth strategy",
   },
-   {
-    title: 'Improving Online Ordering Experience | BigBasket Now',
-    date: 'June 2024',
-    description: 'Secured 8th Rank in PM School #193 Challenge (Score: 87/99). Deep-dived into Q-Commerce market, created pitch deck for Bigbasket Now improvements aimed at increasing engagement. Designed wireframes and outlined end-to-end processes.',
-    imageUrl: '/BigBasket.jpg',
-    pitchDeckUrl: 'https://drive.google.com/file/d/1AsjAzRq_XmjMcHJJhDaVOOWB6qgXXvtL/view?usp=sharing', // Updated link
-    tags: ['Q-Commerce', 'Case Study', 'Product Improvement', 'Pitch Deck', 'Wireframing'],
-    icon: <Lightbulb className="h-6 w-6 text-accent" />,
-    aiHint: "ecommerce app product design",
+  {
+    title: 'PharmaTrade | Product Strategy',
+    date: 'Aug 2025',
+    description: 'Designed a zero-to-one B2B pharmaceutical trading marketplace aimed at bringing real-time price discovery, compliance, and liquidity to India’s fragmented pharma distribution ecosystem. Defined the product vision (“Bloomberg Terminal for Pharma”), sized TAM–SAM–SOM, built dual buyer–seller personas, architected core marketplace features (bid/offer engine, compliance validation, anonymous negotiation), prioritised roadmap using impact–feasibility, and designed GTM and risk-mitigation strategies to drive trust, adoption, and sustained transaction liquidity across Tier 1–3 cities.',
+    imageUrl: '/pharma.jpg',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1TM516BQy7atutg7lipz_jaoEUvgZlMSN/view?usp=sharing',
+    tags: ['Product Strategy', 'Market Sizing', 'Two-Sided Marketplace Design', 'Supply Chain', 'HealthTech', 'GTM', 'Risk Analysis'],
+    icon: <Presentation className="h-6 w-6 text-accent" />,
+    aiHint: 'pharmaceutical trading marketplace',
   },
     {
     title: 'Payment Gateway | Product Design',
@@ -47,15 +47,15 @@ const keyProjects = [
     icon: <Presentation className="h-6 w-6 text-accent" />,
     aiHint: "bnpl product strategy",
   },
-  {
-    title: 'PharmaTrade | Product Strategy',
-    date: 'Aug 2025',
-    description: 'Designed a zero-to-one B2B pharmaceutical trading marketplace aimed at bringing real-time price discovery, compliance, and liquidity to India’s fragmented pharma distribution ecosystem. Defined the product vision (“Bloomberg Terminal for Pharma”), sized TAM–SAM–SOM, built dual buyer–seller personas, architected core marketplace features (bid/offer engine, compliance validation, anonymous negotiation), prioritised roadmap using impact–feasibility, and designed GTM and risk-mitigation strategies to drive trust, adoption, and sustained transaction liquidity across Tier 1–3 cities.',
-    imageUrl: '/pharma.jpg',
-    pitchDeckUrl: 'https://drive.google.com/filed/1TM516BQy7atutg7lipz_jaoEUvgZlMSN/view?usp=sharing',
-    tags: ['Product Strategy', 'Market Sizing', 'Two-Sided Marketplace Design', 'Supply Chain', 'HealthTech', 'GTM', 'Risk Analysis'],
-    icon: <Presentation className="h-6 w-6 text-accent" />,
-    aiHint: 'pharmaceutical trading marketplace',
+   {
+    title: 'Improving Online Ordering Experience | BigBasket Now',
+    date: 'June 2024',
+    description: 'Secured 8th Rank in PM School #193 Challenge (Score: 87/99). Deep-dived into Q-Commerce market, created pitch deck for Bigbasket Now improvements aimed at increasing engagement. Designed wireframes and outlined end-to-end processes.',
+    imageUrl: '/BigBasket.jpg',
+    pitchDeckUrl: 'https://drive.google.com/file/d/1AsjAzRq_XmjMcHJJhDaVOOWB6qgXXvtL/view?usp=sharing', // Updated link
+    tags: ['Q-Commerce', 'Case Study', 'Product Improvement', 'Pitch Deck', 'Wireframing'],
+    icon: <Lightbulb className="h-6 w-6 text-accent" />,
+    aiHint: "ecommerce app product design",
   },
   {
     title: 'Canva | User Onboarding – Product Strategy & Design',
