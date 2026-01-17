@@ -25,7 +25,7 @@ const interviewExperiences = [
         content: "This round focused on understanding my background, motivation for the role, and overall product thinking. I walked through my resume and deep-dived into my most impactful project, primarily from the FinTech domain.\n\nThe discussion then moved to high-level product questions, including customer intent assessment in the context of loan defaults and collections, and how product decisions can be shaped using behavioral signals.\n\nThe round concluded with a logical puzzle i.e. Find the Forfeited Coins’ Jar, aimed at evaluating structured thinking and problem-solving approach.",
       },
       {
-        title: 'Product Analytics',
+        title: 'Round 2: Product Analytics',
         content: "The round began with a brief introduction and quickly moved into a rapid RCA exercise. I was presented with a scenario: a 45% drop in repayments triggered by reminder messages.\n\nThe analysis started at a high level and progressively went deeper into the end-to-end data journey. I mapped out potential data sources, delivery touchpoints, and failure points across the funnel. Through this, I identified a likely root cause: a formatting issue in how contact details were being fetched, which led to shortened or failed message delivery and ultimately impacted repayments.\n\nThe round concluded with a few HR and behavioural questions to assess culture fit and communication style.",
       },
     ],
