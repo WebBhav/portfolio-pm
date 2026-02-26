@@ -9,10 +9,31 @@ import { Briefcase } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Interview Experiences | Vaibhav Singhal',
-  description: 'A collection of my interview journeys with various companies for product management roles, including Google, Spinny, Credgenics, and Adda247.',
+  description: 'A collection of my interview journeys with various companies for product management roles, including Appreciate Wealth, Google, Spinny, Credgenics, and Adda247.',
 };
 
 const interviewExperiences = [
+  {
+    company: 'Appreciate Wealth',
+    role: 'Associate Product Manager',
+    date: 'January 2026',
+    outcome: 'Converted',
+    introduction: 'Secured via direct alumni referral and completed back-to-back interview rounds in a single day, navigating an unstructured hiring process with strong product clarity and execution depth.',
+    rounds: [
+      {
+        title: 'Round 1: Screening & RCA',
+        content: "Deep-dived into leadership PoRs and founder mindset behind initiating clubs and zero-to-one efforts, followed by an RCA on “Why 80% of users complete onboarding but never make their first transaction?” — structured the problem from metric definition, cohort breakdown, and full user journey mapping to behavioral, trust, and activation bottlenecks, driving toward data-backed hypotheses and activation levers.",
+      },
+      {
+        title: 'Round 2: Product & Onboarding Improvement',
+        content: "Led a 1.5-hour solutioning discussion on improving onboarding conversion by auditing existing KYC/banking flows, identifying friction points, and proposing intelligent automation (e.g., PAN-based Aadhaar auto-fetch with one-click consent), reducing cognitive load and time-to-completion while aligning with compliance constraints.",
+      },
+      {
+        title: 'Round 3: HR & Negotiation',
+        content: "Cleared cultural fit and stakeholder alignment discussion after a delayed cycle (1+ month), concluding with structured negotiation and final conversion.",
+      },
+    ],
+  },
     {
     company: 'Credgenics',
     role: 'Associate Product Manager',
@@ -152,16 +173,6 @@ const interviewExperiences = [
       },
     ],
   },
-  // You can add another experience here
-  // {
-  //   company: 'Another Company',
-  //   role: 'Product Manager',
-  //   date: 'September 2023',
-  //   introduction: '...',
-  //   rounds: [
-  //     { title: 'Round 1', content: '...' },
-  //   ],
-  // }
 ];
 
 
