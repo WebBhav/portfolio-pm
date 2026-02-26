@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { Briefcase, GraduationCap, FileText, ArrowRight } from 'lucide-react';
@@ -24,6 +23,17 @@ const journeyData: JourneyItem[] = [
   {
     type: 'experience',
     icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
+    date: '2026',
+    title: 'Associate Product Manager - Moglix',
+    description: 'Company Details: A B2B e-commerce company, specializing in industrial supplies and services.',
+    details: [
+        "Leading 0→1 build and GTM of an AI-native SaaS vertical at Moglix, transforming B2B procurement & ecommerce through intelligent automation, predictive analytics, and scalable product strategy across enterprise supply chains."
+    ],
+    startDate: new Date(2026, 0), // January 2026
+  },
+  {
+    type: 'experience',
+    icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
     date: '2025',
     title: 'Associate Product Manager - KreditBee',
     description: 'Company Details: an Instant Personal Loan & Online Credit Provider.',
@@ -38,7 +48,7 @@ const journeyData: JourneyItem[] = [
     date: '2024',
     title: 'Associate Product Manager - JustBaat AI (Powered By Google)',
     description: 'Company Details: AI Video Generation and Programmatic Ad Mediators.',
-    details: [ // Updated details without leading "— "
+    details: [
       "Launched & scaled 6+ engagement products (Player, Shorts, Quiz, Poll, etc.), generating $300K in 6 months, filling 100% inventory for 400+ publishers, and increasing direct revenue by 16%.",
       "Built a D2C review marketplace, later pivoting it into a WhatsApp Community Monetization Platform, solving a three-way problem—demand partners needed genuine traffic, admins sought better monetization, and it boosted engagement & platform metrics.",
       "Led the development of 5+ platforms, including a Self-Serve Platform for AdTech Vertical, an AI Content Generator, and increased B2B2C user acquisition by 11% in 3 months.",
@@ -64,7 +74,7 @@ const journeyData: JourneyItem[] = [
     title: 'Marketing & Operations Intern - UnSchool',
     description: 'Company Details: #3 Ranked Startup of 2020 LinkedIn.',
     details: [
-        "Executed market expansion and penetration strategies, reaching approx 3K people.", // Removed redundant phrase
+        "Executed market expansion and penetration strategies, reaching approx 3K people.",
         "Aligned efforts with goals for audience growth and product visibility.",
     ],
      startDate: new Date(2021, 3), // April 2021
@@ -73,14 +83,14 @@ const journeyData: JourneyItem[] = [
   {
     type: 'education',
     icon: <GraduationCap className="h-4 w-4 text-accent-foreground" />,
-    date: '2024', // Updated Date
+    date: '2024',
     title: 'Indian Institute of Technology, Ropar',
     description: 'Rupnagar, Punjab.',
-    details: [ // Updated details to list degree and CGPA
+    details: [
         'Bachelor of Technology (B.Tech) in Mechanical Engineering',
         'CGPA: 7.39'
     ],
-    startDate: new Date(2020, 7), // Assuming start in Aug 2020 for sorting, exact month isn't critical for relative order here.
+    startDate: new Date(2020, 7),
   },
 ];
 
