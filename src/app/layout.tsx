@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script'; // Import Script component
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
     default: 'Vaibhav Singhal | AI Product Manager',
     template: '%s | Vaibhav Singhal',
   },
-  description: 'Portfolio of Vaibhav Singhal, an AI Product Manager and IIT Ropar Alumnus, specializing in AI, Product Design, and Monetization strategy.',
+  description: 'Portfolio of Vaibhav Singhal, an AI Product Manager and IIT Ropar\'24, specializing in AI, Product Design, and Monetization strategy.',
   openGraph: {
     title: 'Vaibhav Singhal | AI Product Manager',
     description: 'Explore the portfolio of Vaibhav Singhal, showcasing projects in AI, product management, and design.',
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Vaibhav Singhal | AI Product Manager',
-    description: 'Portfolio of Vaibhav Singhal, an AI Product Manager and IIT Ropar Alumnus.',
+    description: 'Portfolio of Vaibhav Singhal, an AI Product Manager and IIT Ropar\'24.',
     // creator: '@yourtwitterhandle', // Optional: add your twitter handle
      images: ['/vaibhav-singhal.jpg'], // Must be an absolute URL in the future
   },

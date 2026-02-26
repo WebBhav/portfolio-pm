@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -44,7 +43,7 @@ const HeroSection = () => {
         </h1>
         {/* Updated Subheading */}
         <div className="text-base text-muted-foreground sm:text-lg md:text-xl max-w-3xl mb-8">
-          <p>AI Product Manager | IIT Ropar Alumnus</p>
+          <p>AI Product Manager | IIT Ropar&apos;24</p>
           <p>Driving AI, Design and Monetisation in Product</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
