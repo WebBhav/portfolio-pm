@@ -1,8 +1,9 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react'; // Changed from ArrowDown to ArrowRight
+import { ArrowRight, MessageSquare } from 'lucide-react';
 import Image from 'next/image';
 
 const HeroSection = () => {
@@ -51,6 +52,11 @@ const HeroSection = () => {
             <Link href="#contact" onClick={handleScrollClick}>Get In Touch</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
+            <Link href="/query" className="group">
+              <MessageSquare className="mr-2 h-5 w-5" /> Submit a Query
+            </Link>
+          </Button>
+          <Button asChild variant="ghost" size="lg">
             <Link href="/projects" className="group">
               View Projects <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
