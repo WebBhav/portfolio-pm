@@ -4,8 +4,12 @@
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin, Github, Instagram, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const ContactSection = () => {
+  const pathname = usePathname();
+  const isQueryPage = pathname === '/query';
+
   return (
     <section id="contact" className="container mx-auto pt-12 pb-4 md:pt-24 md:pb-8 text-center scroll-mt-16">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Get In Touch</h2>
@@ -36,14 +40,16 @@ const ContactSection = () => {
         </Button>
       </div>
 
-      <div className="mt-12 pt-8 border-t border-border/50">
-        <p className="text-muted-foreground mb-4 font-medium">Having any query? Ask here</p>
-        <Button asChild size="lg" variant="default">
-          <Link href="/query">
-            <MessageSquare className="mr-2 h-5 w-5" /> Submit a query
-          </Link>
-        </Button>
-      </div>
+      {!isQueryPage && (
+        <div className="mt-12 pt-8 border-t border-border/50">
+          <p className="text-muted-foreground mb-4 font-medium">Having any query? Ask here</p>
+          <Button asChild size="lg" variant="default">
+            <Link href="/query">
+              <MessageSquare className="mr-2 h-5 w-5" /> Submit a query
+            </Link>
+          </Button>
+        </div>
+      )}
     </section>
   );
 };
