@@ -24,7 +24,7 @@ import AnimatedSection from '@/components/ui/animated-section';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  contact: z.string().min(10, { message: 'Please enter a valid contact number.' }),
+  contact: z.string().regex(/^[0-9]{10}$/, { message: 'Contact number must be exactly 10 digits.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
   organisation: z.string().optional(),
   query: z.string().min(10, { message: 'Query must be at least 10 characters.' }),
@@ -147,7 +147,7 @@ export default function QueryPage() {
                       <FormItem>
                         <FormLabel>Contact Number*</FormLabel>
                         <FormControl>
-                          <Input placeholder="+91 1234567890" {...field} />
+                          <Input placeholder="9876543210" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
