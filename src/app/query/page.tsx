@@ -86,9 +86,13 @@ export default function QueryPage() {
           <p className="text-muted-foreground text-lg max-w-md">
             Your query has been received. I will get back to you as soon as possible.
           </p>
-          <Button asChild className="mt-8" variant="accent">
-            <Link href="/">Back to Home</Link>
-          </Button>
+          <div className="flex justify-center mt-8">
+            <Button asChild variant="ghost" size="sm">
+              <Link href="/" className="flex items-center">
+                <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
+              </Link>
+            </Button>
+          </div>
         </AnimatedSection>
       </div>
     );
