@@ -37,10 +37,10 @@ const ContactSection = () => {
       </div>
 
       <div className="mt-16 pt-8 border-t border-border/50">
-        <p className="text-muted-foreground mb-4 font-medium">Having any query? Ask here</p>
+        <p className="text-muted-foreground mb-4 font-medium">Having any query?</p>
         <Button asChild size="lg" variant="accent">
           <Link href="/query">
-            <MessageSquare className="mr-2 h-5 w-5" /> Submit a Query
+            <MessageSquare className="mr-2 h-5 w-5" /> Ask here
           </Link>
         </Button>
       </div>
