@@ -22,7 +22,7 @@ const interviewExperiences = [
     rounds: [
       {
         title: 'Round 1: Screening & RCA',
-        content: "Deep-dived into leadership PoRs and founder mindset behind initiating clubs and zero-to-one efforts, followed by an RCA on “Why 80% of users complete onboarding but never make their first transaction?” — structured the problem from metric definition, cohort breakdown, and full user journey mapping to behavioral, trust, and activation bottlenecks, driving toward data-backed hypotheses and activation levers.",
+        content: "Deep-dived into leadership PoRs and founder mindset behind initiating clubs and zero-to-one efforts, followed by an RCA on “Why 80% of users complete onboarding but never make their first transaction?”, structured the problem from metric definition, cohort breakdown, and full user journey mapping to behavioral, trust, and activation bottlenecks, driving toward data-backed hypotheses and activation levers.",
       },
       {
         title: 'Round 2: Product & Onboarding Improvement',
