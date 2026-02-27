@@ -51,7 +51,7 @@ const HeroSection = () => {
           <Button asChild size="lg">
             <Link href="#contact" onClick={handleScrollClick}>Get In Touch</Link>
           </Button>
-          <Button asChild variant="ghost" size="lg">
+          <Button asChild variant="outline" size="lg">
             <Link href="/projects" className="group">
               View Projects <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
