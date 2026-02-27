@@ -40,7 +40,7 @@ const ContactSection = () => {
         <p className="text-muted-foreground mb-4 font-medium">Having any query? Ask here</p>
         <Button asChild size="lg" variant="default">
           <Link href="/query">
-            Submit a query <MessageSquare className="ml-2 h-5 w-5" />
+            <MessageSquare className="mr-2 h-5 w-5" /> Submit a query
           </Link>
         </Button>
       </div>
