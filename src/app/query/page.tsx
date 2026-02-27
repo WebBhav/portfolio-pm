@@ -2,7 +2,6 @@
 'use client';
 
 import { useState } from 'react';
-import type { Metadata } from 'next';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -87,7 +86,7 @@ export default function QueryPage() {
           <p className="text-muted-foreground text-lg max-w-md">
             Your query has been received. I will get back to you as soon as possible.
           </p>
-          <Button asChild className="mt-8">
+          <Button asChild className="mt-8" variant="accent">
             <Link href="/">Back to Home</Link>
           </Button>
         </AnimatedSection>
@@ -199,7 +198,7 @@ export default function QueryPage() {
                   )}
                 />
 
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                <Button type="submit" className="w-full text-base font-semibold" variant="accent" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
