@@ -3,7 +3,7 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight, MessageSquare } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 const HeroSection = () => {
@@ -50,11 +50,6 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4">
           <Button asChild size="lg">
             <Link href="#contact" onClick={handleScrollClick}>Get In Touch</Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <Link href="/query" className="group">
-              <MessageSquare className="mr-2 h-5 w-5" /> Submit a Query
-            </Link>
           </Button>
           <Button asChild variant="ghost" size="lg">
             <Link href="/projects" className="group">

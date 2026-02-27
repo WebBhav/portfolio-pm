@@ -1,7 +1,8 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, Instagram } from 'lucide-react';
+import { Mail, Linkedin, Github, Instagram, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 
 const ContactSection = () => {
@@ -9,7 +10,7 @@ const ContactSection = () => {
     <section id="contact" className="container mx-auto py-12 md:py-24 text-center scroll-mt-16">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Get In Touch</h2>
        <div className="multicolor-line mb-12 w-24 mx-auto"></div>
-      <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8 px-4 sm:px-0">
+      <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8 px-4 sm:px-12">
         I'm always open to discussing new projects, product challenges, or opportunities to collaborate. Feel free to reach out!
       </p>
       <div className="flex flex-wrap justify-center gap-4">
@@ -31,6 +32,15 @@ const ContactSection = () => {
          <Button asChild variant="outline" size="lg">
           <Link href="https://www.instagram.com/thewebbhav" target="_blank" rel="noopener noreferrer">
             <Instagram className="mr-2 h-5 w-5" /> Instagram
+          </Link>
+        </Button>
+      </div>
+
+      <div className="mt-16 pt-8 border-t border-border/50">
+        <p className="text-muted-foreground mb-4 font-medium">Having any query? Ask here</p>
+        <Button asChild size="lg" variant="accent">
+          <Link href="/query">
+            <MessageSquare className="mr-2 h-5 w-5" /> Submit a Query
           </Link>
         </Button>
       </div>
