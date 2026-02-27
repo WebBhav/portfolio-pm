@@ -9,10 +9,27 @@ import { Briefcase } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Interview Experiences | Vaibhav Singhal',
-  description: 'A collection of my interview journeys with various companies for product management roles, including Appreciate Wealth, Google, Spinny, Credgenics, and Adda247.',
+  description: 'A collection of my interview journeys with various companies for product management roles, including Z1 Tech, Appreciate Wealth, Google, Spinny, Credgenics, and Adda247.',
 };
 
 const interviewExperiences = [
+  {
+    company: 'Z1 Tech',
+    role: 'Associate Product Manager',
+    date: 'February 2026',
+    outcome: 'Not Converted',
+    introduction: 'I secured this interview opportunity through a direct application. The overall hiring process was heavily focused on adtech fundamentals, technical depth, and product thinking. Below is a structured round-by-round summary of my experience.',
+    rounds: [
+      {
+        title: 'Round 1: Product Design and AdTech Knowledge',
+        content: "This round began with a discussion about my background, followed by a detailed walkthrough of my resume. The interviewer explored my past projects and specifically deep-dived into the awards section to understand the impact and context behind those achievements.\n\nThe conversation then transitioned into adtech fundamentals. I was asked to explain key industry concepts such as viewability, eCPM, impressions, rendering, key-values, and IAB segmentation taxonomy. The discussion progressed to more advanced topics, including cookies, optimization strategies within the Google ecosystem, and what additional optimizations can be implemented beyond default Google-provided mechanisms.\n\nWe also discussed the self-serve tools I had built and launched, focusing on their problem statements, execution strategy, and measurable outcomes.\n\nThe latter half of the round centered on product thinking — particularly how a product manager can improve ad performance metrics while maintaining a strong user experience. We discussed balancing monetization with user empathy, identifying the right touchpoints to implement user-centric models, and defining the boundaries to ensure ad improvements do not negatively impact overall product usability.",
+      },
+      {
+        title: 'Round 2: Founder Connect',
+        content: "This round again began with a discussion of my prior experience, followed by an assessment of my technical fundamentals. I was asked about concepts such as server-side rendering, HTTP protocols, secure communication channels, and general web architecture principles.\n\nThe conversation then shifted toward product strategy. I was asked: “How would you improve Google Maps?” I structured my answer around user segmentation, identifying core use cases, and proposing enhancements aligned with both user value and business objectives.\n\nThis was followed by a monetization-focused question: “How can we monetize Google Maps for non-business users?” I proposed that essential, high-frequency features should remain free to preserve user base and engagement. Premium, value-added features could be layered on top for monetization. I presented my response in a structured, story-driven format to ensure clarity and logical flow.\n\nThe interview concluded with standard HR and behavioral questions.",
+      },
+    ],
+  },
   {
     company: 'Appreciate Wealth',
     role: 'Associate Product Manager',
