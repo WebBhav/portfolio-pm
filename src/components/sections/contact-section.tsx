@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="container mx-auto pt-12 pb-8 md:pt-24 md:pb-16 text-center scroll-mt-16">
+    <section id="contact" className="container mx-auto pt-12 pb-4 md:pt-24 md:pb-8 text-center scroll-mt-16">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Get In Touch</h2>
        <div className="multicolor-line mb-12 w-24 mx-auto"></div>
       <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8 px-4 sm:px-12">
@@ -36,7 +36,7 @@ const ContactSection = () => {
         </Button>
       </div>
 
-      <div className="mt-16 pt-8 border-t border-border/50">
+      <div className="mt-12 pt-8 border-t border-border/50">
         <p className="text-muted-foreground mb-4 font-medium">Having any query? Ask here</p>
         <Button asChild size="lg" variant="accent">
           <Link href="/query">
