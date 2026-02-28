@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import ReadMoreList from '@/components/ui/read-more-list';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Combined and typed data for the journey timeline
 type JourneyItem = {
@@ -22,7 +23,11 @@ const journeyData: JourneyItem[] = [
   // Experience Items
   {
     type: 'experience',
-    icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
+    icon: (
+      <div className="relative h-full w-full">
+        <Image src="/moglix.jpg" alt="Moglix" fill className="object-cover" />
+      </div>
+    ),
     date: '2026',
     title: 'Associate Product Manager - Moglix',
     description: 'Company Details: A B2B e-commerce company, specializing in industrial supplies and services.',
@@ -33,7 +38,11 @@ const journeyData: JourneyItem[] = [
   },
   {
     type: 'experience',
-    icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
+    icon: (
+      <div className="relative h-full w-full">
+        <Image src="/kb.jpg" alt="KreditBee" fill className="object-cover" />
+      </div>
+    ),
     date: '2025',
     title: 'Associate Product Manager - KreditBee',
     description: 'Company Details: an Instant Personal Loan & Online Credit Provider.',
@@ -44,7 +53,11 @@ const journeyData: JourneyItem[] = [
   },
   {
     type: 'experience',
-    icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
+    icon: (
+      <div className="relative h-full w-full">
+        <Image src="/jb.jpg" alt="JustBaat" fill className="object-cover" />
+      </div>
+    ),
     date: '2024',
     title: 'Associate Product Manager - JustBaat AI (Powered By Google)',
     description: 'Company Details: AI Video Generation and Programmatic Ad Mediators.',
@@ -57,7 +70,11 @@ const journeyData: JourneyItem[] = [
   },
   {
     type: 'experience',
-    icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
+    icon: (
+      <div className="relative h-full w-full">
+        <Image src="/bsg.jpg" alt="B.S. Geartech" fill className="object-cover" />
+      </div>
+    ),
     date: '2023',
     title: 'Product Management Intern - B.S. Geartech Pvt. Ltd.',
     description: 'Company Details: Manufacture High Precision Gears and Gear Boxes.',
@@ -82,7 +99,11 @@ const journeyData: JourneyItem[] = [
   // Education Item (IIT Ropar only)
   {
     type: 'education',
-    icon: <GraduationCap className="h-4 w-4 text-accent-foreground" />,
+    icon: (
+      <div className="relative h-full w-full">
+        <Image src="/iitlogo.jpg" alt="IIT Ropar" fill className="object-cover" />
+      </div>
+    ),
     date: '2024',
     title: 'Indian Institute of Technology, Ropar',
     description: 'Rupnagar, Punjab.',
@@ -116,7 +137,7 @@ const JourneySection = () => {
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 gap-2">
                     <div className="flex items-center gap-2">
-                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent">
+                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent overflow-hidden border border-border/50">
                          {item.icon}
                        </span>
                       <CardTitle className="text-lg sm:text-xl">{item.title}</CardTitle>
