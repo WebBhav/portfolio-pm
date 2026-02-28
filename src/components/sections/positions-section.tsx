@@ -31,7 +31,7 @@ const positionsData = [
 const PositionsSection = () => {
   return (
     <section id="positions" className="container mx-auto py-12 md:py-24 scroll-mt-16">
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Positions of Responsibilities in College</h2>
+      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Leadership Roles</h2>
        <div className="multicolor-line mb-12 w-24 mx-auto"></div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {positionsData.map((position, index) => (
