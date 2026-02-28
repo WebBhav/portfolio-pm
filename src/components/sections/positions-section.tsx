@@ -1,5 +1,4 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Users } from 'lucide-react';
 import Image from 'next/image';
 
 const positionsData = [
@@ -34,7 +33,6 @@ const positionsData = [
     description: 'Spearheaded Annual Festival (footfall: 15k+). Raised 8Mn+ sponsorship. Managed a team of 200+ students.',
   },
   {
-    icon: <Users className="h-6 w-6 text-accent" />,
     title: 'Other Roles',
     duration: 'Dec 2021 - Dec 2022',
     description: 'Deputy Secretary, ODAC | Representative, CDPC | Coordinator, Society of Mech Engg.',
@@ -51,9 +49,11 @@ const PositionsSection = () => {
           <Card key={index} className="flex flex-col bg-card hover:shadow-lg transition-shadow duration-300">
             <CardHeader className="pb-3">
               <div className="flex items-start gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent overflow-hidden border border-border/50 mt-1">
-                  {position.icon}
-                </span>
+                {position.icon && (
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent overflow-hidden border border-border/50 mt-1">
+                    {position.icon}
+                  </span>
+                )}
                 <div>
                   <CardTitle className="text-lg mb-1">{position.title}</CardTitle>
                   <p className="text-xs text-muted-foreground">{position.duration}</p>
