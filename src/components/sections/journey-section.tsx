@@ -55,7 +55,7 @@ const journeyData: JourneyItem[] = [
     type: 'experience',
     icon: (
       <div className="relative h-full w-full">
-        <Image src="/jb.jpg" alt="JustBaat" fill className="object-cover" />
+        <Image src="/Jb.jpg" alt="JustBaat" fill className="object-cover" />
       </div>
     ),
     date: '2024',
@@ -72,7 +72,7 @@ const journeyData: JourneyItem[] = [
     type: 'experience',
     icon: (
       <div className="relative h-full w-full">
-        <Image src="/bsg.jpg" alt="B.S. Geartech" fill className="object-cover" />
+        <Image src="/BSG.jpg" alt="B.S. Geartech" fill className="object-cover" />
       </div>
     ),
     date: '2023',
@@ -86,7 +86,11 @@ const journeyData: JourneyItem[] = [
   },
    {
     type: 'experience',
-    icon: <Briefcase className="h-4 w-4 text-accent-foreground" />,
+    icon: (
+      <div className="relative h-full w-full">
+        <Image src="/unschool.jpg" alt="UnSchool" fill className="object-cover" />
+      </div>
+    ),
     date: '2021',
     title: 'Marketing & Operations Intern - UnSchool',
     description: 'Company Details: #3 Ranked Startup of 2020 LinkedIn.',
@@ -130,7 +134,7 @@ const JourneySection = () => {
           <div key={index} className="timeline-item">
             <div className="timeline-connector"></div>
             <div className="timeline-dot">
-              {/* Icon can be placed inside or next to the dot if needed */}
+              {/* Icon is placed inside the dot */}
             </div>
             <div className="timeline-content">
               <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
