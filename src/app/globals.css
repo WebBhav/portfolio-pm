@@ -4,82 +4,45 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  /* Removed background pattern styles */
 }
 
 @layer base {
   :root {
-    /* Light Theme (kept for potential future toggle, but dark is default) */
-    --background-light: 0 0% 100%;
-    --foreground-light: 0 0% 3.9%;
-    --card-light: 0 0% 100%;
-    --card-foreground-light: 0 0% 3.9%;
-    --popover-light: 0 0% 100%;
-    --popover-foreground-light: 0 0% 3.9%;
-    --primary-light: 221 83% 53%; /* Example Primary - Adjust if needed */
-    --primary-foreground-light: 0 0% 98%;
-    --secondary-light: 0 0% 96.1%;
-    --secondary-foreground-light: 0 0% 9%;
-    --muted-light: 0 0% 96.1%;
-    --muted-foreground-light: 0 0% 45.1%;
-    --accent-light: 0 0% 96.1%;
-    --accent-foreground-light: 0 0% 9%;
-    --destructive-light: 0 84.2% 60.2%;
-    --destructive-foreground-light: 0 0% 98%;
-    --border-light: 0 0% 89.8%;
-    --input-light: 0 0% 89.8%;
-    --ring-light: 221 83% 53%; /* Example Ring - Adjust if needed */
-    --radius: 0.5rem;
-    --chart-1-light: 12 76% 61%;
-    --chart-2-light: 173 58% 39%;
-    --chart-3-light: 197 37% 24%;
-    --chart-4-light: 43 74% 66%;
-    --chart-5-light: 27 87% 67%;
-    --sidebar-background-light: 0 0% 98%;
-    --sidebar-foreground-light: 240 5.3% 26.1%;
-    --sidebar-primary-light: 240 5.9% 10%;
-    --sidebar-primary-foreground-light: 0 0% 98%;
-    --sidebar-accent-light: 240 4.8% 95.9%;
-    --sidebar-accent-foreground-light: 240 5.9% 10%;
-    --sidebar-border-light: 220 13% 91%;
-    --sidebar-ring-light: 217.2 91.2% 59.8%;
-
     /* Dark Theme (Based on User Request) */
     --background-dark: 0 0% 12.9%; /* #212121 */
-    --foreground-dark: 0 0% 98%; /* Near white for contrast */
+    --foreground-dark: 0 0% 98%; 
     --card-dark: 0 0% 18.8%; /* #303030 */
     --card-foreground-dark: 0 0% 98%;
-    --popover-dark: 0 0% 12.9%; /* #212121 */
+    --popover-dark: 0 0% 12.9%; 
     --popover-foreground-dark: 0 0% 98%;
-    --primary-dark: 0 0% 18.8%; /* #303030 - Using Dark Gray as primary */
-    --primary-foreground-dark: 0 0% 98%; /* Near white for contrast on primary */
-    --secondary-dark: 0 0% 12.9%; /* #212121 - Using Darker Gray as secondary */
+    --primary-dark: 0 0% 18.8%; 
+    --primary-foreground-dark: 0 0% 98%; 
+    --secondary-dark: 0 0% 12.9%; 
     --secondary-foreground-dark: 0 0% 98%;
-    --muted-dark: 0 0% 25%; /* Slightly lighter gray for muted elements */
-    --muted-foreground-dark: 0 0% 63.9%; /* Lighter gray for muted text */
+    --muted-dark: 0 0% 25%; 
+    --muted-foreground-dark: 0 0% 63.9%; 
     --accent-dark: 186 100% 39%; /* #00BCD4 - Teal */
-    --accent-foreground-dark: 0 0% 9%; /* Dark text on accent */
+    --accent-foreground-dark: 0 0% 9%; 
     --destructive-dark: 0 62.8% 30.6%;
     --destructive-foreground-dark: 0 0% 98%;
-    --border-dark: 0 0% 25%; /* Slightly lighter gray for borders */
-    --input-dark: 0 0% 25%; /* Slightly lighter gray for inputs */
-    --ring-dark: 186 100% 39%; /* Teal for focus rings */
-    --chart-1-dark: 186 100% 39%; /* Teal */
-    --chart-2-dark: 210 40% 96.1%; /* Light Blue/Gray */
-    --chart-3-dark: 60 9.1% 97.8%; /* Very Light Yellow/Gray */
-    --chart-4-dark: 0 0% 63.9%; /* Gray */
-    --chart-5-dark: 0 0% 80%; /* Lighter Gray */
-    --sidebar-background-dark: 0 0% 12.9%; /* #212121 */
+    --border-dark: 0 0% 25%; 
+    --input-dark: 0 0% 25%; 
+    --ring-dark: 186 100% 39%; 
+    --chart-1-dark: 186 100% 39%; 
+    --chart-2-dark: 210 40% 96.1%; 
+    --chart-3-dark: 60 9.1% 97.8%; 
+    --chart-4-dark: 0 0% 63.9%; 
+    --chart-5-dark: 0 0% 80%; 
+    --sidebar-background-dark: 0 0% 12.9%; 
     --sidebar-foreground-dark: 0 0% 98%;
-    --sidebar-primary-dark: 186 100% 39%; /* Teal */
-    --sidebar-primary-foreground-dark: 0 0% 9%; /* Dark text */
+    --sidebar-primary-dark: 186 100% 39%; 
+    --sidebar-primary-foreground-dark: 0 0% 9%; 
     --sidebar-accent-dark: 0 0% 25%;
     --sidebar-accent-foreground-dark: 0 0% 98%;
     --sidebar-border-dark: 0 0% 25%;
-    --sidebar-ring-dark: 186 100% 39%; /* Teal */
+    --sidebar-ring-dark: 186 100% 39%; 
   }
 
-  /* Apply dark theme variables by default */
   :root {
     --background: var(--background-dark);
     --foreground: var(--foreground-dark);
@@ -113,13 +76,8 @@ body {
     --sidebar-accent-foreground: var(--sidebar-accent-foreground-dark);
     --sidebar-border: var(--sidebar-border-dark);
     --sidebar-ring: var(--sidebar-ring-dark);
+    --radius: 0.5rem;
   }
-
-  /* Optional: Define light theme if needed via .light class */
-  /* .light { */
-    /* --background: var(--background-light); */
-    /* ... map all light variables ... */
-  /* } */
 }
 
 @layer base {
@@ -128,20 +86,13 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    /* Add smooth scroll for better navigation */
     scroll-behavior: smooth;
   }
-  /* Ensure links use accent color */
   a {
       @apply text-accent transition-colors hover:text-accent/80;
   }
-  /* Style for active navigation link */
-   .nav-link-active {
-      @apply text-accent font-semibold; /* Example: Use accent color and bold font */
-    }
 }
 
-/* Add styles for timeline */
 @layer components {
   .timeline-item {
     @apply relative pl-8 pb-8;
@@ -153,7 +104,7 @@ body {
     @apply absolute left-[10px] top-[5px] h-full w-0.5 bg-border;
   }
   .timeline-item:last-child .timeline-connector {
-    @apply h-[calc(100%-1.5rem)]; /* Adjust height for last item */
+    @apply h-[calc(100%-1.5rem)]; 
   }
   .timeline-dot {
     @apply absolute left-0 top-0 h-5 w-5 rounded-full bg-accent border-4 border-background z-20;
@@ -161,28 +112,24 @@ body {
   .timeline-content {
     @apply pt-1;
   }
+
+  .multicolor-line {
+    @apply h-1 w-full;
+    background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4);
+    background-size: 200% 100%;
+    animation: animate-gradient 5s linear infinite;
+  }
 }
 
-/* Animated multicolor line styles */
 @keyframes animate-gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-@layer components {
-  .multicolor-line {
-    @apply h-1 w-full;
-    background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4); /* Google Colors, repeat first color for seamless loop */
-    background-size: 200% 100%; /* Make the background wider than the element */
-    animation: animate-gradient 5s linear infinite; /* Apply the animation */
-  }
-}
-
-/* Neon comet animation */
 @keyframes comet-trail {
   0% {
-    top: 10px; /* Start exactly at the center of the first blue dot */
+    top: 10px; 
     opacity: 0;
   }
   10% {
@@ -192,58 +139,44 @@ body {
     opacity: 1;
   }
   100% {
-    top: calc(100% - 24px); /* End exactly at the bottom dot */
+    top: calc(100% - 24px); 
     opacity: 0;
   }
 }
 
 .timeline-comet {
   @apply absolute left-[8px] w-[4px] h-32 z-10 pointer-events-none;
-  /* Tail of the comet - Tapered using clip-path (wide at bottom head, narrow at top) */
   background: linear-gradient(to bottom, transparent, hsl(var(--accent) / 0.8));
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   animation: comet-trail 5s linear infinite;
 }
 
-/* Head of the comet - thicker and brighter */
 .timeline-comet::after {
   content: '';
   @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-accent;
   box-shadow: 0 0 15px 4px hsl(var(--accent));
 }
 
-/* Chasing comets for button edge */
-@keyframes button-comet-trace {
-  0% { offset-distance: 0%; }
-  100% { offset-distance: 100%; }
+@keyframes comet-svg-trace {
+  from {
+    stroke-dashoffset: 200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
-.button-comet-path {
-  @apply absolute inset-0 pointer-events-none z-10;
+.animate-comet-svg {
+  animation: comet-svg-trace 4s linear infinite;
+  filter: drop-shadow(0 0 5px hsl(var(--accent))) drop-shadow(0 0 10px hsl(var(--accent)));
 }
 
-.chasing-comet {
-  @apply absolute pointer-events-none;
-  width: 60px; /* Tail length */
-  height: 3px;
-  background: linear-gradient(to right, transparent, hsl(var(--accent)));
-  offset-path: border-box; /* Follows the border of the parent */
-  offset-anchor: 100% 50%; /* Anchor to the head */
-  animation: button-comet-trace 4s linear infinite;
+.animate-comet-svg-2 {
+  animation: comet-svg-trace 4s linear infinite;
+  animation-delay: -2s;
+  filter: drop-shadow(0 0 5px hsl(var(--accent))) drop-shadow(0 0 10px hsl(var(--accent)));
 }
 
-.chasing-comet::after {
-  content: '';
-  @apply absolute right-0 top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full bg-accent;
-  box-shadow: 0 0 10px 3px hsl(var(--accent));
-}
-
-.chasing-comet-2 {
-  animation-delay: -2s; /* Halfway through the 4s duration for chasing effect */
-}
-
-
-/* Style scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }

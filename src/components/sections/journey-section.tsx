@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Combined and typed data for the journey timeline
 type JourneyItem = {
   type: 'experience' | 'education';
   icon: JSX.Element;
@@ -15,11 +14,10 @@ type JourneyItem = {
   title: string;
   description: string;
   details?: string[];
-  startDate: Date; // Added for sorting
+  startDate: Date; 
 };
 
 const journeyData: JourneyItem[] = [
-  // Experience Items
   {
     type: 'experience',
     icon: (
@@ -33,7 +31,7 @@ const journeyData: JourneyItem[] = [
     details: [
         "Leading 0→1 build and GTM of an AI-native SaaS vertical at Moglix, transforming B2B procurement & ecommerce through intelligent automation, predictive analytics, and scalable product strategy across enterprise supply chains."
     ],
-    startDate: new Date(2026, 0), // January 2026
+    startDate: new Date(2026, 0), 
   },
   {
     type: 'experience',
@@ -48,7 +46,7 @@ const journeyData: JourneyItem[] = [
     details: [
         "Improved Personal Loan onboarding and funnel conversion across salaried and self-employed segments by leading a website revamp, fixing key journey issues, and supporting product strategy for the UPI vertical."
     ],
-    startDate: new Date(2025, 7), // August 2025
+    startDate: new Date(2025, 7), 
   },
   {
     type: 'experience',
@@ -65,7 +63,7 @@ const journeyData: JourneyItem[] = [
       "Built a D2C review marketplace, later pivoting it into a WhatsApp Community Monetization Platform, solving a three-way problem—demand partners needed genuine traffic, admins sought better monetization, and it boosted engagement & platform metrics.",
       "Led the development of 5+ platforms, including a Self-Serve Platform for AdTech Vertical, an AI Content Generator, and increased B2B2C user acquisition by 11% in 3 months.",
     ],
-    startDate: new Date(2024, 6), // July 2024
+    startDate: new Date(2024, 6), 
   },
   {
     type: 'experience',
@@ -81,7 +79,7 @@ const journeyData: JourneyItem[] = [
       "Optimized Buy vs. Build for 60+ imported parts across 10+ products, impacting 1.3Cr revenue.",
       "Revamped website landing page with the UI, UX & Growth teams.",
     ],
-     startDate: new Date(2023, 4), // May 2023
+     startDate: new Date(2023, 4), 
   },
    {
     type: 'experience',
@@ -97,9 +95,8 @@ const journeyData: JourneyItem[] = [
         "Executed market expansion and penetration strategies, reaching approx 3K people.",
         "Aligned efforts with goals for audience growth and product visibility.",
     ],
-     startDate: new Date(2021, 3), // April 2021
+     startDate: new Date(2021, 3), 
   },
-  // Education Item (IIT Ropar only)
   {
     type: 'education',
     icon: (
@@ -118,9 +115,7 @@ const journeyData: JourneyItem[] = [
   },
 ];
 
-// Sort journey items chronologically, most recent first
 journeyData.sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
-
 
 const JourneySection = () => {
   return (
@@ -128,15 +123,12 @@ const JourneySection = () => {
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">My Journey</h2>
       <div className="multicolor-line mb-12 w-24 mx-auto"></div>
       <div className="relative">
-        {/* Neon Comet Animation */}
         <div className="timeline-comet"></div>
 
         {journeyData.map((item, index) => (
           <div key={index} className="timeline-item">
             <div className="timeline-connector"></div>
-            <div className="timeline-dot">
-              {/* Dot is now purely stylistic with higher z-index in CSS */}
-            </div>
+            <div className="timeline-dot"></div>
             <div className="timeline-content">
               <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
@@ -162,14 +154,42 @@ const JourneySection = () => {
         ))}
       </div>
       <div className="mt-12 text-center">
-        <div className="relative inline-block button-comet-path-container">
-           {/* Chasing Comets */}
-           <div className="button-comet-path">
-             <div className="chasing-comet"></div>
-             <div className="chasing-comet chasing-comet-2"></div>
-           </div>
-           
-           <Button asChild size="lg" className="relative z-20">
+        <div className="relative inline-block">
+          <svg className="absolute inset-0 w-full h-full pointer-events-none z-30 overflow-visible">
+            <defs>
+              <linearGradient id="comet-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="transparent" />
+                <stop offset="100%" stopColor="hsl(var(--accent))" />
+              </linearGradient>
+            </defs>
+            <rect
+              pathLength="100"
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              rx="6"
+              fill="none"
+              stroke="url(#comet-gradient)"
+              strokeWidth="4"
+              strokeDasharray="25 75"
+              className="animate-comet-svg"
+            />
+            <rect
+              pathLength="100"
+              x="0"
+              y="0"
+              width="100%"
+              height="100%"
+              rx="6"
+              fill="none"
+              stroke="url(#comet-gradient)"
+              strokeWidth="4"
+              strokeDasharray="25 75"
+              className="animate-comet-svg-2"
+            />
+          </svg>
+           <Button asChild size="lg" className="relative z-20 shadow-xl">
             <Link href="/interview-experience">
               Read My Interview Experiences <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
