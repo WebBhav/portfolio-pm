@@ -162,11 +162,19 @@ const JourneySection = () => {
         ))}
       </div>
       <div className="mt-12 text-center">
-        <Button asChild size="lg">
-          <Link href="/interview-experience">
-            Read My Interview Experiences <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
-        </Button>
+        <div className="relative inline-block button-comet-path-container">
+           {/* Chasing Comets */}
+           <div className="button-comet-path">
+             <div className="chasing-comet"></div>
+             <div className="chasing-comet chasing-comet-2"></div>
+           </div>
+           
+           <Button asChild size="lg" className="relative z-20">
+            <Link href="/interview-experience">
+              Read My Interview Experiences <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

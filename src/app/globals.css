@@ -212,6 +212,36 @@ body {
   box-shadow: 0 0 15px 4px hsl(var(--accent));
 }
 
+/* Chasing comets for button edge */
+@keyframes button-comet-trace {
+  0% { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+
+.button-comet-path {
+  @apply absolute inset-0 pointer-events-none z-10;
+}
+
+.chasing-comet {
+  @apply absolute pointer-events-none;
+  width: 60px; /* Tail length */
+  height: 3px;
+  background: linear-gradient(to right, transparent, hsl(var(--accent)));
+  offset-path: border-box; /* Follows the border of the parent */
+  offset-anchor: 100% 50%; /* Anchor to the head */
+  animation: button-comet-trace 4s linear infinite;
+}
+
+.chasing-comet::after {
+  content: '';
+  @apply absolute right-0 top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full bg-accent;
+  box-shadow: 0 0 10px 3px hsl(var(--accent));
+}
+
+.chasing-comet-2 {
+  animation-delay: -2s; /* Halfway through the 4s duration for chasing effect */
+}
+
 
 /* Style scrollbar */
 ::-webkit-scrollbar {
