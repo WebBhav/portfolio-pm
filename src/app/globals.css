@@ -198,17 +198,18 @@ body {
 }
 
 .timeline-comet {
-  @apply absolute left-[9.5px] w-[2px] h-32 z-10 pointer-events-none;
-  /* Tail of the comet */
-  background: linear-gradient(to bottom, transparent, hsl(var(--accent) / 0.5));
+  @apply absolute left-[8px] w-[4px] h-32 z-10 pointer-events-none;
+  /* Tail of the comet - Tapered using clip-path (wide at bottom head, narrow at top) */
+  background: linear-gradient(to bottom, transparent, hsl(var(--accent) / 0.8));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   animation: comet-trail 5s linear infinite;
 }
 
 /* Head of the comet - thicker and brighter */
 .timeline-comet::after {
   content: '';
-  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[6px] h-[6px] rounded-full bg-accent;
-  box-shadow: 0 0 15px 2px hsl(var(--accent));
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-accent;
+  box-shadow: 0 0 15px 4px hsl(var(--accent));
 }
 
 
