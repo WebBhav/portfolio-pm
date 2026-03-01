@@ -154,42 +154,8 @@ const JourneySection = () => {
         ))}
       </div>
       <div className="mt-12 text-center">
-        <div className="relative inline-block">
-          <svg className="absolute inset-0 w-full h-full pointer-events-none z-30 overflow-visible">
-            <defs>
-              <linearGradient id="comet-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="transparent" />
-                <stop offset="100%" stopColor="hsl(var(--accent))" />
-              </linearGradient>
-            </defs>
-            <rect
-              pathLength="100"
-              x="0"
-              y="0"
-              width="100%"
-              height="100%"
-              rx="6"
-              fill="none"
-              stroke="url(#comet-gradient)"
-              strokeWidth="4"
-              strokeDasharray="25 75"
-              className="animate-comet-svg"
-            />
-            <rect
-              pathLength="100"
-              x="0"
-              y="0"
-              width="100%"
-              height="100%"
-              rx="6"
-              fill="none"
-              stroke="url(#comet-gradient)"
-              strokeWidth="4"
-              strokeDasharray="25 75"
-              className="animate-comet-svg-2"
-            />
-          </svg>
-           <Button asChild size="lg" className="relative z-20 shadow-xl">
+        <div className="shimmer-button-wrapper">
+           <Button asChild size="lg" className="relative z-10 bg-background hover:bg-background/90 text-foreground border-none">
             <Link href="/interview-experience">
               Read My Interview Experiences <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

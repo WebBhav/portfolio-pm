@@ -119,6 +119,14 @@ body {
     background-size: 200% 100%;
     animation: animate-gradient 5s linear infinite;
   }
+
+  .shimmer-button-wrapper {
+    @apply relative p-[2px] inline-block rounded-lg overflow-hidden;
+    background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4);
+    background-size: 200% 100%;
+    animation: animate-gradient 3s linear infinite;
+    box-shadow: 0 0 15px rgba(66, 133, 244, 0.4);
+  }
 }
 
 @keyframes animate-gradient {
@@ -147,7 +155,7 @@ body {
 .timeline-comet {
   @apply absolute left-[8px] w-[4px] h-32 z-10 pointer-events-none;
   background: linear-gradient(to bottom, transparent, hsl(var(--accent) / 0.8));
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Adjusted clip-path if needed */
   animation: comet-trail 5s linear infinite;
 }
 
@@ -155,26 +163,6 @@ body {
   content: '';
   @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-accent;
   box-shadow: 0 0 15px 4px hsl(var(--accent));
-}
-
-@keyframes comet-svg-trace {
-  from {
-    stroke-dashoffset: 200;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.animate-comet-svg {
-  animation: comet-svg-trace 4s linear infinite;
-  filter: drop-shadow(0 0 5px hsl(var(--accent))) drop-shadow(0 0 10px hsl(var(--accent)));
-}
-
-.animate-comet-svg-2 {
-  animation: comet-svg-trace 4s linear infinite;
-  animation-delay: -2s;
-  filter: drop-shadow(0 0 5px hsl(var(--accent))) drop-shadow(0 0 10px hsl(var(--accent)));
 }
 
 ::-webkit-scrollbar {
