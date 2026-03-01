@@ -182,7 +182,7 @@ body {
 /* Neon comet animation */
 @keyframes comet-trail {
   0% {
-    top: -100px;
+    top: 10px; /* Start exactly at the center of the first blue dot */
     opacity: 0;
   }
   10% {
@@ -192,7 +192,7 @@ body {
     opacity: 1;
   }
   100% {
-    top: 100%;
+    top: calc(100% - 24px); /* End exactly at the bottom of the line connecting dots */
     opacity: 0;
   }
 }
