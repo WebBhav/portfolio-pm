@@ -1,11 +1,13 @@
 'use client';
 
+import { useState, useEffect, useRef } from 'react';
 import { Briefcase, GraduationCap, FileText, ArrowRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ReadMoreList from '@/components/ui/read-more-list';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 type JourneyItem = {
   type: 'experience' | 'education';
@@ -118,12 +120,33 @@ const journeyData: JourneyItem[] = [
 journeyData.sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
 
 const JourneySection = () => {
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+  const buttonContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsButtonVisible(true);
+          // We only need to trigger the start once when it comes into view
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (buttonContainerRef.current) {
+      observer.observe(buttonContainerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="journey" className="container mx-auto py-12 md:py-24 scroll-mt-16">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">My Journey</h2>
       <div className="multicolor-line mb-12 w-24 mx-auto"></div>
       <div className="relative">
-        {/* Replaced comet with shimmer effect */}
         <div className="timeline-shimmer"></div>
 
         {journeyData.map((item, index) => (
@@ -154,8 +177,11 @@ const JourneySection = () => {
           </div>
         ))}
       </div>
-      <div className="mt-12 text-center">
-        <div className="shimmer-button-wrapper group">
+      <div className="mt-12 text-center" ref={buttonContainerRef}>
+        <div className={cn(
+          "shimmer-button-wrapper group",
+          isButtonVisible && "is-shimmering"
+        )}>
            <Button asChild size="lg" className="relative z-10 bg-background hover:bg-background/95 text-foreground border-none rounded-[calc(var(--radius)-1px)] transition-all">
             <Link href="/interview-experience">
               Read My Interview Experiences <ArrowRight className="ml-2 h-5 w-5" />

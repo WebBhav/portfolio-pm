@@ -138,7 +138,11 @@ body {
       #34A853 75%,
       transparent 90%
     );
+  }
+
+  .shimmer-button-wrapper.is-shimmering::before {
     animation: rotate-shimmer 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation-delay: 0.5s;
   }
 
   @keyframes rotate-shimmer {
