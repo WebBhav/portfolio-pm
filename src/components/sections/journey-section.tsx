@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Briefcase, GraduationCap, FileText, ArrowRight } from 'lucide-react';
@@ -129,12 +128,14 @@ const JourneySection = () => {
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">My Journey</h2>
       <div className="multicolor-line mb-12 w-24 mx-auto"></div>
       <div className="relative">
-        {/* The main timeline line is implicitly created by the connectors */}
+        {/* Neon Comet Animation */}
+        <div className="timeline-comet"></div>
+
         {journeyData.map((item, index) => (
           <div key={index} className="timeline-item">
             <div className="timeline-connector"></div>
             <div className="timeline-dot">
-              {/* Icon is placed inside the dot */}
+              {/* Dot is now purely stylistic with higher z-index in CSS */}
             </div>
             <div className="timeline-content">
               <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
