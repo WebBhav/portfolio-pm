@@ -157,34 +157,37 @@ body {
     100% { background-position: 0% 50%; }
   }
 
-  /* Refined Timeline Shimmer (Single Color) */
+  /* Slick Comet Animation */
   @keyframes shimmer-trail {
-    0%, 10% {
+    0%, 5% {
       top: 0; 
       opacity: 0;
     }
-    20% {
+    15% {
       opacity: 1;
     }
-    80% {
+    75% {
       opacity: 1;
     }
-    90%, 100% {
-      top: 100%; 
+    /* Ends at the last dot (roughly) and vanishes */
+    85%, 100% {
+      top: calc(100% - 2.5rem); 
       opacity: 0;
     }
   }
 
   .timeline-shimmer {
-    @apply absolute left-[8.5px] w-[3.5px] h-32 z-10 pointer-events-none;
-    background: linear-gradient(to bottom, transparent, hsl(var(--accent)), transparent);
+    @apply absolute left-[8.5px] w-[4px] h-32 z-10 pointer-events-none;
+    background: linear-gradient(to bottom, transparent, hsl(var(--accent)));
+    /* Tapered comet tail effect: thicker head, converging tail */
+    clip-path: polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%);
     animation: shimmer-trail 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
   .timeline-shimmer::after {
     content: '';
-    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[6px] h-[6px] rounded-full bg-accent;
-    box-shadow: 0 0 12px 2px hsl(var(--accent));
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[8px] h-[8px] rounded-full bg-accent;
+    box-shadow: 0 0 15px 3px hsl(var(--accent));
   }
 }
 
