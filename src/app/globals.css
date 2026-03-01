@@ -142,7 +142,7 @@ body {
 
   .shimmer-button-wrapper.is-shimmering::before {
     animation: rotate-shimmer 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    animation-delay: 0.5s;
+    animation-delay: 0.1s;
   }
 
   @keyframes rotate-shimmer {
