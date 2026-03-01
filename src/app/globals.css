@@ -123,6 +123,7 @@ body {
   /* Slick Firebase-style Shimmer Button */
   .shimmer-button-wrapper {
     @apply relative inline-flex items-center justify-center rounded-lg overflow-hidden p-[1.5px] isolate transition-transform hover:scale-[1.02] active:scale-[0.98];
+    background: hsl(var(--border)); /* Base border color when not shimmering */
   }
   
   .shimmer-button-wrapper::before {
@@ -137,14 +138,14 @@ body {
       #34A853 75%,
       transparent 90%
     );
-    animation: rotate-shimmer 5s ease-in-out infinite;
+    animation: rotate-shimmer 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
   @keyframes rotate-shimmer {
     0% { transform: rotate(0deg); opacity: 0; }
-    5% { opacity: 0.8; }
-    30% { transform: rotate(360deg); opacity: 0.8; }
-    35%, 100% { transform: rotate(360deg); opacity: 0; }
+    2% { opacity: 1; }
+    20% { transform: rotate(360deg); opacity: 1; }
+    25%, 100% { transform: rotate(360deg); opacity: 0; }
   }
 
   @keyframes animate-gradient {
