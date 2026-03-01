@@ -154,8 +154,8 @@ const JourneySection = () => {
         ))}
       </div>
       <div className="mt-12 text-center">
-        <div className="shimmer-button-wrapper">
-           <Button asChild size="lg" className="relative z-10 bg-background hover:bg-background/90 text-foreground border-none">
+        <div className="shimmer-button-wrapper group">
+           <Button asChild size="lg" className="relative z-10 bg-background hover:bg-background/95 text-foreground border-none rounded-[calc(var(--radius)-1px)] transition-all">
             <Link href="/interview-experience">
               Read My Interview Experiences <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

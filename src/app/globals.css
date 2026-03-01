@@ -120,49 +120,66 @@ body {
     animation: animate-gradient 5s linear infinite;
   }
 
+  /* Slick Firebase-style Shimmer Button */
   .shimmer-button-wrapper {
-    @apply relative p-[2px] inline-block rounded-lg overflow-hidden;
-    background: linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853, #4285F4);
-    background-size: 200% 100%;
-    animation: animate-gradient 3s linear infinite;
-    box-shadow: 0 0 15px rgba(66, 133, 244, 0.4);
+    @apply relative inline-flex items-center justify-center rounded-lg overflow-hidden p-[1.5px] isolate transition-transform hover:scale-[1.02] active:scale-[0.98];
   }
-}
+  
+  .shimmer-button-wrapper::before {
+    content: '';
+    @apply absolute h-[250%] w-[250%] z-[-1];
+    background: conic-gradient(
+      from 0deg,
+      transparent 20%,
+      #4285F4 30%,
+      #EA4335 45%,
+      #FBBC05 60%,
+      #34A853 75%,
+      transparent 90%
+    );
+    animation: rotate-shimmer 4s linear infinite;
+  }
 
-@keyframes animate-gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+  @keyframes rotate-shimmer {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 
-@keyframes comet-trail {
-  0% {
-    top: 10px; 
-    opacity: 0;
+  @keyframes animate-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    top: calc(100% - 24px); 
-    opacity: 0;
-  }
-}
 
-.timeline-comet {
-  @apply absolute left-[8px] w-[4px] h-32 z-10 pointer-events-none;
-  background: linear-gradient(to bottom, transparent, hsl(var(--accent) / 0.8));
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Adjusted clip-path if needed */
-  animation: comet-trail 5s linear infinite;
-}
+  @keyframes comet-trail {
+    0% {
+      top: 10px; 
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: calc(100% - 24px); 
+      opacity: 0;
+    }
+  }
 
-.timeline-comet::after {
-  content: '';
-  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-accent;
-  box-shadow: 0 0 15px 4px hsl(var(--accent));
+  .timeline-comet {
+    @apply absolute left-[8px] w-[4px] h-32 z-10 pointer-events-none;
+    background: linear-gradient(to bottom, transparent, hsl(var(--accent) / 0.8));
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    animation: comet-trail 5s linear infinite;
+  }
+
+  .timeline-comet::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-accent;
+    box-shadow: 0 0 15px 4px hsl(var(--accent));
+  }
 }
 
 ::-webkit-scrollbar {
