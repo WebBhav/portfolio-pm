@@ -138,16 +138,17 @@ body {
       #34A853 75%,
       transparent 90%
     );
-    /* Increased duration to 8s for a slower, more elegant rotation */
     animation: rotate-shimmer 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
   @keyframes rotate-shimmer {
-    0% { transform: rotate(0deg); opacity: 0; }
-    2% { opacity: 1; }
-    /* Extended rotation phase to 40% (3.2s) for a slower, smoother trace */
-    40% { transform: rotate(360deg); opacity: 1; }
-    45%, 100% { transform: rotate(360deg); opacity: 0; }
+    0%, 5% { transform: rotate(0deg); opacity: 0; }
+    /* Gradual fade in */
+    15% { opacity: 1; }
+    /* Slow rotation */
+    45% { transform: rotate(360deg); opacity: 1; }
+    /* Gradual fade out */
+    55%, 100% { transform: rotate(360deg); opacity: 0; }
   }
 
   @keyframes animate-gradient {
@@ -156,34 +157,34 @@ body {
     100% { background-position: 0% 50%; }
   }
 
-  @keyframes comet-trail {
-    0% {
-      top: 10px; 
+  /* Refined Timeline Shimmer (Single Color) */
+  @keyframes shimmer-trail {
+    0%, 10% {
+      top: 0; 
       opacity: 0;
     }
-    10% {
+    20% {
       opacity: 1;
     }
-    90% {
+    80% {
       opacity: 1;
     }
-    100% {
-      top: calc(100% - 24px); 
+    90%, 100% {
+      top: 100%; 
       opacity: 0;
     }
   }
 
-  .timeline-comet {
-    @apply absolute left-[8px] w-[4px] h-32 z-10 pointer-events-none;
-    background: linear-gradient(to bottom, transparent, hsl(var(--accent) / 0.8));
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    animation: comet-trail 5s linear infinite;
+  .timeline-shimmer {
+    @apply absolute left-[8.5px] w-[3.5px] h-32 z-10 pointer-events-none;
+    background: linear-gradient(to bottom, transparent, hsl(var(--accent)), transparent);
+    animation: shimmer-trail 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
-  .timeline-comet::after {
+  .timeline-shimmer::after {
     content: '';
-    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[7px] h-[7px] rounded-full bg-accent;
-    box-shadow: 0 0 15px 4px hsl(var(--accent));
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[6px] h-[6px] rounded-full bg-accent;
+    box-shadow: 0 0 12px 2px hsl(var(--accent));
   }
 }
 
