@@ -18,19 +18,19 @@ import {
 
 const projects = [
   {
-    title: 'Automated Revenue Generator (ARG)',
+    title: 'Automated Revenue Generator (ARG) | AI',
     date: 'February 2024',
     description: 'Developed an AI-driven automated publishing and monetization engine that generates and operates revenue-ready websites with minimal human intervention. The system consists of two integrated modules: an Automated Website Generator and an AI Content Generator. The website generator creates new sites, prepares them for ad monetization, and implements essential technical SEO configurations.\n\nThe AI Content Generator continuously identifies trending topics via the Google Trends API, compiles reference signals, and feeds them into OpenAI Playground with structured prompts to produce SEO-optimized content including titles, descriptions, full articles, keywords, and meta tags. Generated articles are further processed through a text humanization layer to improve readability and content quality.\n\nIn parallel, the system retrieves relevant reference images, attributes the source appropriately, and overlays site branding before publishing. All generated media and content are automatically pushed to the ARG CMS, enabling continuous publishing at scale. The ecosystem is designed to capture organic search traffic and generate advertising revenue, creating a fully automated content-to-monetization pipeline.',
     imageUrl: 'https://picsum.photos/seed/arg/600/400',
     projectUrl: '#',
-    flowchartUrl: 'https://picsum.photos/seed/arg-flow/1200/1600',
+    flowchartUrl: '/argflow.jpg',
     tags: ['Automation', 'Generative AI', 'SEO Automation', 'Content Systems'],
     icon: <Workflow className="h-6 w-6 text-accent" />,
     aiHint: "automation flow revenue engine",
     hasFlowchart: true,
   },
   {
-    title: 'WebAstroAI',
+    title: 'WebAstroAI | AI',
     date: 'January 2024',
     description: 'Developed an AI-powered astrology platform that combines web-based data analysis with intelligent interpretation to generate personalised astrological insights. The system automatically scans relevant sources, extracts patterns, and delivers contextual predictions tailored to each user’s profile. Designed with scalable architecture, clean UI, and seamless deployment—now fully live and functional for end users.',
     imageUrl: 'https://picsum.photos/seed/astro/600/400',
@@ -108,27 +108,22 @@ const AiProjectsShowcase = () => {
                 <ReadMore text={project.description} />
               </CardDescription>
             </CardContent>
-            <CardFooter className="flex flex-col gap-2">
-              {project.hasFlowchart && (
-                <Button variant="outline" className="w-full" onClick={() => setSelectedFlowchart(project.flowchartUrl || null)}>
-                  <Workflow className="mr-2 h-4 w-4" /> View Flowchart
-                </Button>
-              )}
-              {project.projectUrl !== '#' ? (
-                <Button asChild variant="default" className="w-full">
-                  <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
-                    View Project
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              ) : (
-                !project.hasFlowchart && (
-                  <Button variant="secondary" disabled className="w-full">
-                    Project Under Development
+            {(project.hasFlowchart || project.projectUrl !== '#') && (
+              <CardFooter className="flex flex-col gap-2">
+                {project.hasFlowchart && (
+                  <Button variant="default" className="w-full" onClick={() => setSelectedFlowchart(project.flowchartUrl || null)}>
+                    View Flowchart <Workflow className="ml-2 h-4 w-4" />
                   </Button>
-                )
-              )}
-            </CardFooter>
+                )}
+                {project.projectUrl !== '#' && (
+                  <Button asChild variant="default" className="w-full">
+                    <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
+                      View Project <ExternalLink className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                )}
+              </CardFooter>
+            )}
           </Card>
         ))}
       </div>
