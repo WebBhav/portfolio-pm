@@ -165,14 +165,15 @@ const AiProjectsShowcase = () => {
                 width: zoom > 1 ? `${zoom * 100}%` : '100%',
               }}
             >
-              <Image
-                src={selectedFlowchart || ''}
-                alt="Architecture Flowchart"
-                width={2000}
-                height={2000}
-                className="w-full h-auto object-contain rounded-md shadow-2xl"
-                priority
-              />
+              {selectedFlowchart && (
+                <Image
+                  src={selectedFlowchart}
+                  alt="Architecture Flowchart"
+                  width={2000}
+                  height={2000}
+                  className="w-full h-auto object-contain rounded-md shadow-2xl"
+                />
+              )}
             </div>
           </div>
         </DialogContent>
