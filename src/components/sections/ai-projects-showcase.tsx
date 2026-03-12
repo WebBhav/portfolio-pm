@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ExternalLink, Bot, Mail, Workflow, ZoomIn, ZoomOut, Maximize2, X } from 'lucide-react';
+import { ExternalLink, Bot, Mail, Workflow, ZoomIn, ZoomOut, Maximize2, X, FileText } from 'lucide-react';
 import Image from 'next/image';
 import ReadMore from '@/components/ui/read-more';
 import {
@@ -19,10 +19,11 @@ import {
 const projects = [
   {
     title: 'Automated Revenue Generator (ARG)',
-    description: 'Developed an AI-driven automated publishing and monetization engine that generates and operates revenue-ready websites with minimal human intervention. The system consists of two integrated modules: an Automated Website Generator and an AI Content Generator. The website generator creates new sites, prepares them for ad monetization, and implements essential technical SEO configurations.\n\nThe AI Content Generator continuously identifies trending topics via the Google Trends API, compiles reference signals, and feeds them into OpenAI Playground with structured prompts to produce SEO-optimized content. Generated articles are further processed through a text humanization layer to improve readability. The system also retrieves relevant reference images, attributes sources, and overlays branding before pushing to the ARG CMS for continuous publishing at scale.',
-    imageUrl: 'https://picsum.photos/seed/arg/400/200',
+    date: 'February 2024',
+    description: 'Developed an AI-driven automated publishing and monetization engine that generates and operates revenue-ready websites with minimal human intervention. The system consists of two integrated modules: an Automated Website Generator and an AI Content Generator. The website generator creates new sites, prepares them for ad monetization, and implements essential technical SEO configurations.\n\nThe AI Content Generator continuously identifies trending topics via the Google Trends API, compiles reference signals, and feeds them into OpenAI Playground with structured prompts to produce SEO-optimized content including titles, descriptions, full articles, keywords, and meta tags. Generated articles are further processed through a text humanization layer to improve readability and content quality.\n\nIn parallel, the system retrieves relevant reference images, attributes the source appropriately, and overlays site branding before publishing. All generated media and content are automatically pushed to the ARG CMS, enabling continuous publishing at scale. The ecosystem is designed to capture organic search traffic and generate advertising revenue, creating a fully automated content-to-monetization pipeline.',
+    imageUrl: 'https://picsum.photos/seed/arg/600/400',
     projectUrl: '#',
-    flowchartUrl: 'https://picsum.photos/seed/arg-flow/1200/1600', // Placeholder for the flowchart
+    flowchartUrl: 'https://picsum.photos/seed/arg-flow/1200/1600',
     tags: ['Automation', 'Generative AI', 'SEO Automation', 'Content Systems'],
     icon: <Workflow className="h-6 w-6 text-accent" />,
     aiHint: "automation flow revenue engine",
@@ -30,19 +31,21 @@ const projects = [
   },
   {
     title: 'WebAstroAI',
+    date: 'January 2024',
     description: 'Developed an AI-powered astrology platform that combines web-based data analysis with intelligent interpretation to generate personalised astrological insights. The system automatically scans relevant sources, extracts patterns, and delivers contextual predictions tailored to each user’s profile. Designed with scalable architecture, clean UI, and seamless deployment—now fully live and functional for end users.',
-    imageUrl: 'https://picsum.photos/seed/astro/400/200',
+    imageUrl: 'https://picsum.photos/seed/astro/600/400',
     projectUrl: 'https://webastroai.netlify.app/',
-    tags: ['AI', 'Astrology', 'Web Analysis', 'Deployed', 'Personal Project'],
+    tags: ['AI', 'Astrology', 'Web Analysis', 'Deployed'],
     icon: <Bot className="h-6 w-6 text-accent" />,
     aiHint: "artificial intelligence astrology web app",
   },
   {
     title: 'Mail Automation | n8n',
+    date: 'December 2023',
     description: 'Developed a fully automated command-to-action engine using n8n, integrating a Telegram bot with Gemini’s LLM capabilities to understand user instructions. The system restructures inputs into a predefined operational format, fetches the appropriate Gmail template from a stored library, and sends the email instantly. Designed for reliability and scalability, it serves as a hands-free AI-driven workflow for automated communication.',
-    imageUrl: 'https://picsum.photos/seed/mail/400/200',
+    imageUrl: 'https://picsum.photos/seed/mail/600/400',
     projectUrl: '#',
-    tags: ['AI', 'Automation', 'n8n', 'Telegram', 'Personal Project'],
+    tags: ['AI', 'Automation', 'n8n', 'Telegram'],
     icon: <Mail className="h-6 w-6 text-accent" />,
     aiHint: "mail automation telegram bot",
   },
@@ -56,12 +59,8 @@ const AiProjectsShowcase = () => {
   const handleZoomOut = () => setZoom(prev => Math.max(prev - 0.5, 1));
   const handleResetZoom = () => setZoom(1);
 
-  if (projects.length === 0) {
-    return null;
-  }
-
   return (
-    <section id="projects-ai" className="container mx-auto pt-12 md:pt-16 scroll-mt-16">
+    <section id="projects-ai" className="container mx-auto py-12 md:py-16 scroll-mt-16">
       <div className="text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">AI Projects Showcase</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -88,27 +87,26 @@ const AiProjectsShowcase = () => {
                  </div>
                )}
              </div>
-            <CardHeader className="flex-row items-start gap-4 pb-2">
-              <div className="mt-1">{project.icon}</div>
-              <div>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                 <div className="flex flex-wrap gap-1 mt-2">
+            <CardHeader className="pb-2">
+               <div className="flex items-center justify-between mb-1">
+                   <div className="flex items-center gap-3">
+                       {project.icon}
+                       <CardTitle className="text-lg">{project.title}</CardTitle>
+                   </div>
+                   <span className="text-xs text-muted-foreground">{project.date}</span>
+               </div>
+                 <div className="flex flex-wrap gap-1 pt-1">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="text-[10px] uppercase tracking-wider font-bold bg-secondary text-secondary-foreground px-2 py-0.5 rounded-sm">
+                    <span key={tagIndex} className="text-xs bg-secondary text-secondary-foreground px-2 py-0.5 rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
-              </div>
-
             </CardHeader>
             <CardContent className="flex-grow">
-              <div className="text-muted-foreground text-sm">
-                <div className="block md:hidden">
-                  <ReadMore text={project.description} maxLength={120} />
-                </div>
-                <p className="hidden md:block line-clamp-4">{project.description}</p>
-              </div>
+              <CardDescription as="div">
+                <ReadMore text={project.description} />
+              </CardDescription>
             </CardContent>
             <CardFooter className="flex flex-col gap-2">
               {project.hasFlowchart && (
@@ -116,13 +114,19 @@ const AiProjectsShowcase = () => {
                   <Workflow className="mr-2 h-4 w-4" /> View Flowchart
                 </Button>
               )}
-              {project.projectUrl !== '#' && (
+              {project.projectUrl !== '#' ? (
                 <Button asChild variant="default" className="w-full">
                   <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
                     View Project
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
+              ) : (
+                !project.hasFlowchart && (
+                  <Button variant="secondary" disabled className="w-full">
+                    Project Under Development
+                  </Button>
+                )
               )}
             </CardFooter>
           </Card>
@@ -141,7 +145,7 @@ const AiProjectsShowcase = () => {
             <div className="flex items-center justify-between">
               <div>
                 <DialogTitle>Project Architecture</DialogTitle>
-                <DialogDescription>Automated Revenue Generator (ARG) Pipeline</DialogDescription>
+                <DialogDescription>Detailed Pipeline Workflow</DialogDescription>
               </div>
               <div className="flex items-center gap-2 mr-6">
                 <Button variant="outline" size="icon" onClick={handleZoomOut} disabled={zoom <= 1}>
@@ -159,7 +163,7 @@ const AiProjectsShowcase = () => {
           </DialogHeader>
           <div className="flex-grow overflow-auto bg-muted/20 relative cursor-grab active:cursor-grabbing p-4">
             <div 
-              className="relative min-h-full transition-transform duration-200 ease-out origin-top-left"
+              className="relative min-h-full transition-transform duration-200 ease-out origin-top-left flex items-start justify-center"
               style={{ 
                 transform: `scale(${zoom})`,
                 width: zoom > 1 ? `${zoom * 100}%` : '100%',
@@ -171,7 +175,7 @@ const AiProjectsShowcase = () => {
                   alt="Architecture Flowchart"
                   width={2000}
                   height={2000}
-                  className="w-full h-auto object-contain rounded-md shadow-2xl"
+                  className="max-w-full h-auto object-contain rounded-md shadow-2xl"
                 />
               )}
             </div>
