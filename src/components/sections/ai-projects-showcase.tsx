@@ -68,7 +68,7 @@ const AiProjectsShowcase = () => {
         </p>
         <div className="multicolor-line mt-6 mb-12 w-24 mx-auto"></div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <Card key={index} className="flex flex-col overflow-hidden bg-card hover:shadow-xl transition-shadow duration-300">
              <div className="relative h-48 w-full group overflow-hidden">
@@ -108,22 +108,20 @@ const AiProjectsShowcase = () => {
                 <ReadMore text={project.description} />
               </CardDescription>
             </CardContent>
-            {(project.hasFlowchart || project.projectUrl !== '#') && (
-              <CardFooter className="flex flex-col gap-2">
-                {project.hasFlowchart && (
-                  <Button variant="default" className="w-full" onClick={() => setSelectedFlowchart(project.flowchartUrl || null)}>
-                    View Flowchart <Workflow className="ml-2 h-4 w-4" />
-                  </Button>
-                )}
-                {project.projectUrl !== '#' && (
-                  <Button asChild variant="default" className="w-full">
-                    <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
-                      View Project <ExternalLink className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                )}
-              </CardFooter>
-            )}
+            <CardFooter className="flex flex-col gap-2">
+              {project.hasFlowchart && (
+                <Button variant="default" className="w-full" onClick={() => setSelectedFlowchart(project.flowchartUrl || null)}>
+                  View Flowchart <Workflow className="ml-2 h-4 w-4" />
+                </Button>
+              )}
+              {project.projectUrl !== '#' && (
+                <Button asChild variant="default" className="w-full">
+                  <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
+                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
+            </CardFooter>
           </Card>
         ))}
       </div>
