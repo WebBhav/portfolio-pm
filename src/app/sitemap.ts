@@ -2,7 +2,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://vaibhav-singhal.netlify.app/'; // Replace with your actual domain
+  const baseUrl = 'https://vaibhav-singhal.netlify.app/';
 
   // Static routes
   const staticRoutes = [
@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/terms-of-use`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
     },
      {
       url: `${baseUrl}/resume`,
