@@ -2,7 +2,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Lightbulb, Presentation, FileText, ArrowRight } from 'lucide-react'; // Added ArrowRight
+import { Lightbulb, Presentation, FileText } from 'lucide-react';
 import Image from 'next/image';
 import ReadMore from '@/components/ui/read-more';
 
@@ -19,7 +19,7 @@ const keyProjects = [
   },
   {
     title: 'PharmaTrade | Product Strategy',
-    date: 'Aug 2025',
+    date: 'August 2025',
     description: 'Designed a zero-to-one B2B pharmaceutical trading marketplace aimed at bringing real-time price discovery, compliance, and liquidity to India’s fragmented pharma distribution ecosystem. Defined the product vision (“Bloomberg Terminal for Pharma”), sized TAM–SAM–SOM, built dual buyer–seller personas, architected core marketplace features (bid/offer engine, compliance validation, anonymous negotiation), prioritised roadmap using impact–feasibility, and designed GTM and risk-mitigation strategies to drive trust, adoption, and sustained transaction liquidity across Tier 1–3 cities.',
     imageUrl: '/pharma.jpg',
     pitchDeckUrl: 'https://drive.google.com/file/d/1TM516BQy7atutg7lipz_jaoEUvgZlMSN/view?usp=sharing',
@@ -52,7 +52,7 @@ const keyProjects = [
     date: 'June 2024',
     description: 'Secured 8th Rank in PM School #193 Challenge (Score: 87/99). Deep-dived into Q-Commerce market, created pitch deck for Bigbasket Now improvements aimed at increasing engagement. Designed wireframes and outlined end-to-end processes.',
     imageUrl: '/BigBasket.jpg',
-    pitchDeckUrl: 'https://drive.google.com/file/d/1AsjAzRq_XmjMcHJJhDaVOOWB6qgXXvtL/view?usp=sharing', // Updated link
+    pitchDeckUrl: 'https://drive.google.com/file/d/1AsjAzRq_XmjMcHJJhDaVOOWB6qgXXvtL/view?usp=sharing',
     tags: ['Q-Commerce', 'Case Study', 'Product Improvement', 'Pitch Deck', 'Wireframing'],
     icon: <Lightbulb className="h-6 w-6 text-accent" />,
     aiHint: "ecommerce app product design",
@@ -82,7 +82,7 @@ const keyProjects = [
     date: 'May 2023',
     description: 'Developed a GTM strategy and pitch deck for a BaaS product targeting college students involved in trading (31B USD market). Included credit and consultancy services, wireframes, media promotions, and KYC procedures.',
     imageUrl: '/BaaS_Product.jpg',
-    pitchDeckUrl: 'https://drive.google.com/file/d/1dwR6wgl-C7Ls4iNYGuovqTu33P41sCPs/view?usp=sharing', // Updated link
+    pitchDeckUrl: 'https://drive.google.com/file/d/1dwR6wgl-C7Ls4iNYGuovqTu33P41sCPs/view?usp=sharing',
     tags: ['FinTech', 'BaaS', 'GTM Strategy', 'Pitch Deck', 'Student Market', 'Wireframing'],
     icon: <Presentation className="h-6 w-6 text-accent" />,
     aiHint: "fintech trading student app",
@@ -134,7 +134,6 @@ const KeyProjectsSection = () => {
             <CardFooter>
                {project.pitchDeckUrl !== '#' ? (
                 <Button asChild variant="default" className="w-full">
-                  {/* Ensure target="_blank" opens link in a new tab */}
                   <Link href={project.pitchDeckUrl} target="_blank" rel="noopener noreferrer">
                     View Pitch Deck <FileText className="ml-2 h-4 w-4" />
                   </Link>

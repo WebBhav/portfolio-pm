@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ExternalLink, Bot, Mail, Workflow, ZoomIn, ZoomOut, Maximize2, X, FileText } from 'lucide-react';
+import { ExternalLink, Bot, Mail, Workflow, ZoomIn, ZoomOut, Maximize2 } from 'lucide-react';
 import Image from 'next/image';
 import ReadMore from '@/components/ui/read-more';
 import {
@@ -19,7 +19,7 @@ import {
 const projects = [
   {
     title: 'Automated Revenue Generator (ARG) | AI',
-    date: 'February 2024',
+    date: 'February 2025',
     description: 'Developed an AI-driven automated publishing and monetization engine that generates and operates revenue-ready websites with minimal human intervention. The system consists of two integrated modules: an Automated Website Generator and an AI Content Generator. The website generator creates new sites, prepares them for ad monetization, and implements essential technical SEO configurations.\n\nThe AI Content Generator continuously identifies trending topics via the Google Trends API, compiles reference signals, and feeds them into OpenAI Playground with structured prompts to produce SEO-optimized content including titles, descriptions, full articles, keywords, and meta tags. Generated articles are further processed through a text humanization layer to improve readability and content quality.\n\nIn parallel, the system retrieves relevant reference images, attributes the source appropriately, and overlays site branding before publishing. All generated media and content are automatically pushed to the ARG CMS, enabling continuous publishing at scale. The ecosystem is designed to capture organic search traffic and generate advertising revenue, creating a fully automated content-to-monetization pipeline.',
     imageUrl: 'https://picsum.photos/seed/arg/600/400',
     projectUrl: '#',
@@ -31,7 +31,7 @@ const projects = [
   },
   {
     title: 'WebAstroAI | AI',
-    date: 'January 2024',
+    date: 'January 2025',
     description: 'Developed an AI-powered astrology platform that combines web-based data analysis with intelligent interpretation to generate personalised astrological insights. The system automatically scans relevant sources, extracts patterns, and delivers contextual predictions tailored to each user’s profile. Designed with scalable architecture, clean UI, and seamless deployment—now fully live and functional for end users.',
     imageUrl: 'https://picsum.photos/seed/astro/600/400',
     projectUrl: 'https://webastroai.netlify.app/',
@@ -41,7 +41,7 @@ const projects = [
   },
   {
     title: 'Mail Automation | n8n',
-    date: 'December 2023',
+    date: 'July 2025',
     description: 'Developed a fully automated command-to-action engine using n8n, integrating a Telegram bot with Gemini’s LLM capabilities to understand user instructions. The system restructures inputs into a predefined operational format, fetches the appropriate Gmail template from a stored library, and sends the email instantly. Designed for reliability and scalability, it serves as a hands-free AI-driven workflow for automated communication.',
     imageUrl: 'https://picsum.photos/seed/mail/600/400',
     projectUrl: '#',
