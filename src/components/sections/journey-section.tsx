@@ -29,7 +29,7 @@ const journeyData: JourneyItem[] = [
     ),
     date: '2026',
     title: 'Associate Product Manager - Moglix',
-    description: 'Company Details: A B2B e-commerce company, specializing in industrial supplies and services.',
+    description: "Company Details: India's 13th Unicorn, revolutionising e-commerce specially in industrial supplies and services.",
     details: [
         "Leading 0→1 build and GTM of an AI-native SaaS vertical at Moglix, transforming B2B procurement & ecommerce through intelligent automation, predictive analytics, and scalable product strategy across enterprise supply chains."
     ],
