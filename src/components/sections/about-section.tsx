@@ -18,13 +18,13 @@ const AboutSection = () => {
   const fullText = (
     <>
       <p>
-        Hi, I’m Vaibhav, a product thinker who blends data, design, and strategy to build meaningful digital experiences.
+        I'm a product thinker who blends data, design, AI, and strategy to build meaningful digital experiences.
       </p>
       <p>
-        I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity. With years of hands-on design experience, I continue to sketch, wireframe, and build UI elements myself.
+        I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity. With years of hands-on design experience, I still sketch, wireframe, and build UI elements myself — because great products are felt, not just specced.
       </p>
       <p>
-        I’ve led teams, built IIT Ropar’s first eSports community, revived campus culture post-COVID, and helped secure over ₹3M+ in sponsorships. I enjoy creating systems that scale, whether products, communities, or ideas.
+        Beyond the screen, I've led teams, founded IIT Ropar's first eSports community, revived campus culture post-COVID, and helped secure over ₹3M+ in sponsorships — proof that I build systems that scale, whether products, communities, or ideas.
       </p>
       <p>
         Mechanical Engineering @ IIT Ropar. Born in Alwar. Driven by curiosity, craft, and impact.
@@ -34,7 +34,7 @@ const AboutSection = () => {
 
   const truncatedText = (
     <p>
-      Hi, I’m Vaibhav, a product thinker who blends data, design, and strategy to build meaningful digital experiences. I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity...
+      I'm a product thinker who blends data, design, AI, and strategy to build meaningful digital experiences. I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity...
     </p>
   );
 
