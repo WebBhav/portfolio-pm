@@ -18,13 +18,13 @@ const AboutSection = () => {
   const fullText = (
     <>
       <p>
-        I'm a product thinker who blends data, design, AI, and strategy to build meaningful digital experiences.
+        I&apos;m a product thinker who blends data, design, AI, and strategy to build meaningful digital experiences.
       </p>
       <p>
-        I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity. With years of hands-on design experience, I still sketch, wireframe, and build UI elements myself — because great products are felt, not just specced.
+        I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity. With years of hands-on design experience, I still sketch, wireframe, and build UI elements myself because great products are felt, not just specced.
       </p>
       <p>
-        Beyond the screen, I've led teams, founded IIT Ropar's first eSports community, revived campus culture post-COVID, and helped secure over ₹3M+ in sponsorships — proof that I build systems that scale, whether products, communities, or ideas.
+        Beyond the screen, I&apos;ve led teams, founded IIT Ropar&apos;s first eSports community, revived campus culture post-COVID, and helped secure over ₹3M+ in sponsorships proof that I build systems that are beyond computers networks.
       </p>
       <p>
         Mechanical Engineering @ IIT Ropar. Born in Alwar. Driven by curiosity, craft, and impact.
@@ -34,7 +34,7 @@ const AboutSection = () => {
 
   const truncatedText = (
     <p>
-      I'm a product thinker who blends data, design, AI, and strategy to build meaningful digital experiences. I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity...
+      I&apos;m a product thinker who blends data, design, AI, and strategy to build meaningful digital experiences. I deep-dive into markets fast, turn insights into decisions, and ship 0–1 products with clarity...
     </p>
   );
 
