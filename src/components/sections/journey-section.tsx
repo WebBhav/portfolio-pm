@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Briefcase, GraduationCap, FileText, ArrowRight } from 'lucide-react';
+import { Briefcase, GraduationCap, FileText, ArrowRight, MapPin } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ReadMoreList from '@/components/ui/read-more-list';
 import { Button } from '@/components/ui/button';
@@ -13,6 +13,7 @@ type JourneyItem = {
   type: 'experience' | 'education';
   icon: JSX.Element;
   date: string;
+  location?: string;
   title: string;
   description: string;
   details?: string[];
@@ -27,13 +28,14 @@ const journeyData: JourneyItem[] = [
         <Image src="/moglix.jpg" alt="Moglix" fill className="object-cover" />
       </div>
     ),
-    date: '2026',
+    date: 'February 2026 - Present',
+    location: 'Noida, Uttar Pradesh, IND',
     title: 'Associate Product Manager - Moglix',
     description: "Company Details: India's 13th Unicorn, revolutionising e-commerce specially in industrial supplies and services.",
     details: [
         "Leading 0→1 build and GTM of an AI-native SaaS vertical at Moglix, transforming B2B procurement & ecommerce through intelligent automation, predictive analytics, and scalable product strategy across enterprise supply chains."
     ],
-    startDate: new Date(2026, 0), 
+    startDate: new Date(2026, 1), 
   },
   {
     type: 'experience',
@@ -42,7 +44,8 @@ const journeyData: JourneyItem[] = [
         <Image src="/kb.jpg" alt="KreditBee" fill className="object-cover" />
       </div>
     ),
-    date: '2025',
+    date: '', // Remove timeline as requested
+    location: 'Bengaluru, Karnataka, IND',
     title: 'Associate Product Manager - KreditBee',
     description: 'Company Details: an Instant Personal Loan & Online Credit Provider.',
     details: [
@@ -57,7 +60,8 @@ const journeyData: JourneyItem[] = [
         <Image src="/Jb.jpg" alt="JustBaat" fill className="object-cover" />
       </div>
     ),
-    date: '2024',
+    date: 'July 2024 - July 2025',
+    location: 'Gurugram, Haryana, IND',
     title: 'Associate Product Manager - JustBaat AI (Powered By Google)',
     description: 'Company Details: AI Video Generation and Programmatic Ad Mediators.',
     details: [
@@ -74,7 +78,8 @@ const journeyData: JourneyItem[] = [
         <Image src="/BSG.jpg" alt="B.S. Geartech" fill className="object-cover" />
       </div>
     ),
-    date: '2023',
+    date: 'May 2023 - July 2023',
+    location: 'Delhi, IND',
     title: 'Product Management Intern - B.S. Geartech Pvt. Ltd.',
     description: 'Company Details: Manufacture High Precision Gears and Gear Boxes.',
     details: [
@@ -90,7 +95,8 @@ const journeyData: JourneyItem[] = [
         <Image src="/unschool.jpg" alt="UnSchool" fill className="object-cover" />
       </div>
     ),
-    date: '2021',
+    date: 'May 2021 - July 2021',
+    location: 'Remote',
     title: 'Marketing & Operations Intern - UnSchool',
     description: 'Company Details: #3 Ranked Startup of 2020 LinkedIn.',
     details: [
@@ -106,7 +112,7 @@ const journeyData: JourneyItem[] = [
         <Image src="/iitlogo.jpg" alt="IIT Ropar" fill className="object-cover" />
       </div>
     ),
-    date: '2024',
+    date: '2020 - 2024',
     title: 'Indian Institute of Technology, Ropar',
     description: 'Rupnagar, Punjab.',
     details: [
@@ -128,7 +134,6 @@ const JourneySection = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsButtonVisible(true);
-          // We only need to trigger the start once when it comes into view
           observer.disconnect();
         }
       },
@@ -157,13 +162,23 @@ const JourneySection = () => {
               <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 gap-2">
-                    <div className="flex items-center gap-2">
-                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent overflow-hidden border border-border/50">
-                         {item.icon}
-                       </span>
-                      <CardTitle className="text-lg sm:text-xl">{item.title}</CardTitle>
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-center gap-2">
+                         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent overflow-hidden border border-border/50">
+                           {item.icon}
+                         </span>
+                        <CardTitle className="text-lg sm:text-xl">{item.title}</CardTitle>
+                      </div>
+                      {item.location && (
+                        <div className="flex items-center gap-1.5 text-xs text-muted-foreground ml-10">
+                          <MapPin className="h-3 w-3" />
+                          <span>{item.location}</span>
+                        </div>
+                      )}
                     </div>
-                    <span className="text-sm text-muted-foreground sm:ml-auto sm:pl-4">{item.date}</span>
+                    {item.date && (
+                      <span className="text-sm text-muted-foreground sm:ml-auto sm:pl-4">{item.date}</span>
+                    )}
                   </div>
                   <CardDescription>{item.description}</CardDescription>
                 </CardHeader>
