@@ -31,7 +31,7 @@ const journeyData: JourneyItem[] = [
     date: 'February 2026 - Present',
     location: 'Noida, Uttar Pradesh, IND',
     title: 'Associate Product Manager - Moglix',
-    description: "Company Details: India's 13th Unicorn, revolutionising e-commerce specially in industrial supplies and services.",
+    description: "India's 13th Unicorn, revolutionising e-commerce specially in industrial supplies and services.",
     details: [
         "Leading 0→1 build and GTM of an AI-native SaaS vertical at Moglix, transforming B2B procurement & ecommerce through intelligent automation, predictive analytics, and scalable product strategy across enterprise supply chains."
     ],
@@ -40,8 +40,8 @@ const journeyData: JourneyItem[] = [
   {
     type: 'experience',
     icon: (
-      <div className="relative h-full w-full flex items-center justify-center bg-accent/10">
-        <BrainCircuit className="h-5 w-5 text-accent" />
+      <div className="relative h-full w-full">
+        <Image src="/Ind-Pro.jpg" alt="AI Research" fill className="object-cover" />
       </div>
     ),
     date: 'August 2025 - January 2026',
@@ -67,7 +67,7 @@ const journeyData: JourneyItem[] = [
     details: [
         "Improved Personal Loan onboarding and funnel conversion across salaried and self-employed segments by leading a website revamp, fixing key journey issues, and supporting product strategy for the UPI vertical."
     ],
-    startDate: new Date(2024, 5, 30), // Adjusted to appear below JustBaat (July 2024)
+    startDate: new Date(2024, 5, 30), 
   },
   {
     type: 'experience',
