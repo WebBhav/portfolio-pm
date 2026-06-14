@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Briefcase, GraduationCap, FileText, ArrowRight, MapPin } from 'lucide-react';
+import { Briefcase, GraduationCap, FileText, ArrowRight, MapPin, BrainCircuit } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ReadMoreList from '@/components/ui/read-more-list';
 import { Button } from '@/components/ui/button';
@@ -36,6 +36,22 @@ const journeyData: JourneyItem[] = [
         "Leading 0→1 build and GTM of an AI-native SaaS vertical at Moglix, transforming B2B procurement & ecommerce through intelligent automation, predictive analytics, and scalable product strategy across enterprise supply chains."
     ],
     startDate: new Date(2026, 1), 
+  },
+  {
+    type: 'experience',
+    icon: (
+      <div className="relative h-full w-full flex items-center justify-center bg-accent/10">
+        <BrainCircuit className="h-5 w-5 text-accent" />
+      </div>
+    ),
+    date: 'August 2025 - January 2026',
+    location: 'Remote',
+    title: 'AI Product Research - Independent Projects',
+    description: 'Built AI-products using LLMs, RAG, Sentence Transformers, & semantic search architectures for enterprise workflows.',
+    details: [
+        "Designed fintech & SaaS product strategies focused on onboarding, analytics, monetization, & AI-driven automation."
+    ],
+    startDate: new Date(2025, 7, 15), 
   },
   {
     type: 'experience',
