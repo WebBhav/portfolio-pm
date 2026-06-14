@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn('dark', inter.variable)}>
+    <html lang="en" className={cn('dark', inter.variable)} suppressHydrationWarning>
       <body
         className={`antialiased flex flex-col min-h-screen bg-background text-foreground`}
       >
