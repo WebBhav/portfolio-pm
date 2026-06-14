@@ -51,6 +51,7 @@ const journeyData: JourneyItem[] = [
     title: 'AI Product Research - Independent Projects',
     description: 'Built AI-products using LLMs, RAG, Sentence Transformers, & semantic search architectures for enterprise workflows.',
     details: [
+        "Built AI-products using LLMs, RAG, Sentence Transformers, & semantic search architectures for enterprise workflows.",
         "Designed fintech & SaaS product strategies focused on onboarding, analytics, monetization, & AI-driven automation."
     ],
     startDate: new Date(2025, 7, 15), 
