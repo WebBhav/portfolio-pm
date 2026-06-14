@@ -49,7 +49,7 @@ const journeyData: JourneyItem[] = [
     date: 'August 2025 - January 2026',
     location: 'Remote',
     title: 'AI Product Research - Independent Projects',
-    description: 'Built AI-products using LLMs, RAG, Sentence Transformers, & semantic search architectures for enterprise workflows.',
+    description: 'Developed AI-native solutions and product strategies for enterprise and fintech segments.',
     details: [
         "Built AI-products using LLMs, RAG, Sentence Transformers, & semantic search architectures for enterprise workflows.",
         "Designed fintech & SaaS product strategies focused on onboarding, analytics, monetization, & AI-driven automation."
