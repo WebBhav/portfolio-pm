@@ -31,7 +31,7 @@ const journeyData: JourneyItem[] = [
     date: 'February 2026 - Present',
     location: 'Noida, Uttar Pradesh, IND',
     title: 'Associate Product Manager - Moglix',
-    description: "India's 13th Unicorn, revolutionising e-commerce specially in industrial supplies and services.",
+    description: "Company Details: India's 13th Unicorn, revolutionising e-commerce specially in industrial supplies and services.",
     details: [
         "Spearheading AI-driven enterprise transformation, delivering an 80% automated AI-native Procurement-to-Pay platform covering RFQ automation, AI-powered vendor discovery & negotiation, predictive warehouse management, PoD-to-PO invoice matching, & payment reconciliation, leveraging specialized AI agents, RAG architectures, semantic search with Sentence Transformers embeddings, & self-serve prompt-based workflows for autonomous enterprise operations.",
         "Engineering Regex and AI-based Auditors for data quality enforcement, a semantic search engine using data embeddings for product discovery, and a RAG-based validator for automated procurement decision grounding.",
