@@ -33,7 +33,9 @@ const journeyData: JourneyItem[] = [
     title: 'Associate Product Manager - Moglix',
     description: "India's 13th Unicorn, revolutionising e-commerce specially in industrial supplies and services.",
     details: [
-        "Leading 0→1 build and GTM of an AI-native SaaS vertical at Moglix, transforming B2B procurement & ecommerce through intelligent automation, predictive analytics, and scalable product strategy across enterprise supply chains."
+        "Spearheading AI-driven enterprise transformation, delivering an 80% automated AI-native Procurement-to-Pay platform covering RFQ automation, AI-powered vendor discovery & negotiation, predictive warehouse management, PoD-to-PO invoice matching, & payment reconciliation, leveraging specialized AI agents, RAG architectures, semantic search with Sentence Transformers embeddings, & self-serve prompt-based workflows for autonomous enterprise operations.",
+        "Engineering Regex and AI-based Auditors for data quality enforcement, a semantic search engine using data embeddings for product discovery, and a RAG-based validator for automated procurement decision grounding.",
+        "Building an AI Data Analyst for anomaly detection across daily operational reports, proactively surfacing outliers and enabling faster, data-driven interventions at scale."
     ],
     startDate: new Date(2026, 1), 
   },
@@ -57,22 +59,6 @@ const journeyData: JourneyItem[] = [
     type: 'experience',
     icon: (
       <div className="relative h-full w-full">
-        <Image src="/kb.jpg" alt="KreditBee" fill className="object-cover" />
-      </div>
-    ),
-    date: '', 
-    location: 'Bengaluru, Karnataka, IND',
-    title: 'Associate Product Manager - KreditBee',
-    description: 'Company Details: an Instant Personal Loan & Online Credit Provider.',
-    details: [
-        "Improved Personal Loan onboarding and funnel conversion across salaried and self-employed segments by leading a website revamp, fixing key journey issues, and supporting product strategy for the UPI vertical."
-    ],
-    startDate: new Date(2024, 5, 30), 
-  },
-  {
-    type: 'experience',
-    icon: (
-      <div className="relative h-full w-full">
         <Image src="/Jb.jpg" alt="JustBaat" fill className="object-cover" />
       </div>
     ),
@@ -86,6 +72,22 @@ const journeyData: JourneyItem[] = [
       "Led the development of 5+ platforms, including a Self-Serve Platform for AdTech Vertical, an AI Content Generator, and increased B2B2C user acquisition by 11% in 3 months.",
     ],
     startDate: new Date(2024, 6), 
+  },
+  {
+    type: 'experience',
+    icon: (
+      <div className="relative h-full w-full">
+        <Image src="/kb.jpg" alt="KreditBee" fill className="object-cover" />
+      </div>
+    ),
+    date: '', 
+    location: 'Bengaluru, Karnataka, IND',
+    title: 'Associate Product Manager - KreditBee',
+    description: 'Company Details: an Instant Personal Loan & Online Credit Provider.',
+    details: [
+        "Improved Personal Loan onboarding and funnel conversion across salaried and self-employed segments by leading a website revamp, fixing key journey issues, and supporting product strategy for the UPI vertical."
+    ],
+    startDate: new Date(2024, 5, 30), 
   },
   {
     type: 'experience',
