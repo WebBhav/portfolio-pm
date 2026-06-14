@@ -60,14 +60,14 @@ const journeyData: JourneyItem[] = [
         <Image src="/kb.jpg" alt="KreditBee" fill className="object-cover" />
       </div>
     ),
-    date: '', // Remove timeline as requested
+    date: '', 
     location: 'Bengaluru, Karnataka, IND',
     title: 'Associate Product Manager - KreditBee',
     description: 'Company Details: an Instant Personal Loan & Online Credit Provider.',
     details: [
         "Improved Personal Loan onboarding and funnel conversion across salaried and self-employed segments by leading a website revamp, fixing key journey issues, and supporting product strategy for the UPI vertical."
     ],
-    startDate: new Date(2025, 7), 
+    startDate: new Date(2024, 5, 30), // Adjusted to appear below JustBaat (July 2024)
   },
   {
     type: 'experience',
