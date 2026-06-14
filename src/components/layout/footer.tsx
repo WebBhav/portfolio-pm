@@ -1,8 +1,14 @@
+'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="border-t bg-secondary/50">
@@ -13,7 +19,7 @@ const Footer = () => {
           </Link>
           <span className="hidden sm:inline opacity-40">|</span>
           <p className="text-center">
-            &copy; {currentYear} Vaibhav Singhal. All rights reserved.
+            &copy; {year || '2024'} Vaibhav Singhal. All rights reserved.
           </p>
         </div>
       </div>

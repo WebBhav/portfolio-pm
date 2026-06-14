@@ -72,6 +72,7 @@ export default function RootLayout({
     <html lang="en" className={cn('dark', inter.variable)} suppressHydrationWarning>
       <body
         className={`antialiased flex flex-col min-h-screen bg-background text-foreground`}
+        suppressHydrationWarning
       >
         {/* Google Analytics Scripts */}
         <Script
