@@ -132,8 +132,9 @@ const journeyData: JourneyItem[] = [
       </div>
     ),
     date: '2020 - 2024',
+    location: 'Rupnagar, Punjab, IND',
     title: 'Indian Institute of Technology, Ropar',
-    description: 'Rupnagar, Punjab.',
+    description: '',
     details: [
         'Bachelor of Technology (B.Tech) in Mechanical Engineering',
         'CGPA: 7.39'
