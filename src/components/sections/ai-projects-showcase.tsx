@@ -15,49 +15,11 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const idpFlowStyles = `
-.idp-flow, .idp-flow * { box-sizing: border-box; }
-.idp-flow {
-    margin:0; padding:0;
-    background: radial-gradient(ellipse at 50% 0%, #0d1226 0%, #05060c 55%, #020308 100%);
-    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-    color:#e8f4ff; min-height:100%; overflow-x:hidden;
-  }
-.idp-flow .wrap { max-width:1600px; margin:0 auto; padding:36px 20px 60px; }
-.idp-flow .header { text-align:center; margin-bottom:8px; }
-.idp-flow .header h1 {
-    font-size:38px; letter-spacing:1px; margin:0 0 8px;
-    background: linear-gradient(90deg, #00e5ff, #ff37d0 40%, #ffab2e 70%, #c78bff);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-    text-shadow: 0 0 30px rgba(0,229,255,0.2);
-  }
-.idp-flow .header p { margin:0; color:#9db8dd; font-size:16px; letter-spacing:2px; text-transform:uppercase; }
-.idp-flow .legend { display:flex; justify-content:center; gap:26px; flex-wrap:wrap; margin:24px 0 14px; font-size:15px; font-weight:600; color:#cfe4ff; }
-.idp-flow .legend span { display:inline-flex; align-items:center; gap:8px; }
-.idp-flow .legend i { width:12px; height:12px; border-radius:50%; display:inline-block; box-shadow:0 0 8px currentColor, 0 0 3px currentColor; }
-.idp-flow .diagram-frame {
-    position:relative; border-radius:18px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-    border:1px solid rgba(120,160,220,0.15);
-    box-shadow: 0 0 60px rgba(0,80,150,0.15) inset, 0 20px 60px rgba(0,0,0,0.5);
-    padding:10px;
-  }
-.idp-flow svg { display:block; width:100%; height:auto; }
-.idp-flow .node-box { fill: rgba(8,14,28,0.88); stroke: var(--nc); stroke-width:2.5; filter:url(#softGlow); }
-.idp-flow .node-glow { fill:none; stroke:var(--ng); stroke-width:9; opacity:0.18; filter:blur(6px); }
-.idp-flow .node { animation:idp-flow-pulseNode 4.5s ease-in-out infinite; }
-@keyframes idp-flow-pulseNode { 0%,100% { filter: drop-shadow(0 0 2px var(--ng)); } 50% { filter: drop-shadow(0 0 10px var(--ng)); } }
-.idp-flow .edge-glow { fill:none; stroke:var(--ec); stroke-width:10; opacity:0.18; filter:blur(3px); }
-.idp-flow .edge-line { fill:none; stroke:var(--ec); stroke-width:1.8; opacity:0.35; }
-.idp-flow .edge-flow {
-    fill:none; stroke:var(--ec); stroke-width:3; stroke-linecap:round;
-    stroke-dasharray:14 220; filter:url(#lineGlow) drop-shadow(0 0 6px var(--ec));
-    animation-name:idp-flow-flowDash; animation-timing-function:linear; animation-iteration-count:infinite;
-  }
-@keyframes idp-flow-flowDash { from { stroke-dashoffset:234; } to { stroke-dashoffset:0; } }
-`;
-
-function IdpFlowDiagram() {
+/**
+ * IdpFlowDiagram
+ * Animated neon flow diagram for the IDP project.
+ */
+const IdpFlowDiagram = () => {
   return (
     <div className="idp-flow wrap">
       <div className="header">
@@ -354,67 +316,593 @@ function IdpFlowDiagram() {
     </g></g>
 </svg>` }}
       />
-      <style>{idpFlowStyles}</style>
+      <style>{`.idp-flow, .idp-flow * { box-sizing: border-box; }
+.idp-flow {
+    margin:0; padding:0;
+    background: radial-gradient(ellipse at 50% 0%, #0d1226 0%, #05060c 55%, #020308 100%);
+    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    color:#e8f4ff; min-height:100%; overflow-x:hidden;
+  }
+.idp-flow .wrap { max-width:1600px; margin:0 auto; padding:36px 20px 60px; }
+.idp-flow .header { text-align:center; margin-bottom:8px; }
+.idp-flow .header h1 {
+    font-size:38px; letter-spacing:1px; margin:0 0 8px;
+    background: linear-gradient(90deg, #00e5ff, #ff37d0 40%, #ffab2e 70%, #c78bff);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 0 30px rgba(0,229,255,0.2);
+  }
+.idp-flow .header p { margin:0; color:#9db8dd; font-size:16px; letter-spacing:2px; text-transform:uppercase; }
+.idp-flow .legend { display:flex; justify-content:center; gap:26px; flex-wrap:wrap; margin:24px 0 14px; font-size:15px; font-weight:600; color:#cfe4ff; }
+.idp-flow .legend span { display:inline-flex; align-items:center; gap:8px; }
+.idp-flow .legend i { width:12px; height:12px; border-radius:50%; display:inline-block; box-shadow:0 0 8px currentColor, 0 0 3px currentColor; }
+.idp-flow .diagram-frame {
+    position:relative; border-radius:18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    border:1px solid rgba(120,160,220,0.15);
+    box-shadow: 0 0 60px rgba(0,80,150,0.15) inset, 0 20px 60px rgba(0,0,0,0.5);
+    padding:10px;
+  }
+.idp-flow svg { display:block; width:100%; height:auto; }
+.idp-flow .node-box { fill: rgba(8,14,28,0.88); stroke: var(--nc); stroke-width:2.5; filter:url(#softGlow); }
+.idp-flow .node-glow { fill:none; stroke:var(--ng); stroke-width:9; opacity:0.18; filter:blur(6px); }
+.idp-flow .node { animation:idp-flow-pulseNode 4.5s ease-in-out infinite; }
+@keyframes idp-flow-pulseNode { 0%,100% { filter: drop-shadow(0 0 2px var(--ng)); } 50% { filter: drop-shadow(0 0 10px var(--ng)); } }
+.idp-flow .edge-glow { fill:none; stroke:var(--ec); stroke-width:10; opacity:0.18; filter:blur(3px); }
+.idp-flow .edge-line { fill:none; stroke:var(--ec); stroke-width:1.8; opacity:0.35; }
+.idp-flow .edge-flow {
+    fill:none; stroke:var(--ec); stroke-width:3; stroke-linecap:round;
+    stroke-dasharray:14 220; filter:url(#lineGlow) drop-shadow(0 0 6px var(--ec));
+    animation-name:idp-flow-flowDash; animation-timing-function:linear; animation-iteration-count:infinite;
+  }
+@keyframes idp-flow-flowDash { from { stroke-dashoffset:234; } to { stroke-dashoffset:0; } }`}</style>
     </div>
   );
 }
 
-const argFlowchartHtml = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<style>
-  :root { --bg1: #05060c; --bg2: #0a0f1e; }
-  * { box-sizing: border-box; }
-  .arg-flow-container {
+/**
+ * ArgSystemFlow
+ * Animated neon flow diagram for the ARG project.
+ */
+const ArgSystemFlow = () => {
+  return (
+    <div className="arg-flow wrap">
+      <div className="header">
+        <h1>Automated Revenue Generator</h1>
+        <p>End-to-end system flow · ARG</p>
+      </div>
+      <div
+        className="legend"
+        dangerouslySetInnerHTML={{ __html: `
+      <span><i style="color:#00e5ff"></i> AI Content Generator</span>
+      <span><i style="color:#ff37d0"></i> Website Generator/Destroyer</span>
+      <span><i style="color:#ffab2e"></i> Media Pipeline</span>
+      <span><i style="color:#7dffb0"></i> Publish &amp; Monetize</span>
+    ` }}
+      />
+      <div
+        className="diagram-frame"
+        dangerouslySetInnerHTML={{ __html: `<svg viewBox="19.319999999999993 2346.84 1961.48 1864.4799999999996" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="lineGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <marker id="arrow-content" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00e5ff"/>
+    </marker>
+    <marker id="arrow-website" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff37d0"/>
+    </marker>
+    <marker id="arrow-media" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffab2e"/>
+    </marker>
+    <marker id="arrow-merge" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7dffb0"/>
+    </marker>
+  </defs>
+  <g class="edges">
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 1398.8,2503.5 C 1398.8,2558.6 1755.0,2558.6 1755.0,2613.8"/>
+      <path class="edge-line" d="M 1398.8,2503.5 C 1398.8,2558.6 1755.0,2558.6 1755.0,2613.8" marker-end="url(#arrow-website)"/>
+      <path class="edge-flow" d="M 1398.8,2503.5 C 1398.8,2558.6 1755.0,2558.6 1755.0,2613.8" style="animation-duration:1.60s; animation-delay:-0.00s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 1097.2,2503.5 C 1097.2,2539.6 740.0,2539.6 740.0,2575.8"/>
+      <path class="edge-line" d="M 1097.2,2503.5 C 1097.2,2539.6 740.0,2539.6 740.0,2575.8" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 1097.2,2503.5 C 1097.2,2539.6 740.0,2539.6 740.0,2575.8" style="animation-duration:1.95s; animation-delay:-0.18s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 1755.0,2704.2 C 1755.0,2724.0 1755.0,2724.0 1755.0,2743.7"/>
+      <path class="edge-line" d="M 1755.0,2704.2 C 1755.0,2724.0 1755.0,2724.0 1755.0,2743.7" marker-end="url(#arrow-website)"/>
+      <path class="edge-flow" d="M 1755.0,2704.2 C 1755.0,2724.0 1755.0,2724.0 1755.0,2743.7" style="animation-duration:2.30s; animation-delay:-0.36s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 1755.0,2806.3 C 1755.0,2827.0 1755.5,2827.0 1755.5,2847.7"/>
+      <path class="edge-line" d="M 1755.0,2806.3 C 1755.0,2827.0 1755.5,2827.0 1755.5,2847.7" marker-end="url(#arrow-website)"/>
+      <path class="edge-flow" d="M 1755.0,2806.3 C 1755.0,2827.0 1755.5,2827.0 1755.5,2847.7" style="animation-duration:2.65s; animation-delay:-0.54s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 1755.5,2910.3 C 1755.5,2937.0 1755.5,2937.0 1755.5,2963.7"/>
+      <path class="edge-line" d="M 1755.5,2910.3 C 1755.5,2937.0 1755.5,2937.0 1755.5,2963.7" marker-end="url(#arrow-website)"/>
+      <path class="edge-flow" d="M 1755.5,2910.3 C 1755.5,2937.0 1755.5,2937.0 1755.5,2963.7" style="animation-duration:3.00s; animation-delay:-0.72s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 1755.5,3026.3 C 1755.5,3052.0 1755.0,3052.0 1755.0,3077.8"/>
+      <path class="edge-line" d="M 1755.5,3026.3 C 1755.5,3052.0 1755.0,3052.0 1755.0,3077.8" marker-end="url(#arrow-website)"/>
+      <path class="edge-flow" d="M 1755.5,3026.3 C 1755.5,3052.0 1755.0,3052.0 1755.0,3077.8" style="animation-duration:1.60s; animation-delay:-0.90s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 740.0,2666.2 C 740.0,2686.0 740.0,2686.0 740.0,2705.7"/>
+      <path class="edge-line" d="M 740.0,2666.2 C 740.0,2686.0 740.0,2686.0 740.0,2705.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 740.0,2666.2 C 740.0,2686.0 740.0,2686.0 740.0,2705.7" style="animation-duration:1.95s; animation-delay:-1.08s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 740.0,2768.3 C 740.0,2841.0 740.0,2841.0 740.0,2913.7"/>
+      <path class="edge-line" d="M 740.0,2768.3 C 740.0,2841.0 740.0,2841.0 740.0,2913.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 740.0,2768.3 C 740.0,2841.0 740.0,2841.0 740.0,2913.7" style="animation-duration:2.30s; animation-delay:-0.00s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 740.0,2976.3 C 740.0,2997.0 740.0,2997.0 740.0,3017.7"/>
+      <path class="edge-line" d="M 740.0,2976.3 C 740.0,2997.0 740.0,2997.0 740.0,3017.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 740.0,2976.3 C 740.0,2997.0 740.0,2997.0 740.0,3017.7" style="animation-duration:2.65s; animation-delay:-0.18s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 740.0,3080.3 C 740.0,3107.0 740.0,3107.0 740.0,3133.7"/>
+      <path class="edge-line" d="M 740.0,3080.3 C 740.0,3107.0 740.0,3107.0 740.0,3133.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 740.0,3080.3 C 740.0,3107.0 740.0,3107.0 740.0,3133.7" style="animation-duration:3.00s; animation-delay:-0.36s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 614.7,3180.0 C 614.7,3324.9 208.0,3324.9 208.0,3469.7"/>
+      <path class="edge-line" d="M 614.7,3180.0 C 614.7,3324.9 208.0,3324.9 208.0,3469.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 614.7,3180.0 C 614.7,3324.9 208.0,3324.9 208.0,3469.7" style="animation-duration:1.60s; animation-delay:-0.54s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 614.7,3195.1 C 614.7,3332.4 473.5,3332.4 473.5,3469.7"/>
+      <path class="edge-line" d="M 614.7,3195.1 C 614.7,3332.4 473.5,3332.4 473.5,3469.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 614.7,3195.1 C 614.7,3332.4 473.5,3332.4 473.5,3469.7" style="animation-duration:1.95s; animation-delay:-0.72s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 740.0,3196.3 C 740.0,3223.0 739.5,3223.0 739.5,3249.7"/>
+      <path class="edge-line" d="M 740.0,3196.3 C 740.0,3223.0 739.5,3223.0 739.5,3249.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 740.0,3196.3 C 740.0,3223.0 739.5,3223.0 739.5,3249.7" style="animation-duration:2.30s; animation-delay:-0.90s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 862.8,3196.3 C 862.8,3333.0 989.5,3333.0 989.5,3469.7"/>
+      <path class="edge-line" d="M 862.8,3196.3 C 862.8,3333.0 989.5,3333.0 989.5,3469.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 862.8,3196.3 C 862.8,3333.0 989.5,3333.0 989.5,3469.7" style="animation-duration:2.65s; animation-delay:-1.08s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 865.3,3180.7 C 865.3,3325.2 1242.5,3325.2 1242.5,3469.7"/>
+      <path class="edge-line" d="M 865.3,3180.7 C 865.3,3325.2 1242.5,3325.2 1242.5,3469.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 865.3,3180.7 C 865.3,3325.2 1242.5,3325.2 1242.5,3469.7" style="animation-duration:3.00s; animation-delay:-0.00s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 739.5,3312.3 C 739.5,3333.0 739.5,3333.0 739.5,3353.7"/>
+      <path class="edge-line" d="M 739.5,3312.3 C 739.5,3333.0 739.5,3333.0 739.5,3353.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 739.5,3312.3 C 739.5,3333.0 739.5,3333.0 739.5,3353.7" style="animation-duration:1.60s; animation-delay:-0.18s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 739.5,3416.3 C 739.5,3507.0 740.5,3507.0 740.5,3597.7"/>
+      <path class="edge-line" d="M 739.5,3416.3 C 739.5,3507.0 740.5,3507.0 740.5,3597.7" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 739.5,3416.3 C 739.5,3507.0 740.5,3507.0 740.5,3597.7" style="animation-duration:1.95s; animation-delay:-0.36s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 208.0,3532.3 C 208.0,3574.4 634.4,3574.4 634.4,3616.5"/>
+      <path class="edge-line" d="M 208.0,3532.3 C 208.0,3574.4 634.4,3574.4 634.4,3616.5" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 208.0,3532.3 C 208.0,3574.4 634.4,3574.4 634.4,3616.5" style="animation-duration:2.30s; animation-delay:-0.54s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 473.5,3532.3 C 473.5,3567.8 634.4,3567.8 634.4,3603.3"/>
+      <path class="edge-line" d="M 473.5,3532.3 C 473.5,3567.8 634.4,3567.8 634.4,3603.3" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 473.5,3532.3 C 473.5,3567.8 634.4,3567.8 634.4,3603.3" style="animation-duration:2.65s; animation-delay:-0.72s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 989.5,3532.3 C 989.5,3567.2 846.6,3567.2 846.6,3602.1"/>
+      <path class="edge-line" d="M 989.5,3532.3 C 989.5,3567.2 846.6,3567.2 846.6,3602.1" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 989.5,3532.3 C 989.5,3567.2 846.6,3567.2 846.6,3602.1" style="animation-duration:3.00s; animation-delay:-0.90s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 1242.5,3532.3 C 1242.5,3573.8 846.6,3573.8 846.6,3615.2"/>
+      <path class="edge-line" d="M 1242.5,3532.3 C 1242.5,3573.8 846.6,3573.8 846.6,3615.2" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 1242.5,3532.3 C 1242.5,3573.8 846.6,3573.8 846.6,3615.2" style="animation-duration:1.60s; animation-delay:-1.08s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ffab2e;">
+      <path class="edge-glow" d="M 1490.0,3416.3 C 1490.0,3436.0 1490.0,3436.0 1490.0,3455.8"/>
+      <path class="edge-line" d="M 1490.0,3416.3 C 1490.0,3436.0 1490.0,3436.0 1490.0,3455.8" marker-end="url(#arrow-media)"/>
+      <path class="edge-flow" d="M 1490.0,3416.3 C 1490.0,3436.0 1490.0,3436.0 1490.0,3455.8" style="animation-duration:1.95s; animation-delay:-0.00s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ffab2e;">
+      <path class="edge-glow" d="M 1490.0,3546.2 C 1490.0,3572.0 1490.0,3572.0 1490.0,3597.7"/>
+      <path class="edge-line" d="M 1490.0,3546.2 C 1490.0,3572.0 1490.0,3572.0 1490.0,3597.7" marker-end="url(#arrow-media)"/>
+      <path class="edge-flow" d="M 1490.0,3546.2 C 1490.0,3572.0 1490.0,3572.0 1490.0,3597.7" style="animation-duration:2.30s; animation-delay:-0.18s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 740.5,3660.3 C 740.5,3704.6 1398.4,3704.6 1398.4,3748.9"/>
+      <path class="edge-line" d="M 740.5,3660.3 C 740.5,3704.6 1398.4,3704.6 1398.4,3748.9" marker-end="url(#arrow-merge)"/>
+      <path class="edge-flow" d="M 740.5,3660.3 C 740.5,3704.6 1398.4,3704.6 1398.4,3748.9" style="animation-duration:2.65s; animation-delay:-0.36s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1490.0,3660.3 C 1490.0,3686.0 1490.0,3686.0 1490.0,3711.8"/>
+      <path class="edge-line" d="M 1490.0,3660.3 C 1490.0,3686.0 1490.0,3686.0 1490.0,3711.8" marker-end="url(#arrow-merge)"/>
+      <path class="edge-flow" d="M 1490.0,3660.3 C 1490.0,3686.0 1490.0,3686.0 1490.0,3711.8" style="animation-duration:3.00s; animation-delay:-0.54s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1755.0,3168.2 C 1755.0,3451.8 1581.6,3451.8 1581.6,3735.3"/>
+      <path class="edge-line" d="M 1755.0,3168.2 C 1755.0,3451.8 1581.6,3451.8 1581.6,3735.3" marker-end="url(#arrow-merge)"/>
+      <path class="edge-flow" d="M 1755.0,3168.2 C 1755.0,3451.8 1581.6,3451.8 1581.6,3735.3" style="animation-duration:1.60s; animation-delay:-0.72s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1490.0,3802.2 C 1490.0,3821.0 1490.5,3821.0 1490.5,3839.8"/>
+      <path class="edge-line" d="M 1490.0,3802.2 C 1490.0,3821.0 1490.5,3821.0 1490.5,3839.8" marker-end="url(#arrow-merge)"/>
+      <path class="edge-flow" d="M 1490.0,3802.2 C 1490.0,3821.0 1490.5,3821.0 1490.5,3839.8" style="animation-duration:1.95s; animation-delay:-0.90s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1400.0,3930.2 C 1400.0,3950.0 1363.0,3950.0 1363.0,3969.7"/>
+      <path class="edge-line" d="M 1400.0,3930.2 C 1400.0,3950.0 1363.0,3950.0 1363.0,3969.7" marker-end="url(#arrow-merge)"/>
+      <path class="edge-flow" d="M 1400.0,3930.2 C 1400.0,3950.0 1363.0,3950.0 1363.0,3969.7" style="animation-duration:2.30s; animation-delay:-1.08s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1581.0,3930.2 C 1581.0,3950.0 1617.5,3950.0 1617.5,3969.7"/>
+      <path class="edge-line" d="M 1581.0,3930.2 C 1581.0,3950.0 1617.5,3950.0 1617.5,3969.7" marker-end="url(#arrow-merge)"/>
+      <path class="edge-flow" d="M 1581.0,3930.2 C 1581.0,3950.0 1617.5,3950.0 1617.5,3969.7" style="animation-duration:2.65s; animation-delay:-0.00s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1363.0,4032.3 C 1363.0,4053.0 1413.6,4053.0 1413.6,4073.7"/>
+      <path class="edge-line" d="M 1363.0,4032.3 C 1363.0,4053.0 1413.6,4053.0 1413.6,4073.7" marker-end="url(#arrow-merge)"/>
+      <path class="edge-flow" d="M 1363.0,4032.3 C 1363.0,4053.0 1413.6,4053.0 1413.6,4073.7" style="animation-duration:3.00s; animation-delay:-0.18s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1617.5,4032.3 C 1617.5,4053.0 1567.4,4053.0 1567.4,4073.7"/>
+      <path class="edge-line" d="M 1617.5,4032.3 C 1617.5,4053.0 1567.4,4053.0 1567.4,4073.7" marker-end="url(#arrow-merge)"/>
+      <path class="edge-flow" d="M 1617.5,4032.3 C 1617.5,4053.0 1567.4,4053.0 1567.4,4073.7" style="animation-duration:1.60s; animation-delay:-0.36s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 740.0,2976.3 C 740.0,3165.9 1507.9,3165.9 1507.9,3355.5"/>
+      <path class="edge-line" d="M 740.0,2976.3 C 740.0,3165.9 1507.9,3165.9 1507.9,3355.5" marker-end="url(#arrow-content)"/>
+      <path class="edge-flow" d="M 740.0,2976.3 C 740.0,3165.9 1507.9,3165.9 1507.9,3355.5" style="animation-duration:1.95s; animation-delay:-0.54s;"/>
+    </g></g>
+  <g class="labels">
+    <g class="edge-label">
+      <rect x="649.2" y="2815.0" width="181.6" height="30" rx="15"/>
+      <text x="740.0" y="2836.0" text-anchor="middle">Fetch Trending Topics</text>
+    </g>
+
+    <g class="edge-label">
+      <rect x="630.2" y="3481.0" width="219.6" height="30" rx="15"/>
+      <text x="740.0" y="3502.0" text-anchor="middle">Becomes High Value Content</text>
+    </g></g>
+  <g class="nodes">
+    <g class="node node-root" style="--nc:#ffd24d; --ng:#ffcf3d;">
+      <rect class="node-glow" x="1097.2" y="2421.8" width="301.6" height="118.3" rx="14"/>
+      <rect class="node-box" x="1097.2" y="2421.8" width="301.6" height="118.3" rx="14"/>
+      <text class="node-text" fill="#fff6d8" text-anchor="middle" font-size="19" font-weight="700"><tspan x="1248.0" y="2470.0">Automated Revenue Generator</tspan><tspan x="1248.0" y="2492.0">ARG</tspan></text>
+    </g>
+
+    <g class="node node-website" style="--nc:#ff37d0; --ng:#ff37d0;">
+      <rect class="node-glow" x="1610.0" y="2613.8" width="290.0" height="90.5" rx="14"/>
+      <rect class="node-box" x="1610.0" y="2613.8" width="290.0" height="90.5" rx="14"/>
+      <text class="node-text" fill="#ffe0f8" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1755.0" y="2648.0">Part 2: Automated Website</tspan><tspan x="1755.0" y="2670.0">Generator/Destroyer</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="589.2" y="2575.8" width="301.6" height="90.5" rx="14"/>
+      <rect class="node-box" x="589.2" y="2575.8" width="301.6" height="90.5" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="740.0" y="2621.0">Part 1: AI Content Generator</tspan></text>
+    </g>
+
+    <g class="node node-website" style="--nc:#ff37d0; --ng:#ff37d0;">
+      <rect class="node-glow" x="1656.4" y="2743.7" width="197.2" height="62.6" rx="14"/>
+      <rect class="node-box" x="1656.4" y="2743.7" width="197.2" height="62.6" rx="14"/>
+      <text class="node-text" fill="#ffe0f8" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1755.0" y="2775.0">Create Website</tspan></text>
+    </g>
+
+    <g class="node node-website" style="--nc:#ff37d0; --ng:#ff37d0;">
+      <rect class="node-glow" x="1650.5" y="2847.7" width="210.0" height="62.6" rx="14"/>
+      <rect class="node-box" x="1650.5" y="2847.7" width="210.0" height="62.6" rx="14"/>
+      <text class="node-text" fill="#ffe0f8" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1755.5" y="2879.0">Make Ads Ready</tspan></text>
+    </g>
+
+    <g class="node node-website" style="--nc:#ff37d0; --ng:#ff37d0;">
+      <rect class="node-glow" x="1633.1" y="2963.7" width="244.8" height="62.6" rx="14"/>
+      <rect class="node-box" x="1633.1" y="2963.7" width="244.8" height="62.6" rx="14"/>
+      <text class="node-text" fill="#ffe0f8" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1755.5" y="2995.0">Implement Tech SEO</tspan></text>
+    </g>
+
+    <g class="node node-website-done" style="--nc:#00ffb0; --ng:#00ffb0;">
+      <rect class="node-glow" x="1604.2" y="3077.8" width="301.6" height="90.5" rx="14"/>
+      <rect class="node-box" x="1604.2" y="3077.8" width="301.6" height="90.5" rx="14"/>
+      <text class="node-text" fill="#dcfff0" text-anchor="middle" font-size="19" font-weight="700"><tspan x="1755.0" y="3123.0">Website Infrastructure Ready</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="614.7" y="2705.7" width="250.6" height="62.6" rx="14"/>
+      <rect class="node-box" x="614.7" y="2705.7" width="250.6" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="740.0" y="2737.0">Google Trends API</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="640.2" y="2913.7" width="199.5" height="62.6" rx="14"/>
+      <rect class="node-box" x="640.2" y="2913.7" width="199.5" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="740.0" y="2945.0">Get References</tspan></text>
+    </g>
+
+    <g class="node node-content-done" style="--nc:#00ffb0; --ng:#00ffb0;">
+      <rect class="node-glow" x="590.4" y="3017.7" width="299.3" height="62.6" rx="14"/>
+      <rect class="node-box" x="590.4" y="3017.7" width="299.3" height="62.6" rx="14"/>
+      <text class="node-text" fill="#dcfff0" text-anchor="middle" font-size="19" font-weight="700"><tspan x="740.0" y="3049.0">Feed to OpenAI Playground</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="614.7" y="3133.7" width="250.6" height="62.6" rx="14"/>
+      <rect class="node-box" x="614.7" y="3133.7" width="250.6" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="740.0" y="3165.0">Generate with Prompt</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="94.3" y="3469.7" width="227.4" height="62.6" rx="14"/>
+      <rect class="node-box" x="94.3" y="3469.7" width="227.4" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="208.0" y="3501.0">Create Catchy Title</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="337.2" y="3469.7" width="272.6" height="62.6" rx="14"/>
+      <rect class="node-box" x="337.2" y="3469.7" width="272.6" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="473.5" y="3501.0">Create Short Description</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="618.3" y="3249.7" width="242.4" height="62.6" rx="14"/>
+      <rect class="node-box" x="618.3" y="3249.7" width="242.4" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="739.5" y="3281.0">Create Body Content</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="872.9" y="3469.7" width="233.2" height="62.6" rx="14"/>
+      <rect class="node-box" x="872.9" y="3469.7" width="233.2" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="989.5" y="3501.0">Generate Keywords</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="1123.6" y="3469.7" width="237.8" height="62.6" rx="14"/>
+      <rect class="node-box" x="1123.6" y="3469.7" width="237.8" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1242.5" y="3501.0">Other relevant information</tspan></text>
+    </g>
+
+    <g class="node node-content" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="640.3" y="3353.7" width="198.4" height="62.6" rx="14"/>
+      <rect class="node-box" x="640.3" y="3353.7" width="198.4" height="62.6" rx="14"/>
+      <text class="node-text" fill="#d6faff" text-anchor="middle" font-size="19" font-weight="600"><tspan x="739.5" y="3385.0">Text Humanizer</tspan></text>
+    </g>
+
+    <g class="node node-content-done" style="--nc:#00ffb0; --ng:#00ffb0;">
+      <rect class="node-glow" x="634.4" y="3597.7" width="212.3" height="62.6" rx="14"/>
+      <rect class="node-box" x="634.4" y="3597.7" width="212.3" height="62.6" rx="14"/>
+      <text class="node-text" fill="#dcfff0" text-anchor="middle" font-size="19" font-weight="700"><tspan x="740.5" y="3629.0">Content Package</tspan></text>
+    </g>
+
+    <g class="node node-media" style="--nc:#ffab2e; --ng:#ffab2e;">
+      <rect class="node-glow" x="1381.0" y="3353.7" width="218.1" height="62.6" rx="14"/>
+      <rect class="node-box" x="1381.0" y="3353.7" width="218.1" height="62.6" rx="14"/>
+      <text class="node-text" fill="#fff1dc" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1490.0" y="3385.0">Reference Picture</tspan></text>
+    </g>
+
+    <g class="node node-media" style="--nc:#ffab2e; --ng:#ffab2e;">
+      <rect class="node-glow" x="1379.8" y="3455.8" width="220.4" height="90.5" rx="14"/>
+      <rect class="node-box" x="1379.8" y="3455.8" width="220.4" height="90.5" rx="14"/>
+      <text class="node-text" fill="#fff1dc" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1490.0" y="3490.0">Add Website Logo</tspan><tspan x="1490.0" y="3512.0">&amp; Attribution</tspan></text>
+    </g>
+
+    <g class="node node-media" style="--nc:#ffab2e; --ng:#ffab2e;">
+      <rect class="node-glow" x="1391.4" y="3597.7" width="197.2" height="62.6" rx="14"/>
+      <rect class="node-box" x="1391.4" y="3597.7" width="197.2" height="62.6" rx="14"/>
+      <text class="node-text" fill="#fff1dc" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1490.0" y="3629.0">Media Package</tspan></text>
+    </g>
+
+    <g class="node node-merge-done" style="--nc:#00ffb0; --ng:#00ffb0;">
+      <rect class="node-glow" x="1398.4" y="3711.8" width="183.3" height="90.5" rx="14"/>
+      <rect class="node-box" x="1398.4" y="3711.8" width="183.3" height="90.5" rx="14"/>
+      <text class="node-text" fill="#dcfff0" text-anchor="middle" font-size="19" font-weight="700"><tspan x="1490.0" y="3746.0">Website CMS</tspan><tspan x="1490.0" y="3768.0">by AWG</tspan></text>
+    </g>
+
+    <g class="node node-merge" style="--nc:#7dffb0; --ng:#39ff88;">
+      <rect class="node-glow" x="1377.4" y="3839.8" width="226.2" height="90.5" rx="14"/>
+      <rect class="node-box" x="1377.4" y="3839.8" width="226.2" height="90.5" rx="14"/>
+      <text class="node-text" fill="#e4ffef" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1490.5" y="3874.0">Published Website</tspan><tspan x="1490.5" y="3896.0">with Content &amp; Ads</tspan></text>
+    </g>
+
+    <g class="node node-merge" style="--nc:#7dffb0; --ng:#39ff88;">
+      <rect class="node-glow" x="1243.5" y="3969.7" width="239.0" height="62.6" rx="14"/>
+      <rect class="node-box" x="1243.5" y="3969.7" width="239.0" height="62.6" rx="14"/>
+      <text class="node-text" fill="#e4ffef" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1363.0" y="4001.0">Drive Organic Traffic</tspan></text>
+    </g>
+
+    <g class="node node-merge" style="--nc:#7dffb0; --ng:#39ff88;">
+      <rect class="node-glow" x="1499.8" y="3969.7" width="235.5" height="62.6" rx="14"/>
+      <rect class="node-box" x="1499.8" y="3969.7" width="235.5" height="62.6" rx="14"/>
+      <text class="node-text" fill="#e4ffef" text-anchor="middle" font-size="19" font-weight="600"><tspan x="1617.5" y="4001.0">Run Advertisements</tspan></text>
+    </g>
+
+    <g class="node node-merge-final" style="--nc:#c6ff4d; --ng:#c6ff4d;">
+      <rect class="node-glow" x="1377.4" y="4073.7" width="226.2" height="62.6" rx="14"/>
+      <rect class="node-box" x="1377.4" y="4073.7" width="226.2" height="62.6" rx="14"/>
+      <text class="node-text" fill="#f4ffdf" text-anchor="middle" font-size="19" font-weight="700"><tspan x="1490.5" y="4105.0">Generate Revenue</tspan></text>
+    </g></g>
+</svg>` }}
+      />
+      <style>{`.arg-flow, .arg-flow * { box-sizing: border-box; }
+.arg-flow {
+    margin: 0; padding: 0;
     background: radial-gradient(ellipse at 50% 0%, #0d1226 0%, #05060c 55%, #020308 100%);
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
     color: #e8f4ff;
-    padding: 36px 20px 60px;
     min-height: 100%;
+    overflow-x: hidden;
   }
-  .arg-header { text-align: center; margin-bottom: 8px; }
-  .arg-header h1 {
-    font-size: 28px; letter-spacing: 1px; margin: 0 0 6px;
+.arg-flow .wrap {
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 36px 20px 60px;
+  }
+.arg-flow .header {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+.arg-flow .header h1 {
+    font-size: 38px;
+    letter-spacing: 1px;
+    margin: 0 0 8px;
     background: linear-gradient(90deg, #00e5ff, #ff37d0 60%, #c6ff4d);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(0,229,255,0.25);
   }
-  .arg-header p { margin: 0; color: #7fa0c9; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
-  .arg-legend { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin: 20px 0 10px; font-size: 12px; color: #b9d2ee; }
-  .arg-legend span { display: inline-flex; align-items: center; gap: 7px; }
-  .arg-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px currentColor; }
-  .node-box { fill: rgba(8, 14, 28, 0.85); stroke-width: 2; }
-  .edge-flow {
-    fill: none; stroke-width: 2.6; stroke-linecap: round;
-    stroke-dasharray: 14 220; animation: flowDash 3s linear infinite;
+.arg-flow .header p {
+    margin: 0;
+    color: #9db8dd;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
-  @keyframes flowDash { from { stroke-dashoffset: 234; } to { stroke-dashoffset: 0; } }
-</style>
-</head>
-<body>
-  <div class="arg-flow-container">
-    <div class="arg-header">
-      <h1>Automated Revenue Generator</h1>
-      <p>End-to-end system flow · ARG</p>
+.arg-flow .legend {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap;
+    margin: 24px 0 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #cfe4ff;
+  }
+.arg-flow .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+.arg-flow .legend i {
+    width: 12px; height: 12px; border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px currentColor, 0 0 3px currentColor;
+  }
+.arg-flow .diagram-frame {
+    position: relative;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    border: 1px solid rgba(120,160,220,0.15);
+    box-shadow: 0 0 60px rgba(0,80,150,0.15) inset, 0 20px 60px rgba(0,0,0,0.5);
+    padding: 10px;
+  }
+.arg-flow svg { display: block; width: 100%; height: auto; }
+.arg-flow /* nodes */
+  .node-box {
+    fill: rgba(8, 14, 28, 0.88);
+    stroke: var(--nc);
+    stroke-width: 2.5;
+    filter: url(#softGlow);
+  }
+.arg-flow .node-glow {
+    fill: none;
+    stroke: var(--ng);
+    stroke-width: 9;
+    opacity: 0.16;
+    filter: blur(6px);
+  }
+.arg-flow .node-text {
+    font-family: 'Segoe UI', system-ui, Arial, sans-serif;
+  }
+.arg-flow .node {
+    animation:arg-flow-pulseNode 4.5s ease-in-out infinite;
+  }
+@keyframes arg-flow-pulseNode {
+    0%, 100% { filter: drop-shadow(0 0 2px var(--ng)); }
+    50% { filter: drop-shadow(0 0 10px var(--ng)); }
+  }
+.arg-flow /* edges */
+  .edge-glow {
+    fill: none;
+    stroke: var(--ec);
+    stroke-width: 10;
+    opacity: 0.18;
+    filter: blur(3px);
+  }
+.arg-flow .edge-line {
+    fill: none;
+    stroke: var(--ec);
+    stroke-width: 1.8;
+    opacity: 0.35;
+  }
+.arg-flow .edge-flow {
+    fill: none;
+    stroke: var(--ec);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 14 220;
+    filter: url(#lineGlow) drop-shadow(0 0 6px var(--ec));
+    animation-name:arg-flow-flowDash;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+@keyframes arg-flow-flowDash {
+    from { stroke-dashoffset: 234; }
+    to { stroke-dashoffset: 0; }
+  }
+.arg-flow .edge-label rect {
+    fill: rgba(6,10,22,0.9);
+    stroke: rgba(120,160,220,0.35);
+    stroke-width: 1;
+  }
+.arg-flow .edge-label text {
+    fill: #bfe8ff;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: italic;
+  }`}</style>
     </div>
-    <div class="arg-legend">
-      <span><i style="background:#00e5ff"></i> AI Content Generator</span>
-      <span><i style="background:#ff37d0"></i> Website Generator</span>
-      <span><i style="background:#ffab2e"></i> Media Pipeline</span>
-      <span><i style="background:#7dffb0"></i> Publish</span>
-    </div>
-    <svg viewBox="60 2390 1860 1780" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
-      <g style="--ec:#ff37d0;">
-        <path class="edge-flow" d="M 1378,2500 C 1378,2560 1755,2560 1755,2620" stroke="#ff37d0"/>
-      </g>
-      <rect class="node-box" x="1118" y="2430" width="260" height="102" rx="12" stroke="#ffd24d"/>
-      <text x="1248" y="2480" text-anchor="middle" fill="#fff" font-size="16">ARG Engine</text>
-    </svg>
-  </div>
-</body>
-</html>
-`;
+  );
+}
 
 const projects = [
   {
@@ -581,7 +1069,7 @@ const AiProjectsShowcase = () => {
             {selectedFlowchart === 'idp-html' ? (
               <IdpFlowDiagram />
             ) : selectedFlowchart === 'arg-html' ? (
-              <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: argFlowchartHtml }} />
+              <ArgSystemFlow />
             ) : (
               <div 
                 className="relative min-h-full transition-transform duration-200 ease-out origin-top-left flex items-start justify-center p-4"
