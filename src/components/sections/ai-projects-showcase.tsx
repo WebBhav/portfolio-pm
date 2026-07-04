@@ -15,71 +15,349 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const idpFlowchartHtml = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<style>
-  :root { --bg1:#05060c; --bg2:#0a0f1e; }
-  * { box-sizing: border-box; }
-  .arg-flow-container {
+const idpFlowStyles = `
+.idp-flow, .idp-flow * { box-sizing: border-box; }
+.idp-flow {
+    margin:0; padding:0;
     background: radial-gradient(ellipse at 50% 0%, #0d1226 0%, #05060c 55%, #020308 100%);
     font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-    color: #e8f4ff;
-    padding: 36px 20px 60px;
-    min-height: 100%;
+    color:#e8f4ff; min-height:100%; overflow-x:hidden;
   }
-  .arg-header { text-align: center; margin-bottom: 8px; }
-  .arg-header h1 {
-    font-size: 38px; letter-spacing: 1px; margin: 0 0 8px;
+.idp-flow .wrap { max-width:1600px; margin:0 auto; padding:36px 20px 60px; }
+.idp-flow .header { text-align:center; margin-bottom:8px; }
+.idp-flow .header h1 {
+    font-size:38px; letter-spacing:1px; margin:0 0 8px;
     background: linear-gradient(90deg, #00e5ff, #ff37d0 40%, #ffab2e 70%, #c78bff);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 0 30px rgba(0,229,255,0.2);
   }
-  .arg-header p { margin: 0; color: #9db8dd; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; }
-  .arg-legend { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; margin: 24px 0 14px; font-size: 15px; font-weight: 600; color: #cfe4ff; }
-  .arg-legend span { display: inline-flex; align-items: center; gap: 8px; }
-  .arg-legend i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px currentColor; }
-  .node-box { fill: rgba(8, 14, 28, 0.88); stroke: var(--nc); stroke-width: 2.5; }
-  .edge-flow {
-    fill: none; stroke: var(--ec); stroke-width: 3; stroke-linecap: round;
-    stroke-dasharray: 14 220; animation: flowDash 3s linear infinite;
+.idp-flow .header p { margin:0; color:#9db8dd; font-size:16px; letter-spacing:2px; text-transform:uppercase; }
+.idp-flow .legend { display:flex; justify-content:center; gap:26px; flex-wrap:wrap; margin:24px 0 14px; font-size:15px; font-weight:600; color:#cfe4ff; }
+.idp-flow .legend span { display:inline-flex; align-items:center; gap:8px; }
+.idp-flow .legend i { width:12px; height:12px; border-radius:50%; display:inline-block; box-shadow:0 0 8px currentColor, 0 0 3px currentColor; }
+.idp-flow .diagram-frame {
+    position:relative; border-radius:18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    border:1px solid rgba(120,160,220,0.15);
+    box-shadow: 0 0 60px rgba(0,80,150,0.15) inset, 0 20px 60px rgba(0,0,0,0.5);
+    padding:10px;
   }
-  @keyframes flowDash { from { stroke-dashoffset: 234; } to { stroke-dashoffset: 0; } }
-</style>
-</head>
-<body>
-  <div class="arg-flow-container">
-    <div class="arg-header">
-      <h1>Intelligent Document Processing</h1>
-      <p>Email Intake → Classification → Automated Downstream Flows</p>
-    </div>
-    <div class="arg-legend">
-      <span><i style="background:#00e5ff"></i> Supplier Invoice</span>
-      <span><i style="background:#ff37d0"></i> Eway Bill</span>
-      <span><i style="background:#ffab2e"></i> RFQ</span>
-      <span><i style="background:#7dffb0"></i> CPO</span>
-      <span><i style="background:#c78bff"></i> Proforma Invoice</span>
-    </div>
-    <svg viewBox="-20 -10 1540 910" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
-      <g style="--ec:#ffd24d;">
-        <path class="edge-flow" d="M 750,122 L 750,168" stroke="#ffd24d"/>
-      </g>
-      <g style="--ec:#00e5ff;">
-        <path class="edge-flow" d="M 750,268 C 750,304 150,304 150,340" stroke="#00e5ff"/>
-      </g>
-      <g style="--ec:#ff37d0;">
-        <path class="edge-flow" d="M 750,268 C 750,304 450,304 450,340" stroke="#ff37d0"/>
-      </g>
-      <rect class="node-box" x="580" y="30" width="340" height="92" rx="14" stroke="#ffd24d"/>
-      <text x="750" y="75" text-anchor="middle" fill="#fff" font-size="20">Central Email Inbox</text>
-      <rect class="node-box" x="540" y="168" width="420" height="100" rx="14" stroke="#ffd24d"/>
-      <text x="750" y="225" text-anchor="middle" fill="#fff" font-size="20">AI Document Classifier</text>
-    </svg>
-  </div>
-</body>
-</html>
+.idp-flow svg { display:block; width:100%; height:auto; }
+.idp-flow .node-box { fill: rgba(8,14,28,0.88); stroke: var(--nc); stroke-width:2.5; filter:url(#softGlow); }
+.idp-flow .node-glow { fill:none; stroke:var(--ng); stroke-width:9; opacity:0.18; filter:blur(6px); }
+.idp-flow .node { animation:idp-flow-pulseNode 4.5s ease-in-out infinite; }
+@keyframes idp-flow-pulseNode { 0%,100% { filter: drop-shadow(0 0 2px var(--ng)); } 50% { filter: drop-shadow(0 0 10px var(--ng)); } }
+.idp-flow .edge-glow { fill:none; stroke:var(--ec); stroke-width:10; opacity:0.18; filter:blur(3px); }
+.idp-flow .edge-line { fill:none; stroke:var(--ec); stroke-width:1.8; opacity:0.35; }
+.idp-flow .edge-flow {
+    fill:none; stroke:var(--ec); stroke-width:3; stroke-linecap:round;
+    stroke-dasharray:14 220; filter:url(#lineGlow) drop-shadow(0 0 6px var(--ec));
+    animation-name:idp-flow-flowDash; animation-timing-function:linear; animation-iteration-count:infinite;
+  }
+@keyframes idp-flow-flowDash { from { stroke-dashoffset:234; } to { stroke-dashoffset:0; } }
 `;
+
+function IdpFlowDiagram() {
+  return (
+    <div className="idp-flow wrap">
+      <div className="header">
+        <h1>Intelligent Document Processing</h1>
+        <p>Email Intake → Classification → Automated Downstream Flows</p>
+      </div>
+      <div
+        className="legend"
+        dangerouslySetInnerHTML={{ __html: `
+      <span><i style="color:#00e5ff"></i> Supplier Invoice</span>
+      <span><i style="color:#ff37d0"></i> Eway Bill</span>
+      <span><i style="color:#ffab2e"></i> RFQ</span>
+      <span><i style="color:#7dffb0"></i> CPO</span>
+      <span><i style="color:#c78bff"></i> Proforma Invoice</span>
+    ` }}
+      />
+      <div
+        className="diagram-frame"
+        dangerouslySetInnerHTML={{ __html: `<svg viewBox="-20 -10 1540 910" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lineGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <marker id="arrow-inv" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00e5ff"/>
+    </marker>
+    <marker id="arrow-eway" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff37d0"/>
+    </marker>
+    <marker id="arrow-rfq" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffab2e"/>
+    </marker>
+    <marker id="arrow-cpo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7dffb0"/>
+    </marker>
+    <marker id="arrow-pf" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c78bff"/>
+    </marker>
+    <marker id="arrow-root" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffd24d"/>
+    </marker>
+  </defs>
+  <g class="edges">
+    <g class="edge" style="--ec:#ffd24d;">
+      <path class="edge-glow" d="M 750.0,122.0 C 750.0,145.0 750.0,145.0 750.0,168.0"/>
+      <path class="edge-line" d="M 750.0,122.0 C 750.0,145.0 750.0,145.0 750.0,168.0" marker-end="url(#arrow-root)"/>
+      <path class="edge-flow" d="M 750.0,122.0 C 750.0,145.0 750.0,145.0 750.0,168.0" style="animation-duration:1.50s; animation-delay:-0.00s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 750.0,268.0 C 750.0,304.0 150.0,304.0 150.0,340.0"/>
+      <path class="edge-line" d="M 750.0,268.0 C 750.0,304.0 150.0,304.0 150.0,340.0" marker-end="url(#arrow-inv)"/>
+      <path class="edge-flow" d="M 750.0,268.0 C 750.0,304.0 150.0,304.0 150.0,340.0" style="animation-duration:1.82s; animation-delay:-0.17s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 750.0,268.0 C 750.0,304.0 450.0,304.0 450.0,340.0"/>
+      <path class="edge-line" d="M 750.0,268.0 C 750.0,304.0 450.0,304.0 450.0,340.0" marker-end="url(#arrow-eway)"/>
+      <path class="edge-flow" d="M 750.0,268.0 C 750.0,304.0 450.0,304.0 450.0,340.0" style="animation-duration:2.14s; animation-delay:-0.34s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ffab2e;">
+      <path class="edge-glow" d="M 750.0,268.0 C 750.0,304.0 750.0,304.0 750.0,340.0"/>
+      <path class="edge-line" d="M 750.0,268.0 C 750.0,304.0 750.0,304.0 750.0,340.0" marker-end="url(#arrow-rfq)"/>
+      <path class="edge-flow" d="M 750.0,268.0 C 750.0,304.0 750.0,304.0 750.0,340.0" style="animation-duration:2.46s; animation-delay:-0.51s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 750.0,268.0 C 750.0,304.0 1050.0,304.0 1050.0,340.0"/>
+      <path class="edge-line" d="M 750.0,268.0 C 750.0,304.0 1050.0,304.0 1050.0,340.0" marker-end="url(#arrow-cpo)"/>
+      <path class="edge-flow" d="M 750.0,268.0 C 750.0,304.0 1050.0,304.0 1050.0,340.0" style="animation-duration:2.78s; animation-delay:-0.68s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#c78bff;">
+      <path class="edge-glow" d="M 750.0,268.0 C 750.0,304.0 1350.0,304.0 1350.0,340.0"/>
+      <path class="edge-line" d="M 750.0,268.0 C 750.0,304.0 1350.0,304.0 1350.0,340.0" marker-end="url(#arrow-pf)"/>
+      <path class="edge-flow" d="M 750.0,268.0 C 750.0,304.0 1350.0,304.0 1350.0,340.0" style="animation-duration:1.50s; animation-delay:-0.85s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 150.0,418.0 C 150.0,448.0 150.0,448.0 150.0,478.0"/>
+      <path class="edge-line" d="M 150.0,418.0 C 150.0,448.0 150.0,448.0 150.0,478.0" marker-end="url(#arrow-inv)"/>
+      <path class="edge-flow" d="M 150.0,418.0 C 150.0,448.0 150.0,448.0 150.0,478.0" style="animation-duration:1.82s; animation-delay:-1.02s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 150.0,556.0 C 150.0,589.0 150.0,589.0 150.0,622.0"/>
+      <path class="edge-line" d="M 150.0,556.0 C 150.0,589.0 150.0,589.0 150.0,622.0" marker-end="url(#arrow-inv)"/>
+      <path class="edge-flow" d="M 150.0,556.0 C 150.0,589.0 150.0,589.0 150.0,622.0" style="animation-duration:2.14s; animation-delay:-0.00s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#00e5ff;">
+      <path class="edge-glow" d="M 150.0,700.0 C 150.0,733.0 150.0,733.0 150.0,766.0"/>
+      <path class="edge-line" d="M 150.0,700.0 C 150.0,733.0 150.0,733.0 150.0,766.0" marker-end="url(#arrow-inv)"/>
+      <path class="edge-flow" d="M 150.0,700.0 C 150.0,733.0 150.0,733.0 150.0,766.0" style="animation-duration:2.46s; animation-delay:-0.17s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 450.0,418.0 C 450.0,448.0 450.0,448.0 450.0,478.0"/>
+      <path class="edge-line" d="M 450.0,418.0 C 450.0,448.0 450.0,448.0 450.0,478.0" marker-end="url(#arrow-eway)"/>
+      <path class="edge-flow" d="M 450.0,418.0 C 450.0,448.0 450.0,448.0 450.0,478.0" style="animation-duration:2.78s; animation-delay:-0.34s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 450.0,556.0 C 450.0,589.0 450.0,589.0 450.0,622.0"/>
+      <path class="edge-line" d="M 450.0,556.0 C 450.0,589.0 450.0,589.0 450.0,622.0" marker-end="url(#arrow-eway)"/>
+      <path class="edge-flow" d="M 450.0,556.0 C 450.0,589.0 450.0,589.0 450.0,622.0" style="animation-duration:1.50s; animation-delay:-0.51s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ff37d0;">
+      <path class="edge-glow" d="M 450.0,700.0 C 450.0,733.0 450.0,733.0 450.0,766.0"/>
+      <path class="edge-line" d="M 450.0,700.0 C 450.0,733.0 450.0,733.0 450.0,766.0" marker-end="url(#arrow-eway)"/>
+      <path class="edge-flow" d="M 450.0,700.0 C 450.0,733.0 450.0,733.0 450.0,766.0" style="animation-duration:1.82s; animation-delay:-0.68s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ffab2e;">
+      <path class="edge-glow" d="M 750.0,418.0 C 750.0,448.0 750.0,448.0 750.0,478.0"/>
+      <path class="edge-line" d="M 750.0,418.0 C 750.0,448.0 750.0,448.0 750.0,478.0" marker-end="url(#arrow-rfq)"/>
+      <path class="edge-flow" d="M 750.0,418.0 C 750.0,448.0 750.0,448.0 750.0,478.0" style="animation-duration:2.14s; animation-delay:-0.85s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#ffab2e;">
+      <path class="edge-glow" d="M 750.0,556.0 C 750.0,589.0 750.0,589.0 750.0,622.0"/>
+      <path class="edge-line" d="M 750.0,556.0 C 750.0,589.0 750.0,589.0 750.0,622.0" marker-end="url(#arrow-rfq)"/>
+      <path class="edge-flow" d="M 750.0,556.0 C 750.0,589.0 750.0,589.0 750.0,622.0" style="animation-duration:2.46s; animation-delay:-1.02s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1050.0,418.0 C 1050.0,448.0 1050.0,448.0 1050.0,478.0"/>
+      <path class="edge-line" d="M 1050.0,418.0 C 1050.0,448.0 1050.0,448.0 1050.0,478.0" marker-end="url(#arrow-cpo)"/>
+      <path class="edge-flow" d="M 1050.0,418.0 C 1050.0,448.0 1050.0,448.0 1050.0,478.0" style="animation-duration:2.78s; animation-delay:-0.00s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1050.0,556.0 C 1050.0,589.0 1050.0,589.0 1050.0,622.0"/>
+      <path class="edge-line" d="M 1050.0,556.0 C 1050.0,589.0 1050.0,589.0 1050.0,622.0" marker-end="url(#arrow-cpo)"/>
+      <path class="edge-flow" d="M 1050.0,556.0 C 1050.0,589.0 1050.0,589.0 1050.0,622.0" style="animation-duration:1.50s; animation-delay:-0.17s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#7dffb0;">
+      <path class="edge-glow" d="M 1050.0,700.0 C 1050.0,733.0 1050.0,733.0 1050.0,766.0"/>
+      <path class="edge-line" d="M 1050.0,700.0 C 1050.0,733.0 1050.0,733.0 1050.0,766.0" marker-end="url(#arrow-cpo)"/>
+      <path class="edge-flow" d="M 1050.0,700.0 C 1050.0,733.0 1050.0,733.0 1050.0,766.0" style="animation-duration:1.82s; animation-delay:-0.34s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#c78bff;">
+      <path class="edge-glow" d="M 1350.0,418.0 C 1350.0,448.0 1350.0,448.0 1350.0,478.0"/>
+      <path class="edge-line" d="M 1350.0,418.0 C 1350.0,448.0 1350.0,448.0 1350.0,478.0" marker-end="url(#arrow-pf)"/>
+      <path class="edge-flow" d="M 1350.0,418.0 C 1350.0,448.0 1350.0,448.0 1350.0,478.0" style="animation-duration:2.14s; animation-delay:-0.51s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#c78bff;">
+      <path class="edge-glow" d="M 1350.0,570.0 C 1350.0,596.0 1350.0,596.0 1350.0,622.0"/>
+      <path class="edge-line" d="M 1350.0,570.0 C 1350.0,596.0 1350.0,596.0 1350.0,622.0" marker-end="url(#arrow-pf)"/>
+      <path class="edge-flow" d="M 1350.0,570.0 C 1350.0,596.0 1350.0,596.0 1350.0,622.0" style="animation-duration:2.46s; animation-delay:-0.68s;"/>
+    </g>
+
+    <g class="edge" style="--ec:#c78bff;">
+      <path class="edge-glow" d="M 1350.0,700.0 C 1350.0,733.0 1350.0,733.0 1350.0,766.0"/>
+      <path class="edge-line" d="M 1350.0,700.0 C 1350.0,733.0 1350.0,733.0 1350.0,766.0" marker-end="url(#arrow-pf)"/>
+      <path class="edge-flow" d="M 1350.0,700.0 C 1350.0,733.0 1350.0,733.0 1350.0,766.0" style="animation-duration:2.78s; animation-delay:-0.85s;"/>
+    </g></g>
+  <g class="nodes">
+    <g class="node" style="--nc:#ffd24d; --ng:#ffd24d;">
+      <rect class="node-glow" x="580.0" y="30.0" width="340.0" height="92.0" rx="14"/>
+      <rect class="node-box" x="580.0" y="30.0" width="340.0" height="92.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="700"><tspan x="750.0" y="63.0">Central Email</tspan><tspan x="750.0" y="89.0">(Inbox Monitor)</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#ffd24d; --ng:#ffd24d;">
+      <rect class="node-glow" x="540.0" y="168.0" width="420.0" height="100.0" rx="14"/>
+      <rect class="node-box" x="540.0" y="168.0" width="420.0" height="100.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="700"><tspan x="750.0" y="218.0">AI Document Classifier</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="25.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="25.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="150.0" y="379.0">Supplier Invoice</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#ff37d0; --ng:#ff37d0;">
+      <rect class="node-glow" x="325.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="325.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="450.0" y="379.0">Eway Bill</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#ffab2e; --ng:#ffab2e;">
+      <rect class="node-glow" x="625.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="625.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="750.0" y="379.0">RFQ</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#7dffb0; --ng:#7dffb0;">
+      <rect class="node-glow" x="925.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="925.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="1050.0" y="379.0">CPO</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#c78bff; --ng:#c78bff;">
+      <rect class="node-glow" x="1225.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="1225.0" y="340.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="1350.0" y="379.0">Proforma Invoice</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="25.0" y="478.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="25.0" y="478.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="150.0" y="517.0">Invoice Extraction</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#ff37d0; --ng:#ff37d0;">
+      <rect class="node-glow" x="325.0" y="478.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="325.0" y="478.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="450.0" y="517.0">Eway Extraction</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#ffab2e; --ng:#ffab2e;">
+      <rect class="node-glow" x="625.0" y="478.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="625.0" y="478.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="750.0" y="517.0">RFQ Auto Punch</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#7dffb0; --ng:#7dffb0;">
+      <rect class="node-glow" x="925.0" y="478.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="925.0" y="478.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="1050.0" y="517.0">CPO Auto Punch</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#c78bff; --ng:#c78bff;">
+      <rect class="node-glow" x="1225.0" y="478.0" width="250.0" height="92.0" rx="14"/>
+      <rect class="node-box" x="1225.0" y="478.0" width="250.0" height="92.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="1350.0" y="511.0">Proforma Invoice</tspan><tspan x="1350.0" y="537.0">Extraction</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="25.0" y="622.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="25.0" y="622.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="150.0" y="661.0">Validation</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#ff37d0; --ng:#ff37d0;">
+      <rect class="node-glow" x="325.0" y="622.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="325.0" y="622.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="450.0" y="661.0">Eway Validation</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#ffab2e; --ng:#ffab2e;">
+      <rect class="node-glow" x="620.0" y="622.0" width="260.0" height="100.0" rx="14"/>
+      <rect class="node-box" x="620.0" y="622.0" width="260.0" height="100.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="700"><tspan x="750.0" y="659.0">Auto Punch into In-house</tspan><tspan x="750.0" y="685.0">Excel on Cloud</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#7dffb0; --ng:#7dffb0;">
+      <rect class="node-glow" x="925.0" y="622.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="925.0" y="622.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="1050.0" y="661.0">Creates SPO</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#c78bff; --ng:#c78bff;">
+      <rect class="node-glow" x="1225.0" y="622.0" width="250.0" height="78.0" rx="14"/>
+      <rect class="node-box" x="1225.0" y="622.0" width="250.0" height="78.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="600"><tspan x="1350.0" y="661.0">Validation</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#00e5ff; --ng:#00e5ff;">
+      <rect class="node-glow" x="20.0" y="766.0" width="260.0" height="100.0" rx="14"/>
+      <rect class="node-box" x="20.0" y="766.0" width="260.0" height="100.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="700"><tspan x="150.0" y="803.0">Customer Invoice</tspan><tspan x="150.0" y="829.0">Creation</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#ff37d0; --ng:#ff37d0;">
+      <rect class="node-glow" x="320.0" y="766.0" width="260.0" height="100.0" rx="14"/>
+      <rect class="node-box" x="320.0" y="766.0" width="260.0" height="100.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="700"><tspan x="450.0" y="803.0">Customer Eway Bill</tspan><tspan x="450.0" y="829.0">Creation</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#7dffb0; --ng:#7dffb0;">
+      <rect class="node-glow" x="920.0" y="766.0" width="260.0" height="100.0" rx="14"/>
+      <rect class="node-box" x="920.0" y="766.0" width="260.0" height="100.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="700"><tspan x="1050.0" y="803.0">SPO Sent to</tspan><tspan x="1050.0" y="829.0">Suppliers</tspan></text>
+    </g>
+
+    <g class="node" style="--nc:#c78bff; --ng:#c78bff;">
+      <rect class="node-glow" x="1220.0" y="766.0" width="260.0" height="100.0" rx="14"/>
+      <rect class="node-box" x="1220.0" y="766.0" width="260.0" height="100.0" rx="14"/>
+      <text class="node-text" fill="#f4fbff" text-anchor="middle" font-size="21" font-weight="700"><tspan x="1350.0" y="816.0">Finance Approval</tspan></text>
+    </g></g>
+</svg>` }}
+      />
+      <style>{idpFlowStyles}</style>
+    </div>
+  );
+}
 
 const argFlowchartHtml = `
 <!DOCTYPE html>
@@ -300,10 +578,10 @@ const AiProjectsShowcase = () => {
             </div>
           </DialogHeader>
           <div className="flex-grow overflow-auto bg-muted/20 relative p-0">
-            {selectedFlowchart === 'arg-html' || selectedFlowchart === 'idp-html' ? (
-              <div className="w-full h-full" dangerouslySetInnerHTML={{ 
-                __html: selectedFlowchart === 'arg-html' ? argFlowchartHtml : idpFlowchartHtml 
-              }} />
+            {selectedFlowchart === 'idp-html' ? (
+              <IdpFlowDiagram />
+            ) : selectedFlowchart === 'arg-html' ? (
+              <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: argFlowchartHtml }} />
             ) : (
               <div 
                 className="relative min-h-full transition-transform duration-200 ease-out origin-top-left flex items-start justify-center p-4"
