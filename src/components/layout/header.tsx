@@ -59,6 +59,7 @@ const NavLink = ({
         className
       )}
       aria-current={isActive ? 'page' : undefined}
+      suppressHydrationWarning
     >
       {children}
     </Link>
@@ -86,6 +87,7 @@ const MobileNavLink = ({
           'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background'
         )}
         aria-current={isActive ? 'page' : undefined}
+        suppressHydrationWarning
       >
         {children}
       </Link>
@@ -125,12 +127,12 @@ const Header = () => {
   }, [handleNavigationClick]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" suppressHydrationWarning>
       <div className="multicolor-line"></div>
-      <div className="container flex h-16 items-center justify-between"> {/* Use justify-between */}
+      <div className="container flex h-16 items-center justify-between" suppressHydrationWarning> {/* Use justify-between */}
         {/* Left: Logo & Brand */}
-        <div className="flex items-center pl-4"> {/* Add padding for spacing */}
-          <Link href="/" className="flex items-center space-x-2" onClick={(e) => handleNavigationClick(e, '/')}>
+        <div className="flex items-center pl-4" suppressHydrationWarning> {/* Add padding for spacing */}
+          <Link href="/" className="flex items-center space-x-2" onClick={(e) => handleNavigationClick(e, '/')} suppressHydrationWarning>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="h-6 w-6 text-accent">
               <rect width="256" height="256" fill="none"></rect>
               <line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
@@ -141,8 +143,8 @@ const Header = () => {
         </div>
 
         {/* Center: Desktop Navigation */}
-         <div className="hidden md:flex flex-grow justify-center">
-          <nav className="flex items-center space-x-1">
+         <div className="hidden md:flex flex-grow justify-center" suppressHydrationWarning>
+          <nav className="flex items-center space-x-1" suppressHydrationWarning>
             {navLinks.map((link) => (
               <NavLink
                 key={link.href}
@@ -157,7 +159,7 @@ const Header = () => {
 
 
         {/* Right: Buttons */}
-        <div className="flex items-center gap-2 pr-4"> {/* Adjusted padding for better alignment */}
+        <div className="flex items-center gap-2 pr-4" suppressHydrationWarning> {/* Adjusted padding for better alignment */}
            <div className="hidden md:flex">
              <Button asChild variant="default" size="sm" className="shadow-md">
               <Link href="#contact" onClick={(e) => handleNavigationClick(e, '#contact')}>
