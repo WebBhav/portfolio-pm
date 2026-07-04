@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -16,16 +15,13 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const argFlowchartHtml = `
+const idpFlowchartHtml = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <style>
-  :root {
-    --bg1: #05060c;
-    --bg2: #0a0f1e;
-  }
+  :root { --bg1:#05060c; --bg2:#0a0f1e; }
   * { box-sizing: border-box; }
   .arg-flow-container {
     background: radial-gradient(ellipse at 50% 0%, #0d1226 0%, #05060c 55%, #020308 100%);
@@ -34,57 +30,88 @@ const argFlowchartHtml = `
     padding: 36px 20px 60px;
     min-height: 100%;
   }
-  .arg-header {
-    text-align: center;
-    margin-bottom: 8px;
-  }
+  .arg-header { text-align: center; margin-bottom: 8px; }
   .arg-header h1 {
-    font-size: 28px;
-    letter-spacing: 1px;
-    margin: 0 0 6px;
+    font-size: 38px; letter-spacing: 1px; margin: 0 0 8px;
+    background: linear-gradient(90deg, #00e5ff, #ff37d0 40%, #ffab2e 70%, #c78bff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .arg-header p { margin: 0; color: #9db8dd; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; }
+  .arg-legend { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; margin: 24px 0 14px; font-size: 15px; font-weight: 600; color: #cfe4ff; }
+  .arg-legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .arg-legend i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px currentColor; }
+  .node-box { fill: rgba(8, 14, 28, 0.88); stroke: var(--nc); stroke-width: 2.5; }
+  .edge-flow {
+    fill: none; stroke: var(--ec); stroke-width: 3; stroke-linecap: round;
+    stroke-dasharray: 14 220; animation: flowDash 3s linear infinite;
+  }
+  @keyframes flowDash { from { stroke-dashoffset: 234; } to { stroke-dashoffset: 0; } }
+</style>
+</head>
+<body>
+  <div class="arg-flow-container">
+    <div class="arg-header">
+      <h1>Intelligent Document Processing</h1>
+      <p>Email Intake → Classification → Automated Downstream Flows</p>
+    </div>
+    <div class="arg-legend">
+      <span><i style="background:#00e5ff"></i> Supplier Invoice</span>
+      <span><i style="background:#ff37d0"></i> Eway Bill</span>
+      <span><i style="background:#ffab2e"></i> RFQ</span>
+      <span><i style="background:#7dffb0"></i> CPO</span>
+      <span><i style="background:#c78bff"></i> Proforma Invoice</span>
+    </div>
+    <svg viewBox="-20 -10 1540 910" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+      <g style="--ec:#ffd24d;">
+        <path class="edge-flow" d="M 750,122 L 750,168" stroke="#ffd24d"/>
+      </g>
+      <g style="--ec:#00e5ff;">
+        <path class="edge-flow" d="M 750,268 C 750,304 150,304 150,340" stroke="#00e5ff"/>
+      </g>
+      <g style="--ec:#ff37d0;">
+        <path class="edge-flow" d="M 750,268 C 750,304 450,304 450,340" stroke="#ff37d0"/>
+      </g>
+      <rect class="node-box" x="580" y="30" width="340" height="92" rx="14" stroke="#ffd24d"/>
+      <text x="750" y="75" text-anchor="middle" fill="#fff" font-size="20">Central Email Inbox</text>
+      <rect class="node-box" x="540" y="168" width="420" height="100" rx="14" stroke="#ffd24d"/>
+      <text x="750" y="225" text-anchor="middle" fill="#fff" font-size="20">AI Document Classifier</text>
+    </svg>
+  </div>
+</body>
+</html>
+`;
+
+const argFlowchartHtml = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root { --bg1: #05060c; --bg2: #0a0f1e; }
+  * { box-sizing: border-box; }
+  .arg-flow-container {
+    background: radial-gradient(ellipse at 50% 0%, #0d1226 0%, #05060c 55%, #020308 100%);
+    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    color: #e8f4ff;
+    padding: 36px 20px 60px;
+    min-height: 100%;
+  }
+  .arg-header { text-align: center; margin-bottom: 8px; }
+  .arg-header h1 {
+    font-size: 28px; letter-spacing: 1px; margin: 0 0 6px;
     background: linear-gradient(90deg, #00e5ff, #ff37d0 60%, #c6ff4d);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .arg-header p {
-    margin: 0;
-    color: #7fa0c9;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  .arg-legend {
-    display: flex;
-    justify-content: center;
-    gap: 22px;
-    flex-wrap: wrap;
-    margin: 20px 0 10px;
-    font-size: 12px;
-    color: #b9d2ee;
-  }
-  .arg-legend span {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .arg-legend i {
-    width: 10px; height: 10px; border-radius: 50%;
-    display: inline-block;
-    box-shadow: 0 0 8px currentColor;
-  }
+  .arg-header p { margin: 0; color: #7fa0c9; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+  .arg-legend { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin: 20px 0 10px; font-size: 12px; color: #b9d2ee; }
+  .arg-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .arg-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px currentColor; }
   .node-box { fill: rgba(8, 14, 28, 0.85); stroke-width: 2; }
   .edge-flow {
-    fill: none;
-    stroke-width: 2.6;
-    stroke-linecap: round;
-    stroke-dasharray: 14 220;
-    animation: flowDash 3s linear infinite;
+    fill: none; stroke-width: 2.6; stroke-linecap: round;
+    stroke-dasharray: 14 220; animation: flowDash 3s linear infinite;
   }
-  @keyframes flowDash {
-    from { stroke-dashoffset: 234; }
-    to { stroke-dashoffset: 0; }
-  }
+  @keyframes flowDash { from { stroke-dashoffset: 234; } to { stroke-dashoffset: 0; } }
 </style>
 </head>
 <body>
@@ -102,22 +129,9 @@ const argFlowchartHtml = `
     <svg viewBox="60 2390 1860 1780" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
       <g style="--ec:#ff37d0;">
         <path class="edge-flow" d="M 1378,2500 C 1378,2560 1755,2560 1755,2620" stroke="#ff37d0"/>
-        <path class="edge-flow" d="M 1755,2698 L 1755,2748" stroke="#ff37d0"/>
-        <path class="edge-flow" d="M 1755,2802 L 1755,2852" stroke="#ff37d0"/>
-      </g>
-      <g style="--ec:#00e5ff;">
-        <path class="edge-flow" d="M 1118,2500 C 1118,2541 740,2541 740,2582" stroke="#00e5ff"/>
-        <path class="edge-flow" d="M 740,2660 L 740,2710" stroke="#00e5ff"/>
-        <path class="edge-flow" d="M 740,2764 L 740,2918" stroke="#00e5ff"/>
       </g>
       <rect class="node-box" x="1118" y="2430" width="260" height="102" rx="12" stroke="#ffd24d"/>
       <text x="1248" y="2480" text-anchor="middle" fill="#fff" font-size="16">ARG Engine</text>
-      
-      <rect class="node-box" x="610" y="2582" width="260" height="78" rx="12" stroke="#00e5ff"/>
-      <text x="740" y="2625" text-anchor="middle" fill="#fff" font-size="14">AI Content Generator</text>
-
-      <rect class="node-box" x="1630" y="2620" width="250" height="78" rx="12" stroke="#ff37d0"/>
-      <text x="1755" y="2665" text-anchor="middle" fill="#fff" font-size="14">Website Generator</text>
     </svg>
   </div>
 </body>
@@ -131,9 +145,11 @@ const projects = [
     description: 'Developed an AI-powered Intelligent Document Processing (IDP) platform that classifies documents from a central email and routes them to the appropriate AI agent. The system automates extraction, validation, invoice creation, E-Way Bill creation, RFQ and CPO processing, SPO generation, and finance approval workflows, eliminating manual effort and improving processing efficiency.',
     imageUrl: 'https://picsum.photos/seed/idp/600/400',
     projectUrl: '#',
+    flowchartUrl: 'idp-html',
     tags: ['AI', 'ML', 'Fresh Service', 'Automation', 'Agentic Workflow'],
     icon: <BrainCircuit className="h-6 w-6 text-accent" />,
     aiHint: "document processing automation",
+    hasFlowchart: true,
     ctaText: 'View Automation'
   },
   {
@@ -228,7 +244,7 @@ const AiProjectsShowcase = () => {
               </CardDescription>
             </CardContent>
             <CardFooter className="flex flex-col gap-2">
-              {project.hasFlowchart && (
+              {project.hasFlowchart && !project.ctaText && (
                 <Button variant="default" className="w-full" onClick={() => setSelectedFlowchart(project.flowchartUrl || null)}>
                   View Flowchart <Workflow className="ml-2 h-4 w-4" />
                 </Button>
@@ -240,8 +256,12 @@ const AiProjectsShowcase = () => {
                   </Link>
                 </Button>
               )}
-              {project.ctaText && project.projectUrl === '#' && !project.hasFlowchart && (
-                <Button variant="default" className="w-full">
+              {project.ctaText && project.projectUrl === '#' && (
+                <Button variant="default" className="w-full" onClick={() => {
+                  if (project.hasFlowchart) {
+                    setSelectedFlowchart(project.flowchartUrl || null);
+                  }
+                }}>
                   {project.ctaText} <Workflow className="ml-2 h-4 w-4" />
                 </Button>
               )}
@@ -250,7 +270,6 @@ const AiProjectsShowcase = () => {
         ))}
       </div>
 
-      {/* Flowchart Modal */}
       <Dialog open={!!selectedFlowchart} onOpenChange={(open) => {
         if (!open) {
           setSelectedFlowchart(null);
@@ -264,7 +283,7 @@ const AiProjectsShowcase = () => {
                 <DialogTitle>Project Architecture</DialogTitle>
                 <DialogDescription>Detailed Pipeline Workflow</DialogDescription>
               </div>
-              {selectedFlowchart !== 'arg-html' && (
+              {selectedFlowchart !== 'arg-html' && selectedFlowchart !== 'idp-html' && (
                 <div className="flex items-center gap-2 mr-6">
                   <Button variant="outline" size="icon" onClick={handleZoomOut} disabled={zoom <= 1}>
                     <ZoomOut className="h-4 w-4" />
@@ -281,8 +300,10 @@ const AiProjectsShowcase = () => {
             </div>
           </DialogHeader>
           <div className="flex-grow overflow-auto bg-muted/20 relative p-0">
-            {selectedFlowchart === 'arg-html' ? (
-              <div className="w-full h-full" dangerouslySetInnerHTML={{ __html: argFlowchartHtml }} />
+            {selectedFlowchart === 'arg-html' || selectedFlowchart === 'idp-html' ? (
+              <div className="w-full h-full" dangerouslySetInnerHTML={{ 
+                __html: selectedFlowchart === 'arg-html' ? argFlowchartHtml : idpFlowchartHtml 
+              }} />
             ) : (
               <div 
                 className="relative min-h-full transition-transform duration-200 ease-out origin-top-left flex items-start justify-center p-4"
