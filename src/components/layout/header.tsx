@@ -1,4 +1,3 @@
-
 'use client';
 
 import type { ComponentProps } from 'react';
@@ -124,7 +123,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" suppressHydrationWarning>
       <div className="multicolor-line"></div>
-      <div className="container mx-auto flex md:grid md:grid-cols-3 h-16 items-center justify-between px-4 sm:px-6" suppressHydrationWarning>
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 md:grid md:grid-cols-3" suppressHydrationWarning>
         
         {/* Left: Logo & Brand */}
         <div className="flex justify-start items-center" suppressHydrationWarning>
@@ -139,7 +138,7 @@ const Header = () => {
         </div>
 
         {/* Center: Desktop Navigation */}
-        <div className="hidden md:flex justify-center" suppressHydrationWarning>
+        <div className="hidden md:flex justify-center items-center" suppressHydrationWarning>
           <nav className="flex items-center space-x-1" suppressHydrationWarning>
             {navLinks.map((link) => (
               <NavLink
@@ -155,9 +154,9 @@ const Header = () => {
 
         {/* Right: Actions */}
         <div className="flex justify-end items-center gap-2 sm:gap-4" suppressHydrationWarning>
-          <Button asChild variant="default" size="sm" className="shadow-md">
+          <Button asChild variant="default" size="sm" className="shadow-md hidden md:inline-flex">
             <Link href="#contact" onClick={(e) => handleNavigationClick(e, '#contact')}>
-              <Mail className="mr-2 h-4 w-4" /> <span className="hidden sm:inline">Contact Me</span><span className="sm:hidden">Contact</span>
+              <Mail className="mr-2 h-4 w-4" /> Contact Me
             </Link>
           </Button>
 
