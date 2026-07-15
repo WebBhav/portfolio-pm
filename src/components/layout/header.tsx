@@ -19,7 +19,7 @@ import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { cn } from '@/lib/utils';
 import { ScrollArea, ScrollAreaViewport } from '@/components/ui/scroll-area';
 import { useLoading } from '@/contexts/loading-context';
-import { usePathname } from 'next/navigation'; // Import usePathname
+import { usePathname } from 'next/navigation';
 
 
 const navLinks = [
@@ -44,7 +44,6 @@ const NavLink = ({
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }) => {
   const pathname = usePathname();
-  // Check if it's a page link (starts with / but not /#)
   const isPageLink = href.startsWith('/') && !href.startsWith('/#');
   const isActive = isPageLink && pathname === href;
 
@@ -98,14 +97,12 @@ const MobileNavLink = ({
 const Header = () => {
   const { setIsLoading } = useLoading();
   const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const pathname = usePathname(); // Get current pathname
+  const pathname = usePathname();
 
   const handleNavigationClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // If we are already on the page, do nothing.
     if (pathname === href) {
         return;
     }
-    // For hash links on the same page, we prevent default and scroll smoothly.
     if (href.startsWith('/#') && pathname === '/') {
         e.preventDefault();
         const elementId = href.substring(2);
@@ -117,33 +114,32 @@ const Header = () => {
             }
         }
     }
-    // For other links, Next.js Link component will handle navigation,
-    // and the global loader will be dismissed by the wrapper component on route change.
   }, [pathname]);
 
   const handleSheetLinkClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    setIsSheetOpen(false); // Close sheet on click
-    handleNavigationClick(e, href); // Reuse the same logic
+    setIsSheetOpen(false);
+    handleNavigationClick(e, href);
   }, [handleNavigationClick]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" suppressHydrationWarning>
       <div className="multicolor-line"></div>
-      <div className="container flex h-16 items-center justify-between" suppressHydrationWarning> {/* Use justify-between */}
+      <div className="container mx-auto flex md:grid md:grid-cols-3 h-16 items-center justify-between px-4 sm:px-6" suppressHydrationWarning>
+        
         {/* Left: Logo & Brand */}
-        <div className="flex items-center pl-4" suppressHydrationWarning> {/* Add padding for spacing */}
+        <div className="flex justify-start items-center" suppressHydrationWarning>
           <Link href="/" className="flex items-center space-x-2" onClick={(e) => handleNavigationClick(e, '/')} suppressHydrationWarning>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="h-6 w-6 text-accent">
               <rect width="256" height="256" fill="none"></rect>
               <line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
               <line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
             </svg>
-            <span className="font-bold text-lg">Vaibhav Singhal</span>
+            <span className="font-bold text-base sm:text-lg whitespace-nowrap">Vaibhav Singhal</span>
           </Link>
         </div>
 
         {/* Center: Desktop Navigation */}
-         <div className="hidden md:flex flex-grow justify-center" suppressHydrationWarning>
+        <div className="hidden md:flex justify-center" suppressHydrationWarning>
           <nav className="flex items-center space-x-1" suppressHydrationWarning>
             {navLinks.map((link) => (
               <NavLink
@@ -155,18 +151,15 @@ const Header = () => {
               </NavLink>
             ))}
           </nav>
-         </div>
+        </div>
 
-
-        {/* Right: Buttons */}
-        <div className="flex items-center gap-2 pr-4" suppressHydrationWarning> {/* Adjusted padding for better alignment */}
-           <div className="hidden md:flex">
-             <Button asChild variant="default" size="sm" className="shadow-md">
-              <Link href="#contact" onClick={(e) => handleNavigationClick(e, '#contact')}>
-                <Mail className="mr-2 h-4 w-4" /> Contact Me
-              </Link>
-            </Button>
-           </div>
+        {/* Right: Actions */}
+        <div className="flex justify-end items-center gap-2 sm:gap-4" suppressHydrationWarning>
+          <Button asChild variant="default" size="sm" className="shadow-md">
+            <Link href="#contact" onClick={(e) => handleNavigationClick(e, '#contact')}>
+              <Mail className="mr-2 h-4 w-4" /> <span className="hidden sm:inline">Contact Me</span><span className="sm:hidden">Contact</span>
+            </Link>
+          </Button>
 
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
