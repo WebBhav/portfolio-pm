@@ -32,7 +32,7 @@ const interviewExperiences = [
   },
   {
     company: 'Appreciate Wealth',
-    role: 'Associate Product Manager',
+    role: 'Product Manager-1',
     date: 'January 2026',
     outcome: 'Converted',
     introduction: 'Secured via direct alumni referral and completed back-to-back interview rounds in a single day, navigating an unstructured hiring process with strong product clarity and execution depth.',
