@@ -4,9 +4,15 @@ import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ExternalLink, Bot, Mail, Workflow, ZoomIn, ZoomOut, Maximize2, BrainCircuit, Sparkles } from 'lucide-react';
+import { ExternalLink, Bot, Mail, Workflow, ZoomIn, ZoomOut, Maximize2, BrainCircuit, Sparkles, Sun, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import ReadMore from '@/components/ui/read-more';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu';
 import {
   Dialog,
   DialogContent,
@@ -916,10 +922,25 @@ const projects = [
     aiHint: "ai chrome extension form auto filler",
   },
   {
+    title: 'Sun King | Async Onboarding Redesign',
+    date: 'October 2026',
+    description: 'Redesigned customer onboarding for an off-grid solar PAYG provider in rural Africa, replacing a live-call verification queue with an async flow: offline-first submission, SMS→IVR→deferred OTP, non-biometric ID capture with a consent video, and a prioritised executive queue with auto-approval and audit sampling. Delivered 8 Whimsical flows and a numbered decision document.',
+    imageUrl: '/sunking.jpg',
+    projectUrl: 'https://sunking-onboarding.netlify.app',
+    tags: ['Product Design', 'Fintech', 'KYC', 'Systems Design', 'Whimsical'],
+    icon: <Sun className="h-6 w-6 text-accent" />,
+    aiHint: "solar onboarding fintech kyc",
+    links: [
+      { label: 'View Prototype', url: 'https://sunking-onboarding.netlify.app' },
+      { label: 'Whimsical Flow', url: 'https://whimsical.com/vaibhav-singhal/sun-king-onboarding-flow-QGKR3sKPHWB9ica1AjkTss' },
+      { label: 'Decision Document', url: 'https://drive.google.com/file/d/1X0LAmBdL1Yvh-3vc34_sHRyL2c3jwbXX/view?usp=drive_link' },
+    ],
+  },
+  {
     title: 'Intelligent Document Processing | AI-ML',
     date: 'June 2026',
     description: 'Developed an AI-powered Intelligent Document Processing (IDP) platform that classifies documents from a central email and routes them to the appropriate AI agent. The system automates extraction, validation, invoice creation, E-Way Bill creation, RFQ and CPO processing, SPO generation, and finance approval workflows, eliminating manual effort and improving processing efficiency.',
-    imageUrl: 'https://picsum.photos/seed/idp/600/400',
+    imageUrl: '/idp.jpg',
     projectUrl: '#',
     flowchartUrl: 'idp-html',
     tags: ['AI', 'ML', 'Fresh Service', 'Automation', 'Agentic Workflow'],
@@ -927,6 +948,16 @@ const projects = [
     aiHint: "document processing automation",
     hasFlowchart: true,
     ctaText: 'View Automation'
+  },
+  {
+    title: 'Mail Automation | n8n',
+    date: 'July 2025',
+    description: 'Developed a fully automated command-to-action engine using n8n, integrating a Telegram bot with Gemini’s LLM capabilities to understand user instructions. The system restructures inputs into a predefined operational format, fetches the appropriate Gmail template from a stored library, and sends the email instantly. Designed for reliability and scalability, it serves as a hands-free AI-driven workflow for automated communication.',
+    imageUrl: 'https://picsum.photos/seed/mail/600/400',
+    projectUrl: '#',
+    tags: ['AI', 'Automation', 'n8n', 'Telegram'],
+    icon: <Mail className="h-6 w-6 text-accent" />,
+    aiHint: "mail automation telegram bot",
   },
   {
     title: 'Automated Revenue Generator (ARG) | AI',
@@ -949,16 +980,6 @@ const projects = [
     tags: ['AI', 'Astrology', 'Web Analysis', 'Deployed'],
     icon: <Bot className="h-6 w-6 text-accent" />,
     aiHint: "artificial intelligence astrology web app",
-  },
-  {
-    title: 'Mail Automation | n8n',
-    date: 'July 2025',
-    description: 'Developed a fully automated command-to-action engine using n8n, integrating a Telegram bot with Gemini’s LLM capabilities to understand user instructions. The system restructures inputs into a predefined operational format, fetches the appropriate Gmail template from a stored library, and sends the email instantly. Designed for reliability and scalability, it serves as a hands-free AI-driven workflow for automated communication.',
-    imageUrl: 'https://picsum.photos/seed/mail/600/400',
-    projectUrl: '#',
-    tags: ['AI', 'Automation', 'n8n', 'Telegram'],
-    icon: <Mail className="h-6 w-6 text-accent" />,
-    aiHint: "mail automation telegram bot",
   },
 ];
 
@@ -1020,26 +1041,48 @@ const AiProjectsShowcase = () => {
               </CardDescription>
             </CardContent>
             <CardFooter className="flex flex-col gap-2">
-              {project.hasFlowchart && !project.ctaText && (
-                <Button variant="default" className="w-full" onClick={() => setSelectedFlowchart(project.flowchartUrl || null)}>
-                  View Flowchart <Workflow className="ml-2 h-4 w-4" />
-                </Button>
-              )}
-              {project.projectUrl !== '#' && (
-                <Button asChild variant="default" className="w-full">
-                  <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
-                    {project.ctaText || 'View Project'} <ExternalLink className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              )}
-              {project.ctaText && project.projectUrl === '#' && (
-                <Button variant="default" className="w-full" onClick={() => {
-                  if (project.hasFlowchart) {
-                    setSelectedFlowchart(project.flowchartUrl || null);
-                  }
-                }}>
-                  {project.ctaText} <Workflow className="ml-2 h-4 w-4" />
-                </Button>
+              {project.links && project.links.length > 0 ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="default" className="w-full justify-center">
+                      View Prototype <ChevronDown className="ml-2 h-4 w-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-[var(--radix-dropdown-menu-trigger-width)] min-w-[240px] p-1.5" align="center" side="bottom">
+                    {project.links.map((linkItem, lIdx) => (
+                      <DropdownMenuItem key={lIdx} asChild className="cursor-pointer py-2">
+                        <Link href={linkItem.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between w-full">
+                          <span>{linkItem.label}</span>
+                          <ExternalLink className="h-4 w-4 text-accent" />
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <>
+                  {project.hasFlowchart && !project.ctaText && (
+                    <Button variant="default" className="w-full" onClick={() => setSelectedFlowchart(project.flowchartUrl || null)}>
+                      View Flowchart <Workflow className="ml-2 h-4 w-4" />
+                    </Button>
+                  )}
+                  {project.projectUrl !== '#' && (
+                    <Button asChild variant="default" className="w-full">
+                      <Link href={project.projectUrl} target="_blank" rel="noopener noreferrer">
+                        {project.ctaText || 'View Project'} <ExternalLink className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  )}
+                  {project.ctaText && project.projectUrl === '#' && (
+                    <Button variant="default" className="w-full" onClick={() => {
+                      if (project.hasFlowchart) {
+                        setSelectedFlowchart(project.flowchartUrl || null);
+                      }
+                    }}>
+                      {project.ctaText} <Workflow className="ml-2 h-4 w-4" />
+                    </Button>
+                  )}
+                </>
               )}
             </CardFooter>
           </Card>
